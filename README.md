@@ -46,7 +46,7 @@ Moment of Us provides a platform for users to:
 
 For more detailed documentation, including the development plan, database schema, and deployment instructions, please refer to the project wiki:
 
-* **[Link to Wiki](https://github.com/Abdullahtariq11/MomentOfUs-API/wiki)`
+**[Link to Wiki](https://github.com/Abdullahtariq11/MomentOfUs-API/wiki)**
 
 ## Contributing
 
