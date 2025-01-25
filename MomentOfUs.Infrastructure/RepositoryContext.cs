@@ -18,7 +18,6 @@ public class RepositoryContext : IdentityDbContext<User>
         //Any configurations can be added here.
 
     }
-
     ///<summary>
     /// Add Dbsets here to implement associated tables in the database. User not needed to be defined.
     /// </summary>

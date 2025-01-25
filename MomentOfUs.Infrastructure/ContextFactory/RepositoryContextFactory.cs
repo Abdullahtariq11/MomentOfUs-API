@@ -19,6 +19,7 @@ namespace MomentOfUs.Infrastructure.ContextFactory
         public RepositoryContext CreateDbContext(string[] args)
         {
             var basePath = Directory.GetCurrentDirectory();
+            //Builds IConfiguration object to access configurations
             var configuration = new ConfigurationBuilder()
             .SetBasePath(basePath)
             .AddJsonFile(Path.Combine(basePath, "..", "MomentOfUs.API", "appsettings.json"))
