@@ -10,8 +10,13 @@ namespace MomentOfUs.Domain.Models
     public class User : IdentityUser
     {
         [Required(ErrorMessage = "This Information Is Required")]
+        [MaxLength(10,ErrorMessage = "Character count exceeds the max limit")]
         public string? FirstName { get; set; }
+        
         [Required(ErrorMessage = "This information is Required")]
+        [MaxLength(10,ErrorMessage = "Character count exceeds the max limit")]
         public string? LastName { get; set; }
+
+        public string? ProfileImageUrl { get; set; }
     }
 }
