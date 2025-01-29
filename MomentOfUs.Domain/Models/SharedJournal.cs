@@ -16,6 +16,7 @@ namespace MomentOfUs.Domain.Models
         public DateTime UpdatedAt { get; set; }
 
         //Navigation property
+        public User? Owner { get; set; }
         [Required]
         public Journal? Journal { get; set; }
         [Required]

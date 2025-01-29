@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.Extensions.Options;
 using MomentOfUs.Domain.Models;
+using MomentOfUs.Infrastructure.Configuration;
 
 namespace MomentOfUs.Infrastructure;
 
@@ -17,6 +18,7 @@ public class RepositoryContext : IdentityDbContext<User>
         base.OnModelCreating(modelBuilder);
 
         //Any configurations can be added here.
+        modelBuilder.ApplyConfiguration(new UserConfiguration()); 
 
     }
     ///<summary>

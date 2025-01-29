@@ -11,8 +11,9 @@ namespace MomentOfUs.Domain.Models
     /// </summary>
     public class UserSharedJournal
     {
-        [Required]
+        public Guid Id { get; set; }
         public string UserId { get; set; }=string.Empty;
+        
         public Guid SharedJournalId { get; set; }
         public PermissionLevel PermissionLevel { get; set; }
 

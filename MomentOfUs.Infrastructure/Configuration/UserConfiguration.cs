@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.Extensions.Configuration;
@@ -15,17 +16,20 @@ namespace MomentOfUs.Infrastructure.Configuration
     public class UserConfiguration : IEntityTypeConfiguration<User>
     {
         public void Configure(EntityTypeBuilder<User> builder)
-        { 
+        {
             //configure with Journal
-            builder.HasMany(u=>u.Journals)
-            .WithOne(j=>j.Owner)
-            .HasForeignKey(j=>j.OwnerID)
+            builder.HasMany(u => u.Journals)
+            .WithOne(j => j.Owner)
+            .HasForeignKey(j => j.OwnerID)
             .OnDelete(DeleteBehavior.Cascade);
 
+
             //configure shared journal
-           // builder.HasMany(u=>u.sharedJournals)
-           //.WithOne(sj=>sj.)
-            
+            builder.HasMany(u => u.sharedJournals)
+            .WithOne(sj => sj.Owner)
+            .HasForeignKey(sj => sj.OwnerId)
+            .OnDelete(DeleteBehavior.Cascade);
+
         }
     }
 }
