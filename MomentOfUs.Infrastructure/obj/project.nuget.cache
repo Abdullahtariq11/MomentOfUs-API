@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "s9miCYu1SYs=",
+  "dgSpecHash": "cs2iVvo6x68=",
   "success": true,
   "projectFilePath": "/Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Infrastructure/MomentOfUs.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -39,6 +39,7 @@
     "/Users/abdullahtariq/.nuget/packages/microsoft.entityframeworkcore.relational/9.0.1/microsoft.entityframeworkcore.relational.9.0.1.nupkg.sha512",
     "/Users/abdullahtariq/.nuget/packages/microsoft.entityframeworkcore.sqlite/9.0.1/microsoft.entityframeworkcore.sqlite.9.0.1.nupkg.sha512",
     "/Users/abdullahtariq/.nuget/packages/microsoft.entityframeworkcore.sqlite.core/9.0.1/microsoft.entityframeworkcore.sqlite.core.9.0.1.nupkg.sha512",
+    "/Users/abdullahtariq/.nuget/packages/microsoft.entityframeworkcore.tools/9.0.1/microsoft.entityframeworkcore.tools.9.0.1.nupkg.sha512",
     "/Users/abdullahtariq/.nuget/packages/microsoft.extensions.caching.abstractions/9.0.1/microsoft.extensions.caching.abstractions.9.0.1.nupkg.sha512",
     "/Users/abdullahtariq/.nuget/packages/microsoft.extensions.caching.memory/9.0.1/microsoft.extensions.caching.memory.9.0.1.nupkg.sha512",
     "/Users/abdullahtariq/.nuget/packages/microsoft.extensions.configuration/9.0.1/microsoft.extensions.configuration.9.0.1.nupkg.sha512",

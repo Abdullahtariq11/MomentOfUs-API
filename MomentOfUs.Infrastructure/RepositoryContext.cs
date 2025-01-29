@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.Extensions.Options;
 using MomentOfUs.Domain.Models;
 
@@ -21,6 +22,11 @@ public class RepositoryContext : IdentityDbContext<User>
     ///<summary>
     /// Add Dbsets here to implement associated tables in the database. User not needed to be defined.
     /// </summary>
+    /// 
+
+    public DbSet<Journal> Journals { get; set; }
+    public DbSet<SharedJournal> SharedJournals { get; set; }
+
 
 
 }

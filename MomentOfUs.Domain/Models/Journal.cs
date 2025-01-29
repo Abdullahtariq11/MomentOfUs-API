@@ -8,10 +8,10 @@ namespace MomentOfUs.Domain.Models
 {
     public class Journal
     {
-        public Guid JournalId { get; set; }
+        public Guid Id { get; set; }
 
         [Required]
-        public string? UserID { get; set; }
+        public string OwnerID { get; set; }=string.Empty;
 
         [Required]
         [MaxLength(50, ErrorMessage = "Character count exceeds the max length.")]
@@ -23,7 +23,12 @@ namespace MomentOfUs.Domain.Models
 
         public string? PhotoUrl { get; set; }
 
-        public DateTime CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; }=  DateTime.Now;
         public DateTime UpdatedAt { get; set; }
+
+        //Navigation Property
+        [Required]
+        public User? Owner { get; set; }
+        public ICollection<SharedJournal> sharedJournals { get; set; }= new List<SharedJournal>();
     }
 }
