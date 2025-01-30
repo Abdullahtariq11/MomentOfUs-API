@@ -379,13 +379,13 @@ namespace MomentOfUs.Infrastructure.Migrations
                     b.HasOne("MomentOfUs.Domain.Models.Journal", "Journal")
                         .WithMany("sharedJournals")
                         .HasForeignKey("JournalId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("MomentOfUs.Domain.Models.User", "Owner")
                         .WithMany("sharedJournals")
                         .HasForeignKey("OwnerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Journal");
@@ -402,7 +402,7 @@ namespace MomentOfUs.Infrastructure.Migrations
                         .IsRequired();
 
                     b.HasOne("MomentOfUs.Domain.Models.User", "User")
-                        .WithMany()
+                        .WithMany("userSharedJournals")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -427,6 +427,8 @@ namespace MomentOfUs.Infrastructure.Migrations
                     b.Navigation("Journals");
 
                     b.Navigation("sharedJournals");
+
+                    b.Navigation("userSharedJournals");
                 });
 #pragma warning restore 612, 618
         }

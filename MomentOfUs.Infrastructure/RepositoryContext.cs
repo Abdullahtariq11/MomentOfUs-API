@@ -19,6 +19,9 @@ public class RepositoryContext : IdentityDbContext<User>
 
         //Any configurations can be added here.
         modelBuilder.ApplyConfiguration(new UserConfiguration()); 
+        modelBuilder.ApplyConfiguration(new JournalConfiguration()); 
+        modelBuilder.ApplyConfiguration(new SharedJournalConfiguration()); 
+        modelBuilder.ApplyConfiguration(new UserSharedJournalConfiguration()); 
 
     }
     ///<summary>

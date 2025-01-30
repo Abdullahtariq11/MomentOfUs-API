@@ -12,6 +12,7 @@ namespace MomentOfUs.Domain.Models
         public string OwnerId { get; set; } =string.Empty;
         [Required]
         public Guid JournalId { get; set; } 
+
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; }
 
