@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MomentOfUs.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class initialMigration_user : Migration
+    public partial class initialMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -201,13 +201,13 @@ namespace MomentOfUs.Infrastructure.Migrations
                         column: x => x.OwnerId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_SharedJournals_Journals_JournalId",
                         column: x => x.JournalId,
                         principalTable: "Journals",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -235,11 +235,6 @@ namespace MomentOfUs.Infrastructure.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.InsertData(
-                table: "AspNetUsers",
-                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "ProfileImageUrl", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "a29f7b85-9f5f-4b0e-9497-9c6f91b8b1c4", 0, "ce03c6f9-1f21-4b76-acb3-7560bfb18535", "abdullahtariq096@gmail.com", true, "Abdullah", "Tariq", false, null, "ABDULLAHTARIQ096@GMAIL.COM", "ABDULLAHT", "AQAAAAIAAYagAAAAENhRuarjcfF6CEMaZBu9tQLNcdENMR+XUPrNiVaZK+8xuiUBOvUrh0kaoI3xeljaEg==", null, false, null, "c4d3b80a-8856-4ae0-b7af-91e2d87f9af7", false, "abdullahT" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

@@ -11,8 +11,8 @@ using MomentOfUs.Infrastructure;
 namespace MomentOfUs.Infrastructure.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20250129045509_initialMigration_user")]
-    partial class initialMigration_user
+    [Migration("20250130034214_initialMigration")]
+    partial class initialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -288,26 +288,6 @@ namespace MomentOfUs.Infrastructure.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "a29f7b85-9f5f-4b0e-9497-9c6f91b8b1c4",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "ce03c6f9-1f21-4b76-acb3-7560bfb18535",
-                            Email = "abdullahtariq096@gmail.com",
-                            EmailConfirmed = true,
-                            FirstName = "Abdullah",
-                            LastName = "Tariq",
-                            LockoutEnabled = false,
-                            NormalizedEmail = "ABDULLAHTARIQ096@GMAIL.COM",
-                            NormalizedUserName = "ABDULLAHT",
-                            PasswordHash = "AQAAAAIAAYagAAAAENhRuarjcfF6CEMaZBu9tQLNcdENMR+XUPrNiVaZK+8xuiUBOvUrh0kaoI3xeljaEg==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "c4d3b80a-8856-4ae0-b7af-91e2d87f9af7",
-                            TwoFactorEnabled = false,
-                            UserName = "abdullahT"
-                        });
                 });
 
             modelBuilder.Entity("MomentOfUs.Domain.Models.UserSharedJournal", b =>
@@ -402,13 +382,13 @@ namespace MomentOfUs.Infrastructure.Migrations
                     b.HasOne("MomentOfUs.Domain.Models.Journal", "Journal")
                         .WithMany("sharedJournals")
                         .HasForeignKey("JournalId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("MomentOfUs.Domain.Models.User", "Owner")
                         .WithMany("sharedJournals")
                         .HasForeignKey("OwnerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Journal");
@@ -425,7 +405,7 @@ namespace MomentOfUs.Infrastructure.Migrations
                         .IsRequired();
 
                     b.HasOne("MomentOfUs.Domain.Models.User", "User")
-                        .WithMany()
+                        .WithMany("userSharedJournals")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -450,6 +430,8 @@ namespace MomentOfUs.Infrastructure.Migrations
                     b.Navigation("Journals");
 
                     b.Navigation("sharedJournals");
+
+                    b.Navigation("userSharedJournals");
                 });
 #pragma warning restore 612, 618
         }

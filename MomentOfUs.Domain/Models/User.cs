@@ -22,5 +22,6 @@ namespace MomentOfUs.Domain.Models
         //Navigation Property
         public ICollection<Journal> Journals { get; set; }=new List<Journal>();
         public ICollection<SharedJournal> sharedJournals { get; set; }=new List<SharedJournal>();
+        public ICollection<UserSharedJournal> userSharedJournals { get; set; }=new List<UserSharedJournal>();
     }
 }
