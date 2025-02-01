@@ -14,7 +14,8 @@ var builder = WebApplication.CreateBuilder(args);
 ServiceExtensions.ConfigureSerilog(builder.Host,builder.Configuration);
 //Add database server
 builder.Services.ConfigureSQLiteDatabase(builder.Configuration);
-
+builder.Services.ConfigureIdentity();
+builder.Services.ConfigureJwtAuthentication(builder.Configuration);
 builder.Services.AddControllers();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
