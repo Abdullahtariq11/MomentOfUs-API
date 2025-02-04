@@ -1,0 +1,1045 @@
+2025-02-01 20:14:38.3861 Info Application Starting Up... 
+2025-02-01 20:14:38.5713 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-01 20:14:38.7481 Info Now listening on: https://localhost:7241 
+2025-02-01 20:14:38.7481 Info Now listening on: http://localhost:5063 
+2025-02-01 20:14:38.7492 Info Application started. Press Ctrl+C to shut down. 
+2025-02-01 20:14:38.7494 Info Hosting environment: Development 
+2025-02-01 20:14:38.7494 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-01 20:14:39.0035 Info Request starting HTTP/2 GET https://localhost:7241/swagger - - - 
+2025-02-01 20:14:39.1096 Info Request starting HTTP/2 GET https://localhost:7241/swagger/index.html - - - 
+2025-02-01 20:14:39.1096 Info Request finished HTTP/2 GET https://localhost:7241/swagger - 301 0 - 102.7961ms 
+2025-02-01 20:14:39.1611 Info Request finished HTTP/2 GET https://localhost:7241/swagger/index.html - 200 - text/html;charset=utf-8 51.4456ms 
+2025-02-01 20:14:39.1744 Info Request starting HTTP/2 GET https://localhost:7241/swagger/swagger-ui.css - - - 
+2025-02-01 20:14:39.1744 Info Request starting HTTP/2 GET https://localhost:7241/swagger/swagger-ui-standalone-preset.js - - - 
+2025-02-01 20:14:39.1744 Info Request starting HTTP/2 GET https://localhost:7241/swagger/swagger-ui-bundle.js - - - 
+2025-02-01 20:14:39.2453 Info Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A' 
+2025-02-01 20:14:39.2454 Info Request finished HTTP/2 GET https://localhost:7241/swagger/swagger-ui.css - 200 143943 text/css 71.0005ms 
+2025-02-01 20:14:39.2504 Info Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A' 
+2025-02-01 20:14:39.2506 Info Request finished HTTP/2 GET https://localhost:7241/swagger/swagger-ui-standalone-preset.js - 200 339486 text/javascript 76.0674ms 
+2025-02-01 20:14:39.2624 Info Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A' 
+2025-02-01 20:14:39.2624 Info Request finished HTTP/2 GET https://localhost:7241/swagger/swagger-ui-bundle.js - 200 1096145 text/javascript 88.0914ms 
+2025-02-01 20:14:39.3656 Info Request starting HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - - - 
+2025-02-01 20:14:39.3855 Info Request starting HTTP/2 GET https://localhost:7241/swagger/favicon-32x32.png - - - 
+2025-02-01 20:14:39.3855 Info Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A' 
+2025-02-01 20:14:39.3855 Info Request finished HTTP/2 GET https://localhost:7241/swagger/favicon-32x32.png - 200 628 image/png 0.2811ms 
+2025-02-01 20:14:39.4010 Info Request finished HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 35.4097ms 
+2025-02-01 20:15:03.7458 Info Request starting HTTP/2 POST https://localhost:7241/api/Users/Register - application/json 120 
+2025-02-01 20:15:03.7516 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 20:15:03.7733 Info Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(MomentOfUs.Application.Dtos.UserDto.UserRegisterDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-01 20:15:03.8647 Info Registering User 
+2025-02-01 20:15:04.3915 Error Failed executing DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-01 20:15:04.4004 Error An exception occurred while iterating over the results of a query for context type 'MomentOfUs.Infrastructure.RepositoryContext'.
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: AspNetUsers'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync() Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: AspNetUsers'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2025-02-01 20:20:25.9975 Info Application Starting Up... 
+2025-02-01 20:20:26.1972 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-01 20:20:26.3804 Info Now listening on: https://localhost:7241 
+2025-02-01 20:20:26.3804 Info Now listening on: http://localhost:5063 
+2025-02-01 20:20:26.3804 Info Application started. Press Ctrl+C to shut down. 
+2025-02-01 20:20:26.3816 Info Hosting environment: Development 
+2025-02-01 20:20:26.3816 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-01 20:20:26.6385 Info Request starting HTTP/2 GET https://localhost:7241/swagger/index.html - - - 
+2025-02-01 20:20:26.7203 Info Request finished HTTP/2 GET https://localhost:7241/swagger/index.html - 200 - text/html;charset=utf-8 70.0096ms 
+2025-02-01 20:20:26.8228 Info Request starting HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - - - 
+2025-02-01 20:20:26.8609 Info Request finished HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 37.9801ms 
+2025-02-01 20:20:32.2456 Info Request starting HTTP/2 POST https://localhost:7241/api/Users/Register - application/json 96 
+2025-02-01 20:20:32.2542 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 20:20:32.2740 Info Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(MomentOfUs.Application.Dtos.UserDto.UserRegisterDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-01 20:20:32.3568 Info Registering User 
+2025-02-01 20:20:32.3585 Info Generating JWT Token 
+2025-02-01 20:22:30.9928 Info Application Starting Up... 
+2025-02-01 20:22:31.1507 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-01 20:22:31.2886 Info Now listening on: https://localhost:7241 
+2025-02-01 20:22:31.2886 Info Now listening on: http://localhost:5063 
+2025-02-01 20:22:31.2895 Info Application started. Press Ctrl+C to shut down. 
+2025-02-01 20:22:31.2895 Info Hosting environment: Development 
+2025-02-01 20:22:31.2895 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-01 20:22:31.5148 Info Request starting HTTP/2 GET https://localhost:7241/swagger/index.html - - - 
+2025-02-01 20:22:31.5973 Info Request finished HTTP/2 GET https://localhost:7241/swagger/index.html - 200 - text/html;charset=utf-8 69.6180ms 
+2025-02-01 20:22:31.6651 Info Request starting HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - - - 
+2025-02-01 20:22:31.7460 Info Request finished HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 80.9526ms 
+2025-02-01 20:23:04.0116 Info Request starting HTTP/2 POST https://localhost:7241/api/Users/Register - application/json 120 
+2025-02-01 20:23:04.0188 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 20:23:04.0337 Info Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(MomentOfUs.Application.Dtos.UserDto.UserRegisterDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-01 20:23:04.1168 Info Registering User 
+2025-02-01 20:23:04.5201 Error Failed executing DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-01 20:23:04.5291 Error An exception occurred while iterating over the results of a query for context type 'MomentOfUs.Infrastructure.RepositoryContext'.
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: AspNetUsers'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync() Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: AspNetUsers'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2025-02-01 20:26:55.4754 Info Application Starting Up... 
+2025-02-01 20:26:55.6418 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-01 20:26:55.8203 Info Now listening on: https://localhost:7241 
+2025-02-01 20:26:55.8203 Info Now listening on: http://localhost:5063 
+2025-02-01 20:26:55.8214 Info Application started. Press Ctrl+C to shut down. 
+2025-02-01 20:26:55.8214 Info Hosting environment: Development 
+2025-02-01 20:26:55.8214 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-01 20:26:56.0341 Info Request starting HTTP/2 GET https://localhost:7241/swagger/index.html - - - 
+2025-02-01 20:26:56.1195 Info Request finished HTTP/2 GET https://localhost:7241/swagger/index.html - 200 - text/html;charset=utf-8 73.0901ms 
+2025-02-01 20:26:56.2076 Info Request starting HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - - - 
+2025-02-01 20:26:56.2405 Info Request finished HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 32.8733ms 
+2025-02-01 20:27:03.6051 Info Request starting HTTP/2 POST https://localhost:7241/api/Users/Register - application/json 120 
+2025-02-01 20:27:03.6128 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 20:27:03.6335 Info Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(MomentOfUs.Application.Dtos.UserDto.UserRegisterDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-01 20:27:03.7121 Info Registering User 
+2025-02-01 20:27:04.0886 Error Failed executing DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-01 20:27:04.0968 Error An exception occurred while iterating over the results of a query for context type 'MomentOfUs.Infrastructure.RepositoryContext'.
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: AspNetUsers'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync() Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: AspNetUsers'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2025-02-01 20:29:17.4763 Info Application Starting Up... 
+2025-02-01 20:29:17.6979 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-01 20:29:17.8806 Info Now listening on: https://localhost:7241 
+2025-02-01 20:29:17.8806 Info Now listening on: http://localhost:5063 
+2025-02-01 20:29:17.8815 Info Application started. Press Ctrl+C to shut down. 
+2025-02-01 20:29:17.8815 Info Hosting environment: Development 
+2025-02-01 20:29:17.8815 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-01 20:29:18.0463 Info Request starting HTTP/2 GET https://localhost:7241/swagger/index.html - - - 
+2025-02-01 20:29:18.1545 Info Request finished HTTP/2 GET https://localhost:7241/swagger/index.html - 200 - text/html;charset=utf-8 92.3914ms 
+2025-02-01 20:29:18.2270 Info Request starting HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - - - 
+2025-02-01 20:29:18.2623 Info Request finished HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 35.2382ms 
+2025-02-01 20:29:22.9721 Info Request starting HTTP/2 POST https://localhost:7241/api/Users/Register - application/json 120 
+2025-02-01 20:29:22.9813 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 20:29:23.0011 Info Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(MomentOfUs.Application.Dtos.UserDto.UserRegisterDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-01 20:29:23.0812 Info Registering User 
+2025-02-01 20:29:23.4508 Error An error occurred using the connection to database 'main' on server '/Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API/MomentOfUs.Infrastructure/MomentOfUs.db'. 
+2025-02-01 20:29:23.4575 Error An exception occurred while iterating over the results of a query for context type 'MomentOfUs.Infrastructure.RepositoryContext'.
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 14: 'unable to open database file'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteConnectionInternal..ctor(SqliteConnectionStringBuilder connectionOptions, SqliteConnectionPool pool)
+   at Microsoft.Data.Sqlite.SqliteConnectionPool.GetConnection()
+   at Microsoft.Data.Sqlite.SqliteConnectionFactory.GetConnection(SqliteConnection outerConnection)
+   at Microsoft.Data.Sqlite.SqliteConnection.Open()
+   at System.Data.Common.DbConnection.OpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync() Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 14: 'unable to open database file'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteConnectionInternal..ctor(SqliteConnectionStringBuilder connectionOptions, SqliteConnectionPool pool)
+   at Microsoft.Data.Sqlite.SqliteConnectionPool.GetConnection()
+   at Microsoft.Data.Sqlite.SqliteConnectionFactory.GetConnection(SqliteConnection outerConnection)
+   at Microsoft.Data.Sqlite.SqliteConnection.Open()
+   at System.Data.Common.DbConnection.OpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2025-02-01 20:31:13.8336 Info Application Starting Up... 
+2025-02-01 20:31:14.0332 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-01 20:31:14.1895 Info Now listening on: https://localhost:7241 
+2025-02-01 20:31:14.1895 Info Now listening on: http://localhost:5063 
+2025-02-01 20:31:14.1895 Info Application started. Press Ctrl+C to shut down. 
+2025-02-01 20:31:14.1907 Info Hosting environment: Development 
+2025-02-01 20:31:14.1907 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-01 20:31:14.3542 Info Request starting HTTP/2 GET https://localhost:7241/swagger/index.html - - - 
+2025-02-01 20:31:14.4293 Info Request finished HTTP/2 GET https://localhost:7241/swagger/index.html - 200 - text/html;charset=utf-8 62.4265ms 
+2025-02-01 20:31:14.4961 Info Request starting HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - - - 
+2025-02-01 20:31:14.5547 Info Request finished HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 58.5758ms 
+2025-02-01 20:31:17.8313 Info Request starting HTTP/2 POST https://localhost:7241/api/Users/Register - application/json 120 
+2025-02-01 20:31:17.8409 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 20:31:17.8605 Info Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(MomentOfUs.Application.Dtos.UserDto.UserRegisterDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-01 20:31:17.9385 Info Registering User 
+2025-02-01 20:31:18.3009 Error An error occurred using the connection to database 'main' on server '/Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API/MomentOfUs.Infrastructure/MomentOfUs.db'. 
+2025-02-01 20:31:18.3073 Error An exception occurred while iterating over the results of a query for context type 'MomentOfUs.Infrastructure.RepositoryContext'.
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 14: 'unable to open database file'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteConnectionInternal..ctor(SqliteConnectionStringBuilder connectionOptions, SqliteConnectionPool pool)
+   at Microsoft.Data.Sqlite.SqliteConnectionPool.GetConnection()
+   at Microsoft.Data.Sqlite.SqliteConnectionFactory.GetConnection(SqliteConnection outerConnection)
+   at Microsoft.Data.Sqlite.SqliteConnection.Open()
+   at System.Data.Common.DbConnection.OpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync() Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 14: 'unable to open database file'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteConnectionInternal..ctor(SqliteConnectionStringBuilder connectionOptions, SqliteConnectionPool pool)
+   at Microsoft.Data.Sqlite.SqliteConnectionPool.GetConnection()
+   at Microsoft.Data.Sqlite.SqliteConnectionFactory.GetConnection(SqliteConnection outerConnection)
+   at Microsoft.Data.Sqlite.SqliteConnection.Open()
+   at System.Data.Common.DbConnection.OpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2025-02-01 20:33:33.3733 Info Application Starting Up... 
+2025-02-01 20:33:33.5524 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-01 20:33:33.7215 Info Now listening on: https://localhost:7241 
+2025-02-01 20:33:33.7215 Info Now listening on: http://localhost:5063 
+2025-02-01 20:33:33.7225 Info Application started. Press Ctrl+C to shut down. 
+2025-02-01 20:33:33.7225 Info Hosting environment: Development 
+2025-02-01 20:33:33.7225 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-01 20:33:33.8641 Info Request starting HTTP/2 GET https://localhost:7241/swagger/index.html - - - 
+2025-02-01 20:33:34.0047 Info Request finished HTTP/2 GET https://localhost:7241/swagger/index.html - 200 - text/html;charset=utf-8 123.5525ms 
+2025-02-01 20:33:34.0701 Info Request starting HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - - - 
+2025-02-01 20:33:34.1511 Info Request finished HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 80.9872ms 
+2025-02-01 20:33:38.1710 Info Request starting HTTP/2 POST https://localhost:7241/api/Users/Register - application/json 120 
+2025-02-01 20:33:38.1803 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 20:33:38.1997 Info Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(MomentOfUs.Application.Dtos.UserDto.UserRegisterDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-01 20:33:38.2819 Info Registering User 
+2025-02-01 20:33:38.6650 Info Executed DbCommand (6ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-01 20:33:38.6730 Info Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2 
+2025-02-01 20:33:38.7277 Info Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (DbType = Int32), @p2='?' (Size = 36), @p3='?' (Size = 26), @p4='?' (DbType = Boolean), @p5='?' (Size = 8), @p6='?' (Size = 5), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 26), @p10='?' (Size = 26), @p11='?' (Size = 84), @p12='?', @p13='?' (DbType = Boolean), @p14='?', @p15='?' (Size = 32), @p16='?' (DbType = Boolean), @p17='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "ProfileImageUrl", "SecurityStamp", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17); 
+2025-02-01 20:33:38.7330 Info Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 5)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2 
+2025-02-01 20:33:38.7346 Info Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 5)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2 
+2025-02-01 20:36:07.3493 Info Application Starting Up... 
+2025-02-01 20:36:07.5263 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-01 20:36:07.7445 Info Now listening on: https://localhost:7241 
+2025-02-01 20:36:07.7445 Info Now listening on: http://localhost:5063 
+2025-02-01 20:36:07.7454 Info Application started. Press Ctrl+C to shut down. 
+2025-02-01 20:36:07.7454 Info Hosting environment: Development 
+2025-02-01 20:36:07.7454 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-01 20:36:07.9244 Info Request starting HTTP/2 GET https://localhost:7241/swagger/index.html - - - 
+2025-02-01 20:36:08.0400 Info Request finished HTTP/2 GET https://localhost:7241/swagger/index.html - 200 - text/html;charset=utf-8 99.1729ms 
+2025-02-01 20:36:08.1055 Info Request starting HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - - - 
+2025-02-01 20:36:08.1662 Info Request finished HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 60.7555ms 
+2025-02-01 20:36:11.1730 Info Request starting HTTP/2 POST https://localhost:7241/api/Users/Register - application/json 120 
+2025-02-01 20:36:11.1830 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 20:36:11.2018 Info Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(MomentOfUs.Application.Dtos.UserDto.UserRegisterDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-01 20:36:11.2794 Info Registering User 
+2025-02-01 20:36:11.6590 Info Executed DbCommand (6ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-01 20:36:11.6901 Info Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2 
+2025-02-01 20:36:11.6913 Info Generating JWT Token 
+2025-02-01 20:36:11.7057 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-01 20:37:28.1019 Info Application Starting Up... 
+2025-02-01 20:37:28.2808 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-01 20:37:28.4490 Info Now listening on: https://localhost:7241 
+2025-02-01 20:37:28.4490 Info Now listening on: http://localhost:5063 
+2025-02-01 20:37:28.4500 Info Application started. Press Ctrl+C to shut down. 
+2025-02-01 20:37:28.4500 Info Hosting environment: Development 
+2025-02-01 20:37:28.4500 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-01 20:37:28.5511 Info Request starting HTTP/2 GET https://localhost:7241/swagger/index.html - - - 
+2025-02-01 20:37:28.6113 Info Request finished HTTP/2 GET https://localhost:7241/swagger/index.html - 200 - text/html;charset=utf-8 52.2070ms 
+2025-02-01 20:37:28.6790 Info Request starting HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - - - 
+2025-02-01 20:37:28.7186 Info Request finished HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 39.5150ms 
+2025-02-01 20:37:31.7116 Info Request starting HTTP/2 POST https://localhost:7241/api/Users/Register - application/json 120 
+2025-02-01 20:37:31.7197 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 20:37:31.7390 Info Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(MomentOfUs.Application.Dtos.UserDto.UserRegisterDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-01 20:37:31.8212 Info Registering User 
+2025-02-01 20:37:32.2013 Info Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-01 20:37:32.2326 Info Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2 
+2025-02-01 20:37:32.2337 Info Generating JWT Token 
+2025-02-01 20:37:32.2473 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-01 20:37:32.2573 Info Executing CreatedAtActionResult, writing value of type 'System.String'. 
+2025-02-01 20:37:32.2641 Info Executed action MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API) in 523.1108ms 
+2025-02-01 20:37:32.2641 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 20:37:32.2662 Info Request finished HTTP/2 POST https://localhost:7241/api/Users/Register - 201 - text/plain;+charset=utf-8 554.7237ms 
+2025-02-01 20:46:43.3561 Info Application Starting Up... 
+2025-02-01 20:46:43.5536 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-01 20:46:43.7031 Info Now listening on: https://localhost:7241 
+2025-02-01 20:46:43.7031 Info Now listening on: http://localhost:5063 
+2025-02-01 20:46:43.7039 Info Application started. Press Ctrl+C to shut down. 
+2025-02-01 20:46:43.7039 Info Hosting environment: Development 
+2025-02-01 20:46:43.7039 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-01 20:46:43.8794 Info Request starting HTTP/2 GET https://localhost:7241/swagger/index.html - - - 
+2025-02-01 20:46:43.9672 Info Request finished HTTP/2 GET https://localhost:7241/swagger/index.html - 200 - text/html;charset=utf-8 83.1457ms 
+2025-02-01 20:46:44.0534 Info Request starting HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - - - 
+2025-02-01 20:46:44.0898 Info Request finished HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 36.3805ms 
+2025-02-01 20:46:48.3391 Info Request starting HTTP/2 POST https://localhost:7241/api/Users/Register - application/json 120 
+2025-02-01 20:46:48.3485 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 20:46:48.3677 Info Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(MomentOfUs.Application.Dtos.UserDto.UserRegisterDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-01 20:46:48.4453 Info Registering User 
+2025-02-01 20:46:48.8226 Info Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-01 20:46:48.8532 Info Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2 
+2025-02-01 20:46:48.8543 Info Generating JWT Token 
+2025-02-01 20:46:48.8683 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-01 20:46:48.8776 Info Executing CreatedAtActionResult, writing value of type 'System.String'. 
+2025-02-01 20:46:48.8843 Info Executed action MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API) in 514.6371ms 
+2025-02-01 20:46:48.8843 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 20:46:48.8864 Info Request finished HTTP/2 POST https://localhost:7241/api/Users/Register - 201 - text/plain;+charset=utf-8 547.3839ms 
+2025-02-01 20:46:55.1965 Info Request starting HTTP/2 POST https://localhost:7241/api/Users/Register - application/json 120 
+2025-02-01 20:46:55.1980 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 20:46:55.1980 Info Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(MomentOfUs.Application.Dtos.UserDto.UserRegisterDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-01 20:46:55.2021 Info Registering User 
+2025-02-01 20:46:55.2754 Info Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-01 20:46:55.2761 Info Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2 
+2025-02-01 20:46:55.2761 Info Generating JWT Token 
+2025-02-01 20:46:55.2761 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-01 20:46:55.2773 Info Executing CreatedAtActionResult, writing value of type 'System.String'. 
+2025-02-01 20:46:55.2773 Info Executed action MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API) in 78.6674ms 
+2025-02-01 20:46:55.2773 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 20:46:55.2773 Info Request finished HTTP/2 POST https://localhost:7241/api/Users/Register - 201 - text/plain;+charset=utf-8 81.3114ms 
+2025-02-01 20:47:41.2816 Info Request starting HTTP/2 POST https://localhost:7241/api/Users/Register - application/json 119 
+2025-02-01 20:47:41.2828 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 20:47:41.2831 Info Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(MomentOfUs.Application.Dtos.UserDto.UserRegisterDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-01 20:47:41.2982 Info Registering User 
+2025-02-01 20:47:41.3542 Info Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 25)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-01 20:47:41.3542 Info Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 25)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2 
+2025-02-01 20:47:41.3928 Info Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (DbType = Int32), @p2='?' (Size = 36), @p3='?' (Size = 25), @p4='?' (DbType = Boolean), @p5='?' (Size = 8), @p6='?' (Size = 5), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 25), @p10='?' (Size = 25), @p11='?' (Size = 84), @p12='?', @p13='?' (DbType = Boolean), @p14='?', @p15='?' (Size = 32), @p16='?' (DbType = Boolean), @p17='?' (Size = 25)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "ProfileImageUrl", "SecurityStamp", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17); 
+2025-02-01 20:47:41.3994 Info Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 5)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2 
+2025-02-01 20:47:41.4084 Info Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36), @__p_1='?' (Size = 1)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."UserId", "a"."RoleId"
+FROM "AspNetUserRoles" AS "a"
+WHERE "a"."UserId" = @__p_0 AND "a"."RoleId" = @__p_1
+LIMIT 1 
+2025-02-01 20:47:41.4093 Info Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 5)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."ConcurrencyStamp", "a"."Name", "a"."NormalizedName"
+FROM "AspNetRoles" AS "a"
+WHERE "a"."NormalizedName" = @__normalizedRoleName_0
+LIMIT 2 
+2025-02-01 20:47:41.4125 Info Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 25)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-01 20:47:41.4125 Info Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 25)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2 
+2025-02-01 20:47:41.4202 Info Executed DbCommand (0ms) [Parameters=[@p0='?' (Size = 1), @p1='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "AspNetUserRoles" ("RoleId", "UserId")
+VALUES (@p0, @p1); 
+2025-02-01 20:47:41.4212 Info Executed DbCommand (0ms) [Parameters=[@p17='?' (Size = 36), @p0='?' (DbType = Int32), @p1='?' (Size = 36), @p18='?' (Size = 36), @p2='?' (Size = 25), @p3='?' (DbType = Boolean), @p4='?' (Size = 8), @p5='?' (Size = 5), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 25), @p9='?' (Size = 25), @p10='?' (Size = 84), @p11='?', @p12='?' (DbType = Boolean), @p13='?', @p14='?' (Size = 32), @p15='?' (DbType = Boolean), @p16='?' (Size = 25)], CommandType='Text', CommandTimeout='30']
+UPDATE "AspNetUsers" SET "AccessFailedCount" = @p0, "ConcurrencyStamp" = @p1, "Email" = @p2, "EmailConfirmed" = @p3, "FirstName" = @p4, "LastName" = @p5, "LockoutEnabled" = @p6, "LockoutEnd" = @p7, "NormalizedEmail" = @p8, "NormalizedUserName" = @p9, "PasswordHash" = @p10, "PhoneNumber" = @p11, "PhoneNumberConfirmed" = @p12, "ProfileImageUrl" = @p13, "SecurityStamp" = @p14, "TwoFactorEnabled" = @p15, "UserName" = @p16
+WHERE "Id" = @p17 AND "ConcurrencyStamp" = @p18
+RETURNING 1; 
+2025-02-01 20:47:41.4237 Info Generating JWT Token 
+2025-02-01 20:47:41.4241 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-01 20:47:41.4241 Info Executing CreatedAtActionResult, writing value of type 'System.String'. 
+2025-02-01 20:47:41.4241 Info Executed action MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API) in 141.3232ms 
+2025-02-01 20:47:41.4241 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 20:47:41.4241 Info Request finished HTTP/2 POST https://localhost:7241/api/Users/Register - 201 - text/plain;+charset=utf-8 143.0496ms 
+2025-02-01 20:47:50.1872 Info Request starting HTTP/2 POST https://localhost:7241/api/Users/Register - application/json 120 
+2025-02-01 20:47:50.1872 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 20:47:50.1882 Info Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(MomentOfUs.Application.Dtos.UserDto.UserRegisterDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-01 20:47:50.1893 Info Registering User 
+2025-02-01 20:47:50.2498 Info Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-01 20:47:50.2502 Info Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2 
+2025-02-01 20:47:50.2502 Info Generating JWT Token 
+2025-02-01 20:47:50.2502 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-01 20:47:50.2512 Info Executing CreatedAtActionResult, writing value of type 'System.String'. 
+2025-02-01 20:47:50.2512 Info Executed action MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API) in 63.1647ms 
+2025-02-01 20:47:50.2512 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 20:47:50.2512 Info Request finished HTTP/2 POST https://localhost:7241/api/Users/Register - 201 - text/plain;+charset=utf-8 64.3608ms 
+2025-02-01 20:54:00.7448 Info Application Starting Up... 
+2025-02-01 20:54:00.9535 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-01 20:54:01.1638 Info Now listening on: https://localhost:7241 
+2025-02-01 20:54:01.1638 Info Now listening on: http://localhost:5063 
+2025-02-01 20:54:01.1648 Info Application started. Press Ctrl+C to shut down. 
+2025-02-01 20:54:01.1648 Info Hosting environment: Development 
+2025-02-01 20:54:01.1648 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-01 20:54:01.3062 Info Request starting HTTP/2 GET https://localhost:7241/swagger/index.html - - - 
+2025-02-01 20:54:01.3844 Info Request finished HTTP/2 GET https://localhost:7241/swagger/index.html - 200 - text/html;charset=utf-8 64.9633ms 
+2025-02-01 20:54:01.4518 Info Request starting HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - - - 
+2025-02-01 20:54:01.4861 Info Request finished HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 34.2437ms 
+2025-02-01 20:54:05.0702 Info Request starting HTTP/2 POST https://localhost:7241/api/Users/Register - application/json 120 
+2025-02-01 20:54:05.0780 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 20:54:05.0994 Info Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(MomentOfUs.Application.Dtos.UserDto.UserRegisterDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-01 20:54:05.1827 Info Registering User 
+2025-02-01 20:54:05.5607 Info Executed DbCommand (6ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-01 20:54:05.5915 Info Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2 
+2025-02-01 20:54:05.5926 Info Generating JWT Token 
+2025-02-01 20:54:05.6065 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-01 20:54:05.6162 Info Executing CreatedAtActionResult, writing value of type 'System.String'. 
+2025-02-01 20:54:05.6228 Info Executed action MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API) in 521.3374ms 
+2025-02-01 20:54:05.6228 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 20:54:05.6248 Info Request finished HTTP/2 POST https://localhost:7241/api/Users/Register - 201 - text/plain;+charset=utf-8 554.6845ms 
+2025-02-01 20:54:08.9910 Info Request starting HTTP/2 POST https://localhost:7241/api/Users/Register - application/json 120 
+2025-02-01 20:54:08.9919 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 20:54:08.9923 Info Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(MomentOfUs.Application.Dtos.UserDto.UserRegisterDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-01 20:54:08.9949 Info Registering User 
+2025-02-01 20:54:09.0694 Info Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-01 20:54:09.0701 Info Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2 
+2025-02-01 20:54:09.0701 Info Generating JWT Token 
+2025-02-01 20:54:09.0701 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-01 20:54:09.0712 Info Executing CreatedAtActionResult, writing value of type 'System.String'. 
+2025-02-01 20:54:09.0712 Info Executed action MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API) in 79.0139ms 
+2025-02-01 20:54:09.0712 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 20:54:09.0712 Info Request finished HTTP/2 POST https://localhost:7241/api/Users/Register - 201 - text/plain;+charset=utf-8 80.7259ms 
+2025-02-01 20:54:12.6145 Info Request starting HTTP/2 POST https://localhost:7241/api/Users/Register - application/json 120 
+2025-02-01 20:54:12.6145 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 20:54:12.6152 Info Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(MomentOfUs.Application.Dtos.UserDto.UserRegisterDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-01 20:54:12.6326 Info Registering User 
+2025-02-01 20:54:12.6883 Info Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-01 20:54:12.6883 Info Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2 
+2025-02-01 20:54:12.6883 Info Generating JWT Token 
+2025-02-01 20:54:12.6892 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-01 20:54:12.6892 Info Executing CreatedAtActionResult, writing value of type 'System.String'. 
+2025-02-01 20:54:12.6892 Info Executed action MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API) in 74.3335ms 
+2025-02-01 20:54:12.6892 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 20:54:12.6892 Info Request finished HTTP/2 POST https://localhost:7241/api/Users/Register - 201 - text/plain;+charset=utf-8 75.2798ms 
+2025-02-01 20:54:16.0032 Info Request starting HTTP/2 POST https://localhost:7241/api/Users/Register - application/json 120 
+2025-02-01 20:54:16.0032 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 20:54:16.0032 Info Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(MomentOfUs.Application.Dtos.UserDto.UserRegisterDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-01 20:54:16.0049 Info Registering User 
+2025-02-01 20:54:16.0580 Info Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-01 20:54:16.0584 Info Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2 
+2025-02-01 20:54:16.0584 Info Generating JWT Token 
+2025-02-01 20:54:16.0584 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-01 20:54:16.0584 Info Executing CreatedAtActionResult, writing value of type 'System.String'. 
+2025-02-01 20:54:16.0592 Info Executed action MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API) in 55.1853ms 
+2025-02-01 20:54:16.0592 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 20:54:16.0592 Info Request finished HTTP/2 POST https://localhost:7241/api/Users/Register - 201 - text/plain;+charset=utf-8 56.1063ms 
+2025-02-01 20:54:16.7232 Info Request starting HTTP/2 POST https://localhost:7241/api/Users/Register - application/json 120 
+2025-02-01 20:54:16.7232 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 20:54:16.7232 Info Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(MomentOfUs.Application.Dtos.UserDto.UserRegisterDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-01 20:54:16.7248 Info Registering User 
+2025-02-01 20:54:16.7850 Info Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-01 20:54:16.7854 Info Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2 
+2025-02-01 20:54:16.7854 Info Generating JWT Token 
+2025-02-01 20:54:16.7854 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-01 20:54:16.7854 Info Executing CreatedAtActionResult, writing value of type 'System.String'. 
+2025-02-01 20:54:16.7862 Info Executed action MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API) in 62.2978ms 
+2025-02-01 20:54:16.7862 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 20:54:16.7862 Info Request finished HTTP/2 POST https://localhost:7241/api/Users/Register - 201 - text/plain;+charset=utf-8 63.1385ms 
+2025-02-01 20:54:17.3038 Info Request starting HTTP/2 POST https://localhost:7241/api/Users/Register - application/json 120 
+2025-02-01 20:54:17.3045 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 20:54:17.3045 Info Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(MomentOfUs.Application.Dtos.UserDto.UserRegisterDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-01 20:54:17.3071 Info Registering User 
+2025-02-01 20:54:17.3674 Info Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-01 20:54:17.3674 Info Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2 
+2025-02-01 20:54:17.3674 Info Generating JWT Token 
+2025-02-01 20:54:17.3683 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-01 20:54:17.3683 Info Executing CreatedAtActionResult, writing value of type 'System.String'. 
+2025-02-01 20:54:17.3683 Info Executed action MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API) in 63.9006ms 
+2025-02-01 20:54:17.3683 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 20:54:17.3683 Info Request finished HTTP/2 POST https://localhost:7241/api/Users/Register - 201 - text/plain;+charset=utf-8 65.1150ms 
+2025-02-01 20:58:02.2516 Info Application Starting Up... 
+2025-02-01 20:58:02.4358 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-01 20:58:02.5950 Info Now listening on: https://localhost:7241 
+2025-02-01 20:58:02.5950 Info Now listening on: http://localhost:5063 
+2025-02-01 20:58:02.5959 Info Application started. Press Ctrl+C to shut down. 
+2025-02-01 20:58:02.5959 Info Hosting environment: Development 
+2025-02-01 20:58:02.5959 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-01 20:58:02.7850 Info Request starting HTTP/2 GET https://localhost:7241/swagger/index.html - - - 
+2025-02-01 20:58:02.8594 Info Request finished HTTP/2 GET https://localhost:7241/swagger/index.html - 200 - text/html;charset=utf-8 64.3679ms 
+2025-02-01 20:58:02.9244 Info Request starting HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - - - 
+2025-02-01 20:58:02.9575 Info Request finished HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 32.9875ms 
+2025-02-01 20:58:08.2625 Info Request starting HTTP/2 POST https://localhost:7241/api/Users/Register - application/json 120 
+2025-02-01 20:58:08.2697 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 20:58:08.2845 Info Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(MomentOfUs.Application.Dtos.UserDto.UserRegisterDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-01 20:58:08.3632 Info Registering User 
+2025-02-01 20:58:08.7476 Info Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-01 20:58:08.7914 Info Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2 
+2025-02-01 20:58:08.8300 Error Database update error while creating user. MomentOfUs.Domain.Exceptions.BadRequestException: User creation failed: Username 'abdullahtariq096@gmail.com' is already taken., Email 'abdullahtariq096@gmail.com' is already taken.
+   at MomentOfUs.Application.Service.AuthService.Register(UserRegisterDto userRegisterDto) in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Application/Service/AuthService.cs:line 108
+2025-02-01 21:01:10.5024 Info Application Starting Up... 
+2025-02-01 21:01:10.6871 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-01 21:01:10.8981 Info Now listening on: https://localhost:7241 
+2025-02-01 21:01:10.8988 Info Now listening on: http://localhost:5063 
+2025-02-01 21:01:10.9000 Info Application started. Press Ctrl+C to shut down. 
+2025-02-01 21:01:10.9000 Info Hosting environment: Development 
+2025-02-01 21:01:10.9002 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-01 21:01:11.1196 Info Request starting HTTP/2 GET https://localhost:7241/swagger/index.html - - - 
+2025-02-01 21:01:11.2064 Info Request finished HTTP/2 GET https://localhost:7241/swagger/index.html - 200 - text/html;charset=utf-8 70.9324ms 
+2025-02-01 21:01:11.2849 Info Request starting HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - - - 
+2025-02-01 21:01:11.3649 Info Request finished HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 80.0250ms 
+2025-02-01 21:01:13.5646 Info Request starting HTTP/2 POST https://localhost:7241/api/Users/Register - application/json 120 
+2025-02-01 21:01:13.5760 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 21:01:13.5950 Info Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(MomentOfUs.Application.Dtos.UserDto.UserRegisterDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-01 21:01:13.6750 Info Registering User 
+2025-02-01 21:01:14.0539 Info Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-01 21:01:14.0850 Info Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2 
+2025-02-01 21:02:23.1771 Info Application Starting Up... 
+2025-02-01 21:02:23.3518 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-01 21:02:23.5239 Info Now listening on: https://localhost:7241 
+2025-02-01 21:02:23.5239 Info Now listening on: http://localhost:5063 
+2025-02-01 21:02:23.5249 Info Application started. Press Ctrl+C to shut down. 
+2025-02-01 21:02:23.5249 Info Hosting environment: Development 
+2025-02-01 21:02:23.5249 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-01 21:02:23.6515 Info Request starting HTTP/2 GET https://localhost:7241/swagger/index.html - - - 
+2025-02-01 21:02:23.7566 Info Request finished HTTP/2 GET https://localhost:7241/swagger/index.html - 200 - text/html;charset=utf-8 87.7918ms 
+2025-02-01 21:02:23.8172 Info Request starting HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - - - 
+2025-02-01 21:02:23.8999 Info Request finished HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 82.6659ms 
+2025-02-01 21:02:28.6883 Info Request starting HTTP/2 POST https://localhost:7241/api/Users/Register - application/json 120 
+2025-02-01 21:02:28.6964 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 21:02:28.7182 Info Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(MomentOfUs.Application.Dtos.UserDto.UserRegisterDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-01 21:02:28.7986 Info Registering User 
+2025-02-01 21:02:29.1855 Info Executed DbCommand (6ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-01 21:02:29.2162 Info Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2 
+2025-02-01 21:02:29.2173 Info Generating JWT Token 
+2025-02-01 21:02:29.2316 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-01 21:02:29.2408 Info Executing CreatedAtActionResult, writing value of type 'System.String'. 
+2025-02-01 21:02:29.2475 Info Executed action MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API) in 527.2583ms 
+2025-02-01 21:02:29.2475 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 21:02:29.2495 Info Request finished HTTP/2 POST https://localhost:7241/api/Users/Register - 201 - text/plain;+charset=utf-8 561.4120ms 
+2025-02-01 21:02:33.4880 Info Request starting HTTP/2 POST https://localhost:7241/api/Users/Register - application/json 120 
+2025-02-01 21:02:33.4896 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 21:02:33.4896 Info Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(MomentOfUs.Application.Dtos.UserDto.UserRegisterDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-01 21:02:33.4930 Info Registering User 
+2025-02-01 21:02:33.5676 Info Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-01 21:02:33.5676 Info Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2 
+2025-02-01 21:02:33.5684 Info Generating JWT Token 
+2025-02-01 21:02:33.5684 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-01 21:02:33.5695 Info Executing CreatedAtActionResult, writing value of type 'System.String'. 
+2025-02-01 21:02:33.5695 Info Executed action MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API) in 79.3542ms 
+2025-02-01 21:02:33.5695 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 21:02:33.5695 Info Request finished HTTP/2 POST https://localhost:7241/api/Users/Register - 201 - text/plain;+charset=utf-8 81.9474ms 
+2025-02-01 21:06:02.3808 Info Application Starting Up... 
+2025-02-01 21:06:02.5313 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-01 21:06:02.7714 Info Now listening on: https://localhost:7241 
+2025-02-01 21:06:02.7714 Info Now listening on: http://localhost:5063 
+2025-02-01 21:06:02.7725 Info Application started. Press Ctrl+C to shut down. 
+2025-02-01 21:06:02.7725 Info Hosting environment: Development 
+2025-02-01 21:06:02.7725 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-01 21:06:02.9131 Info Request starting HTTP/2 GET https://localhost:7241/swagger/index.html - - - 
+2025-02-01 21:06:02.9843 Info Request finished HTTP/2 GET https://localhost:7241/swagger/index.html - 200 - text/html;charset=utf-8 60.8814ms 
+2025-02-01 21:06:03.0505 Info Request starting HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - - - 
+2025-02-01 21:06:03.0865 Info Request finished HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 36.0503ms 
+2025-02-01 21:06:27.6214 Info Request starting HTTP/2 POST https://localhost:7241/api/Users/Register - application/json 116 
+2025-02-01 21:06:27.6295 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 21:06:27.6472 Info Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(MomentOfUs.Application.Dtos.UserDto.UserRegisterDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-01 21:06:27.7435 Info Registering User 
+2025-02-01 21:06:27.7452 Info Generating JWT Token 
+2025-02-01 21:06:28.0809 Info Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-01 21:06:28.0936 Info Executing CreatedAtActionResult, writing value of type 'System.String'. 
+2025-02-01 21:06:28.1003 Info Executed action MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API) in 451.0383ms 
+2025-02-01 21:06:28.1003 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 21:06:28.1023 Info Request finished HTTP/2 POST https://localhost:7241/api/Users/Register - 201 - text/plain;+charset=utf-8 481.0500ms 
+2025-02-01 21:10:55.1488 Info Application Starting Up... 
+2025-02-01 21:10:55.3503 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-01 21:10:55.5453 Info Now listening on: https://localhost:7241 
+2025-02-01 21:10:55.5453 Info Now listening on: http://localhost:5063 
+2025-02-01 21:10:55.5462 Info Application started. Press Ctrl+C to shut down. 
+2025-02-01 21:10:55.5462 Info Hosting environment: Development 
+2025-02-01 21:10:55.5462 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-01 21:10:55.7104 Info Request starting HTTP/2 GET https://localhost:7241/swagger/index.html - - - 
+2025-02-01 21:10:55.7907 Info Request finished HTTP/2 GET https://localhost:7241/swagger/index.html - 200 - text/html;charset=utf-8 69.8495ms 
+2025-02-01 21:10:55.8584 Info Request starting HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - - - 
+2025-02-01 21:10:55.8943 Info Request finished HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 35.7881ms 
+2025-02-01 21:11:03.6261 Info Request starting HTTP/2 POST https://localhost:7241/api/Users/Register - application/json 116 
+2025-02-01 21:11:03.6357 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 21:11:03.6553 Info Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(MomentOfUs.Application.Dtos.UserDto.UserRegisterDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-01 21:11:03.7335 Info Registering User 
+2025-02-01 21:11:04.0747 Info Executed DbCommand (5ms) [Parameters=[@__normalizedEmail_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2 
+2025-02-01 21:11:07.1740 Info Executed action MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API) in 3514.2893ms 
+2025-02-01 21:11:07.1750 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-01 21:11:07.1851 Error An unhandled exception occurred MomentOfUs.Domain.Exceptions.BadRequestException: User with same email exist
+   at MomentOfUs.Application.Service.AuthService.Register(UserRegisterDto userRegisterDto) in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Application/Service/AuthService.cs:line 96
+   at MomentOfUs.API.Controllers.UserController.Register(UserRegisterDto userRegisterDto) in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API/Controllers/UserController.cs:line 26
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at MomentOfUs.API.Extensions.GlobalErrorHandlingMiddleware.Invoke(HttpContext context) in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API/Extensions/GlobalErrorHandlingMiddleware.cs:line 26
+2025-02-01 21:11:07.1977 Warn BadRequestException: User with same email exist 
+2025-02-01 21:11:07.2022 Info Request finished HTTP/2 POST https://localhost:7241/api/Users/Register - 400 - application/json 3576.2217ms 
+2025-02-03 21:00:26.3214 Info Application Starting Up... 
+2025-02-03 21:00:26.5037 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-03 21:00:26.6567 Info Now listening on: https://localhost:7241 
+2025-02-03 21:00:26.6567 Info Now listening on: http://localhost:5063 
+2025-02-03 21:00:26.6576 Info Application started. Press Ctrl+C to shut down. 
+2025-02-03 21:00:26.6576 Info Hosting environment: Development 
+2025-02-03 21:00:26.6576 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-03 21:00:26.8976 Info Request starting HTTP/2 GET https://localhost:7241/swagger/index.html - - - 
+2025-02-03 21:00:26.9806 Info Request finished HTTP/2 GET https://localhost:7241/swagger/index.html - 200 - text/html;charset=utf-8 68.4250ms 
+2025-02-03 21:00:27.0600 Info Request starting HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - - - 
+2025-02-03 21:00:27.0979 Info Request finished HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 37.8605ms 
+2025-02-03 21:42:22.2179 Info Application Starting Up... 
+2025-02-03 21:42:22.3938 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-03 21:42:22.5621 Info Now listening on: https://localhost:7241 
+2025-02-03 21:42:22.5621 Info Now listening on: http://localhost:5063 
+2025-02-03 21:42:22.5631 Info Application started. Press Ctrl+C to shut down. 
+2025-02-03 21:42:22.5631 Info Hosting environment: Development 
+2025-02-03 21:42:22.5631 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-03 21:42:22.7821 Info Request starting HTTP/2 GET https://localhost:7241/swagger/index.html - - - 
+2025-02-03 21:42:22.8674 Info Request finished HTTP/2 GET https://localhost:7241/swagger/index.html - 200 - text/html;charset=utf-8 73.2213ms 
+2025-02-03 21:42:22.9638 Info Request starting HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - - - 
+2025-02-03 21:42:23.0117 Info Request finished HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 47.9689ms 
+2025-02-03 21:42:49.2531 Info Request starting HTTP/2 POST https://localhost:7241/api/Users/Login - application/json 95 
+2025-02-03 21:42:49.2658 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-03 21:42:49.2769 Info Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MomentOfUs.Application.Dtos.UserDto.UserLoginDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-03 21:42:49.3522 Info Logging in user:abdullahtariq096@gmail.com 
+2025-02-03 21:42:49.7212 Info Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-03 21:42:49.7986 Info Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClaimType", "a"."ClaimValue", "a"."UserId"
+FROM "AspNetUserClaims" AS "a"
+WHERE "a"."UserId" = @__user_Id_0 
+2025-02-03 21:42:49.8054 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-03 21:42:49.8094 Info AuthenticationScheme: Identity.Application signed in. 
+2025-02-03 21:42:49.8106 Info Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-03 21:42:49.8118 Info Generating JWT Token 
+2025-02-03 21:42:49.8118 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-03 21:42:49.8227 Info Executing CreatedAtActionResult, writing value of type 'System.String'. 
+2025-02-03 21:42:49.8297 Info Executed action MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API) in 550.8142ms 
+2025-02-03 21:42:49.8297 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-03 21:42:49.8318 Info Request finished HTTP/2 POST https://localhost:7241/api/Users/Login - 201 - text/plain;+charset=utf-8 578.7286ms 
+2025-02-03 21:42:58.9672 Info Request starting HTTP/2 POST https://localhost:7241/api/Users/Login - application/json 95 
+2025-02-03 21:42:58.9685 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-03 21:42:58.9688 Info Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MomentOfUs.Application.Dtos.UserDto.UserLoginDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-03 21:42:58.9707 Info Logging in user:abdullahtariq096@gmail.com 
+2025-02-03 21:42:59.0071 Info Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-03 21:48:42.9608 Info Application Starting Up... 
+2025-02-03 21:48:43.1735 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-03 21:48:43.3936 Info Now listening on: https://localhost:7241 
+2025-02-03 21:48:43.3936 Info Now listening on: http://localhost:5063 
+2025-02-03 21:48:43.3947 Info Application started. Press Ctrl+C to shut down. 
+2025-02-03 21:48:43.3947 Info Hosting environment: Development 
+2025-02-03 21:48:43.3947 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-03 21:48:43.6667 Info Request starting HTTP/2 GET https://localhost:7241/swagger/index.html - - - 
+2025-02-03 21:48:43.7607 Info Request finished HTTP/2 GET https://localhost:7241/swagger/index.html - 200 - text/html;charset=utf-8 81.1341ms 
+2025-02-03 21:48:43.8313 Info Request starting HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - - - 
+2025-02-03 21:48:43.9158 Info Request finished HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 84.4170ms 
+2025-02-03 21:48:49.0900 Info Request starting HTTP/2 POST https://localhost:7241/api/Users/Login - application/json 72 
+2025-02-03 21:48:49.0990 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-03 21:48:49.1183 Info Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MomentOfUs.Application.Dtos.UserDto.UserLoginDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-03 21:48:49.2004 Info Logging in user:string 
+2025-02-03 21:48:49.5485 Info Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 6)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-03 21:49:08.0613 Info Executed action MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API) in 18938.1268ms 
+2025-02-03 21:49:08.0625 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-03 21:49:08.0763 Error An unhandled exception occurred MomentOfUs.Domain.Exceptions.BadRequestException: Inavlid Login Attempt
+   at MomentOfUs.Application.Service.AuthService.Login(UserLoginDto userLoginDto) in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Application/Service/AuthService.cs:line 83
+   at MomentOfUs.API.Controllers.UserController.Login(UserLoginDto userLoginDto) in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API/Controllers/UserController.cs:line 33
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at MomentOfUs.API.Extensions.GlobalErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API/Extensions/GlobalErrorHandlingMiddleware.cs:line 28
+2025-02-03 21:49:08.0980 Warn BadRequestException: Inavlid Login Attempt 
+2025-02-03 21:49:08.1331 Info Request finished HTTP/2 POST https://localhost:7241/api/Users/Login - 400 - application/json 19043.1986ms 
+2025-02-03 21:49:15.2882 Info Request starting HTTP/2 POST https://localhost:7241/api/Users/Login - application/json 72 
+2025-02-03 21:49:15.2898 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-03 21:49:15.2904 Info Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MomentOfUs.Application.Dtos.UserDto.UserLoginDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-03 21:49:15.2932 Info Logging in user:string 
+2025-02-03 21:49:15.3322 Info Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 6)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-03 21:49:25.0030 Info Executed action MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API) in 9712.142ms 
+2025-02-03 21:49:25.0046 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-03 21:49:25.0188 Error An unhandled exception occurred MomentOfUs.Domain.Exceptions.BadRequestException: Inavlid Login Attempt
+   at MomentOfUs.Application.Service.AuthService.Login(UserLoginDto userLoginDto) in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Application/Service/AuthService.cs:line 83
+   at MomentOfUs.API.Controllers.UserController.Login(UserLoginDto userLoginDto) in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API/Controllers/UserController.cs:line 33
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at MomentOfUs.API.Extensions.GlobalErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API/Extensions/GlobalErrorHandlingMiddleware.cs:line 28
+2025-02-03 21:49:25.0201 Warn BadRequestException: Inavlid Login Attempt 
+2025-02-03 21:49:25.0206 Info Request finished HTTP/2 POST https://localhost:7241/api/Users/Login - 400 - application/json 9732.4305ms 
+2025-02-03 22:01:00.7403 Info Application Starting Up... 
+2025-02-03 22:01:00.9104 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-03 22:01:01.0612 Info Now listening on: https://localhost:7241 
+2025-02-03 22:01:01.0612 Info Now listening on: http://localhost:5063 
+2025-02-03 22:01:01.0622 Info Application started. Press Ctrl+C to shut down. 
+2025-02-03 22:01:01.0622 Info Hosting environment: Development 
+2025-02-03 22:01:01.0622 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-03 22:01:01.2791 Info Request starting HTTP/2 GET https://localhost:7241/swagger/index.html - - - 
+2025-02-03 22:01:01.3804 Info Request finished HTTP/2 GET https://localhost:7241/swagger/index.html - 200 - text/html;charset=utf-8 89.4990ms 
+2025-02-03 22:01:01.4715 Info Request starting HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - - - 
+2025-02-03 22:01:01.5372 Info Request finished HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 65.6610ms 
+2025-02-03 22:01:06.0757 Info Request starting HTTP/2 POST https://localhost:7241/api/Users/Logout - - 0 
+2025-02-03 22:01:06.0851 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Logout (MomentOfUs.API)' 
+2025-02-03 22:01:06.1006 Info Route matched with {action = "Logout", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout() on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-03 22:01:06.1736 Info logging user out with Id:(null) 
+2025-02-03 22:01:54.0893 Info Application Starting Up... 
+2025-02-03 22:01:54.2940 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-03 22:01:54.4822 Info Now listening on: https://localhost:7241 
+2025-02-03 22:01:54.4822 Info Now listening on: http://localhost:5063 
+2025-02-03 22:01:54.4831 Info Application started. Press Ctrl+C to shut down. 
+2025-02-03 22:01:54.4831 Info Hosting environment: Development 
+2025-02-03 22:01:54.4831 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-03 22:01:54.6172 Info Request starting HTTP/2 GET https://localhost:7241/swagger/index.html - - - 
+2025-02-03 22:01:54.6914 Info Request finished HTTP/2 GET https://localhost:7241/swagger/index.html - 200 - text/html;charset=utf-8 63.9491ms 
+2025-02-03 22:01:54.7615 Info Request starting HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - - - 
+2025-02-03 22:01:54.8077 Info Request finished HTTP/2 GET https://localhost:7241/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 46.1048ms 
+2025-02-03 22:01:58.3202 Info Request starting HTTP/2 POST https://localhost:7241/api/Users/Login - application/json 95 
+2025-02-03 22:01:58.3280 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-03 22:01:58.3477 Info Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MomentOfUs.Application.Dtos.UserDto.UserLoginDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-03 22:01:58.4287 Info Logging in user:abdullahtariq096@gmail.com 
+2025-02-03 22:01:58.7725 Info Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-03 22:01:58.8487 Info Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClaimType", "a"."ClaimValue", "a"."UserId"
+FROM "AspNetUserClaims" AS "a"
+WHERE "a"."UserId" = @__user_Id_0 
+2025-02-03 22:01:58.8561 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-03 22:01:58.8606 Info AuthenticationScheme: Identity.Application signed in. 
+2025-02-03 22:01:58.8619 Info Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-03 22:01:58.8630 Info Generating JWT Token 
+2025-02-03 22:01:58.8634 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-03 22:01:58.8737 Info Executing CreatedAtActionResult, writing value of type 'System.String'. 
+2025-02-03 22:01:58.8810 Info Executed action MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API) in 531.1722ms 
+2025-02-03 22:01:58.8811 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-03 22:01:58.8832 Info Request finished HTTP/2 POST https://localhost:7241/api/Users/Login - 201 - text/plain;+charset=utf-8 563.0419ms 
+2025-02-03 22:02:01.5211 Info Request starting HTTP/2 POST https://localhost:7241/api/Users/Logout - - 0 
+2025-02-03 22:02:01.5243 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Logout (MomentOfUs.API)' 
+2025-02-03 22:02:01.5313 Info Route matched with {action = "Logout", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout() on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-03 22:02:01.5352 Info logging user out with Id:(null) 
+2025-02-03 22:03:41.3259 Info Executed action MomentOfUs.API.Controllers.UserController.Logout (MomentOfUs.API) in 99793.7205ms 
+2025-02-03 22:03:41.3272 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Logout (MomentOfUs.API)' 
+2025-02-03 22:03:41.3355 Error An unhandled exception occurred MomentOfUs.Domain.Exceptions.BadRequestException: Unable to load user with id 
+   at MomentOfUs.Application.Service.AuthService.Logout(String userId) in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Application/Service/AuthService.cs:line 96
+   at MomentOfUs.API.Controllers.UserController.Logout() in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API/Controllers/UserController.cs:line 40
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at MomentOfUs.API.Extensions.GlobalErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API/Extensions/GlobalErrorHandlingMiddleware.cs:line 28
+2025-02-03 22:03:41.3538 Warn BadRequestException: Unable to load user with id  
+2025-02-03 22:03:41.3824 Info Request finished HTTP/2 POST https://localhost:7241/api/Users/Logout - 400 - application/json 99861.0171ms 

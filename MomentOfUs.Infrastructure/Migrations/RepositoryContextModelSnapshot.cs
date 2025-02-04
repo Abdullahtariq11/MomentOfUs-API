@@ -404,7 +404,7 @@ namespace MomentOfUs.Infrastructure.Migrations
                     b.HasOne("MomentOfUs.Domain.Models.User", "User")
                         .WithMany("userSharedJournals")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("SharedJournal");
