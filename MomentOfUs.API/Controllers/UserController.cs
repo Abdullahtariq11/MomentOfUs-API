@@ -26,5 +26,20 @@ namespace MomentOfUs.API.Controllers
             var token= await _serviceManager.AuthService.Register(userRegisterDto);
             return CreatedAtAction(nameof(Register), token);
         }
+
+        [HttpPost("Login")]
+        public async Task<IActionResult> Login([FromBody] UserLoginDto userLoginDto)
+        {
+            var token= await _serviceManager.AuthService.Login(userLoginDto);
+            return CreatedAtAction(nameof(Login), token);
+        }
+        [HttpPost("Logout")]
+        public async Task<IActionResult> Logout()
+        {
+            var userId= User.FindFirst("Id")?.Value;
+            await _serviceManager.AuthService.Logout(userId);
+            return CreatedAtAction(nameof(Logout), "User Succeffully Logged out");
+
+        }
     }
 }

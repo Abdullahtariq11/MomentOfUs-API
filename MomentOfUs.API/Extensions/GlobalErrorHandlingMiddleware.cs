@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using MomentOfUs.Domain.Exceptions;
+using MomentOfUs.Domain.Models;
+using Newtonsoft.Json;
 
 namespace MomentOfUs.API.Extensions
 {
@@ -19,7 +21,7 @@ namespace MomentOfUs.API.Extensions
             _logger = logger;
         }
 
-        public async Task Invoke(HttpContext context)
+        public async Task InvokeAsync(HttpContext context)
         {
             try
             {
@@ -32,42 +34,39 @@ namespace MomentOfUs.API.Extensions
             }
         }
 
-        private async Task HandleExceptionAsync(HttpContext context, Exception ex)
+ private Task HandleExceptionAsync(HttpContext context, Exception ex)
         {
             context.Response.ContentType = "application/json";
-            int statusCode = (int)HttpStatusCode.InternalServerError;
-            string message = "An unexpected error occurred. Please try again later.";
 
-            switch (ex)
+            /// If the exception is of type NotFoundException, it returns a 404 Not Found status and logs a warning.
+            if (ex is NotFoundException)
             {
-                case NotFoundException:
-                    statusCode = (int)HttpStatusCode.NotFound;
-                    message = ex.Message;
-                    _logger.LogWarning("NotFoundException: {Message}", ex.Message);
-                    break;
-
-                case BadRequestException:
-                    statusCode = (int)HttpStatusCode.BadRequest;
-                    message = ex.Message;
-                    _logger.LogWarning("BadRequestException: {Message}", ex.Message);
-                    break;
-
-                default:
-                    _logger.LogError(ex, "Unhandled Exception: {ExceptionMessage}", ex.Message);
-                    break;
+                context.Response.StatusCode = (int)HttpStatusCode.NotFound;
+                _logger.LogWarning("NotFoundException: {Message}", ex.Message);
             }
 
-            var errorResponse = new
+            /// For BadRequestException, it returns a 400 Bad Request.
+            else if (ex is BadRequestException)
             {
-                StatusCode = statusCode,
-                Message = message,
-                DetailedError = context.RequestServices.GetService<IWebHostEnvironment>()?.IsDevelopment() == true
-                    ? ex.StackTrace
-                    : null // Show stack trace only in development mode
+                context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                _logger.LogWarning("BadRequestException: {Message}", ex.Message);
+            }
+
+            /// For all other exceptions, it returns a 500 Internal Server Error and logs the error.
+            else
+            {
+                context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                _logger.LogWarning(ex, "Internal Server Error");
+            }
+            var response = new ErrorDetails
+            {
+                StatusCode = context.Response.StatusCode,
+                ErrorMessage = ex.Message
             };
 
-            context.Response.StatusCode = statusCode;
-            await context.Response.WriteAsync(JsonSerializer.Serialize(errorResponse));
+            /// The error details are serialized into JSON format using JsonConvert.SerializeObject() and sent back to the client.
+            return context.Response.WriteAsync(JsonConvert.SerializeObject(response));
+
         }
     }
 }

@@ -10,8 +10,8 @@ namespace MomentOfUs.Application.Service.Contracts
     public interface IAuthService
     {
          Task<string> Register(UserRegisterDto userRegisterDto);
-         Task<string> Login();
+         Task<string> Login(UserLoginDto userLoginDto);
          Task<string> GenerateJwt(User user);
-         Task Logout();
+         Task Logout(string userId);
     }
 }

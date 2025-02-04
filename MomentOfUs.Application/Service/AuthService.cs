@@ -74,14 +74,30 @@ namespace MomentOfUs.Application.Service
 
         }
 
-        public Task<string> Login()
+        public async Task<string> Login(UserLoginDto userLoginDto)
         {
-            throw new NotImplementedException();
+            _logger.LogInformation("Logging in user:{user}",userLoginDto.Username);
+            var result= await _signInManager.PasswordSignInAsync(userLoginDto.Username,userLoginDto.Password,userLoginDto.RememberMe,lockoutOnFailure:false);
+            if(!result.Succeeded)
+            {
+                throw new BadRequestException("Inavlid Login Attempt");
+            }
+            var user= await _userManager.FindByNameAsync(userLoginDto.Username);
+            return await GenerateJwt(user);
+            
         }
 
-        public Task Logout()
+        public async Task Logout(string userId)
         {
-            throw new NotImplementedException();
+            _logger.LogInformation("logging user out with Id:{id}",userId);
+            var user = await _userManager.FindByIdAsync(userId);
+            if(user ==null)
+            {
+                throw new BadRequestException($"Unable to load user with id {userId}");
+            }
+            await _userManager.UpdateSecurityStampAsync(user);
+            await _signInManager.SignOutAsync();
+       
         }
 
         public async Task<string> Register(UserRegisterDto userRegisterDto)
