@@ -1,0 +1,16 @@
+/Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Application/bin/Debug/net9.0/MomentOfUs.Application.deps.json
+/Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Application/bin/Debug/net9.0/MomentOfUs.Application.dll
+/Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Application/bin/Debug/net9.0/MomentOfUs.Application.pdb
+/Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Application/bin/Debug/net9.0/MomentOfUs.Domain.dll
+/Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Application/bin/Debug/net9.0/MomentOfUs.Domain.pdb
+/Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Application/obj/Debug/net9.0/MomentOfUs.Application.csproj.AssemblyReference.cache
+/Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Application/obj/Debug/net9.0/MomentOfUs.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Application/obj/Debug/net9.0/MomentOfUs.Application.AssemblyInfoInputs.cache
+/Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Application/obj/Debug/net9.0/MomentOfUs.Application.AssemblyInfo.cs
+/Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Application/obj/Debug/net9.0/MomentOfUs.Application.csproj.CoreCompileInputs.cache
+/Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Application/obj/Debug/net9.0/MomentOfUs.Application.sourcelink.json
+/Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Application/obj/Debug/net9.0/MomentOf.1D9F6B0D.Up2Date
+/Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Application/obj/Debug/net9.0/MomentOfUs.Application.dll
+/Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Application/obj/Debug/net9.0/refint/MomentOfUs.Application.dll
+/Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Application/obj/Debug/net9.0/MomentOfUs.Application.pdb
+/Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Application/obj/Debug/net9.0/ref/MomentOfUs.Application.dll

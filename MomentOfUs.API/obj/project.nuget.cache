@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pIYSgTGiNz0=",
+  "dgSpecHash": "12UkfP9fZ/Y=",
   "success": true,
   "projectFilePath": "/Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API/MomentOfUs.API.csproj",
   "expectedPackageFiles": [
@@ -65,6 +65,9 @@
     "/Users/abdullahtariq/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
     "/Users/abdullahtariq/.nuget/packages/microsoft.win32.registry/4.5.0/microsoft.win32.registry.4.5.0.nupkg.sha512",
     "/Users/abdullahtariq/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
+    "/Users/abdullahtariq/.nuget/packages/nlog/5.3.4/nlog.5.3.4.nupkg.sha512",
+    "/Users/abdullahtariq/.nuget/packages/nlog.extensions.logging/5.3.15/nlog.extensions.logging.5.3.15.nupkg.sha512",
+    "/Users/abdullahtariq/.nuget/packages/nlog.web.aspnetcore/5.3.15/nlog.web.aspnetcore.5.3.15.nupkg.sha512",
     "/Users/abdullahtariq/.nuget/packages/serilog/4.2.0/serilog.4.2.0.nupkg.sha512",
     "/Users/abdullahtariq/.nuget/packages/serilog.aspnetcore/9.0.0/serilog.aspnetcore.9.0.0.nupkg.sha512",
     "/Users/abdullahtariq/.nuget/packages/serilog.enrichers.process/3.0.0/serilog.enrichers.process.3.0.0.nupkg.sha512",

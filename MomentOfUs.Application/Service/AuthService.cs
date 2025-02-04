@@ -9,18 +9,20 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using MomentOfUs.Application.Dtos.UserDto;
 using MomentOfUs.Application.Service.Contracts;
+using MomentOfUs.Domain.Exceptions;
 using MomentOfUs.Domain.Models;
 
 namespace MomentOfUs.Application.Service
 {
     public class AuthService : IAuthService
     {
-        private readonly ILogger _logger;
+        private readonly ILogger<AuthService> _logger;
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly IConfiguration _configuration;
-        public AuthService(ILogger logger, UserManager<User> userManager, SignInManager<User> signInManager, IConfiguration configuration)
+        public AuthService(ILogger<AuthService> logger, UserManager<User> userManager, SignInManager<User> signInManager, IConfiguration configuration)
         {
             _logger = logger;
             _userManager = userManager;
@@ -38,7 +40,7 @@ namespace MomentOfUs.Application.Service
             //Retrieves JWT settings from appsettings.json.
             var jwtSettings = _configuration.GetSection("JwtSettings");
             //Encodes the secret key (Key) into a byte array,
-            var secretKey = Encoding.UTF8.GetBytes(jwtSettings["Key"]);
+            var secretKey = Encoding.UTF8.GetBytes(jwtSettings["Secret"]);
             //Create JWT Claims
             var authClaims = new List<Claim>
             {
@@ -58,7 +60,7 @@ namespace MomentOfUs.Application.Service
             //Converts the secret key into a SymmetricSecurityKey.
 	        //This key will be used to digitally sign the JWT to prevent tampering.
             var authSigningKey = new SymmetricSecurityKey(secretKey);
-            
+
             //Generate JWT Token
             var token = new JwtSecurityToken(
                 issuer: jwtSettings["Issuer"],
@@ -82,9 +84,32 @@ namespace MomentOfUs.Application.Service
             throw new NotImplementedException();
         }
 
-        public Task<string> Register()
+        public async Task<string> Register(UserRegisterDto userRegisterDto)
         {
-            throw new NotImplementedException();
+            _logger.LogInformation("Registering User");
+            if (userRegisterDto == null)
+            {
+                throw new BadRequestException("Information not present or not in correct format.");
+            }
+            if(_userManager.FindByEmailAsync(userRegisterDto.Email)!=null)
+            {
+                throw new BadRequestException("User with same email exist");
+            }
+            var user= new User
+            {
+                UserName = userRegisterDto.Email,
+                Email=userRegisterDto.Email,
+                FirstName=userRegisterDto.FirstName,
+                LastName=userRegisterDto.LastName,
+
+            };
+            var result= await _userManager.CreateAsync(user,userRegisterDto.Password);
+            if(result.Succeeded)
+            {
+                await _userManager.AddToRoleAsync(user,"Admin");
+
+            }
+            return await GenerateJwt(user); 
         }
     }
 }

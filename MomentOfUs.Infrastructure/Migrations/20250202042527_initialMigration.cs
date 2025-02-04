@@ -227,7 +227,7 @@ namespace MomentOfUs.Infrastructure.Migrations
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_UserSharedJournal_SharedJournals_SharedJournalId",
                         column: x => x.SharedJournalId,

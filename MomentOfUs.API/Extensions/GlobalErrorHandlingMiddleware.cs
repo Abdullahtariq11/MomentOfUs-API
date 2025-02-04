@@ -1,13 +1,10 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
+using System.Text.Json;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore.Storage.Json;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
 using MomentOfUs.Domain.Exceptions;
-using MomentOfUs.Domain.Models;
-using Newtonsoft.Json;
-using Serilog;
 
 namespace MomentOfUs.API.Extensions
 {
@@ -16,52 +13,61 @@ namespace MomentOfUs.API.Extensions
         private readonly RequestDelegate _next;
         private readonly ILogger<GlobalErrorHandlingMiddleware> _logger;
 
-        public GlobalErrorHandlingMiddleware( RequestDelegate next, ILogger<GlobalErrorHandlingMiddleware> logger)
+        public GlobalErrorHandlingMiddleware(RequestDelegate next, ILogger<GlobalErrorHandlingMiddleware> logger)
         {
-
             _next = next;
             _logger = logger;
         }
+
         public async Task Invoke(HttpContext context)
         {
             try
             {
-                await _next(context); //pass to next middleware
+                await _next(context); // Pass request to the next middleware
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "An unhandled exception occured");
+                _logger.LogError(ex, "An unhandled exception occurred");
                 await HandleExceptionAsync(context, ex);
             }
         }
 
-        private Task HandleExceptionAsync(HttpContext context, Exception ex)
+        private async Task HandleExceptionAsync(HttpContext context, Exception ex)
         {
             context.Response.ContentType = "application/json";
+            int statusCode = (int)HttpStatusCode.InternalServerError;
+            string message = "An unexpected error occurred. Please try again later.";
 
-            if (ex is NotFoundException)
+            switch (ex)
             {
-                context.Response.StatusCode = (int)HttpStatusCode.NotFound;
-                _logger.LogWarning("NotFoundException: {Message}", ex.Message);
-            }
-            else if (ex is BadRequestException)
-            {
-                context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                _logger.LogWarning("BadRequestException: {Message}", ex.Message);
-            }
-            else
-            {
-                context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-                _logger.LogWarning(ex, "Internal Server Error");
+                case NotFoundException:
+                    statusCode = (int)HttpStatusCode.NotFound;
+                    message = ex.Message;
+                    _logger.LogWarning("NotFoundException: {Message}", ex.Message);
+                    break;
+
+                case BadRequestException:
+                    statusCode = (int)HttpStatusCode.BadRequest;
+                    message = ex.Message;
+                    _logger.LogWarning("BadRequestException: {Message}", ex.Message);
+                    break;
+
+                default:
+                    _logger.LogError(ex, "Unhandled Exception: {ExceptionMessage}", ex.Message);
+                    break;
             }
 
-            var response= new ErrorDetails
+            var errorResponse = new
             {
-                StatusCode = context.Response.StatusCode,
-                ErrorMessage=ex.Message,
+                StatusCode = statusCode,
+                Message = message,
+                DetailedError = context.RequestServices.GetService<IWebHostEnvironment>()?.IsDevelopment() == true
+                    ? ex.StackTrace
+                    : null // Show stack trace only in development mode
             };
 
-            return context.Response.WriteAsync(JsonConvert.SerializeObject(response));
+            context.Response.StatusCode = statusCode;
+            await context.Response.WriteAsync(JsonSerializer.Serialize(errorResponse));
         }
     }
 }

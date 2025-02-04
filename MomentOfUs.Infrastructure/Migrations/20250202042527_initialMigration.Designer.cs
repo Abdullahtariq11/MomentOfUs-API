@@ -11,7 +11,7 @@ using MomentOfUs.Infrastructure;
 namespace MomentOfUs.Infrastructure.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20250130034214_initialMigration")]
+    [Migration("20250202042527_initialMigration")]
     partial class initialMigration
     {
         /// <inheritdoc />
@@ -407,7 +407,7 @@ namespace MomentOfUs.Infrastructure.Migrations
                     b.HasOne("MomentOfUs.Domain.Models.User", "User")
                         .WithMany("userSharedJournals")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("SharedJournal");
