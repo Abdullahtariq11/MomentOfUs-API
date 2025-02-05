@@ -58,7 +58,7 @@ namespace MomentOfUs.Application.Service
             }
 
             //Converts the secret key into a SymmetricSecurityKey.
-	        //This key will be used to digitally sign the JWT to prevent tampering.
+            //This key will be used to digitally sign the JWT to prevent tampering.
             var authSigningKey = new SymmetricSecurityKey(secretKey);
 
             //Generate JWT Token
@@ -76,28 +76,28 @@ namespace MomentOfUs.Application.Service
 
         public async Task<string> Login(UserLoginDto userLoginDto)
         {
-            _logger.LogInformation("Logging in user:{user}",userLoginDto.Username);
-            var result= await _signInManager.PasswordSignInAsync(userLoginDto.Username,userLoginDto.Password,userLoginDto.RememberMe,lockoutOnFailure:false);
-            if(!result.Succeeded)
+            _logger.LogInformation("Logging in user:{user}", userLoginDto.Username);
+            var result = await _signInManager.PasswordSignInAsync(userLoginDto.Username, userLoginDto.Password, userLoginDto.RememberMe, lockoutOnFailure: false);
+            if (!result.Succeeded)
             {
                 throw new BadRequestException("Inavlid Login Attempt");
             }
-            var user= await _userManager.FindByNameAsync(userLoginDto.Username);
+            var user = await _userManager.FindByNameAsync(userLoginDto.Username);
             return await GenerateJwt(user);
-            
+
         }
 
         public async Task Logout(string userId)
         {
-            _logger.LogInformation("logging user out with Id:{id}",userId);
+            _logger.LogInformation("logging user out with Id:{id}", userId);
             var user = await _userManager.FindByIdAsync(userId);
-            if(user ==null)
+            if (user == null)
             {
                 throw new BadRequestException($"Unable to load user with id {userId}");
             }
             await _userManager.UpdateSecurityStampAsync(user);
             await _signInManager.SignOutAsync();
-       
+
         }
 
         public async Task<string> Register(UserRegisterDto userRegisterDto)
@@ -107,25 +107,25 @@ namespace MomentOfUs.Application.Service
             {
                 throw new BadRequestException("Information not present or not in correct format.");
             }
-            if(_userManager.FindByEmailAsync(userRegisterDto.Email)!=null)
+            if (_userManager.FindByEmailAsync(userRegisterDto.Email) != null)
             {
                 throw new BadRequestException("User with same email exist");
             }
-            var user= new User
+            var user = new User
             {
                 UserName = userRegisterDto.Email,
-                Email=userRegisterDto.Email,
-                FirstName=userRegisterDto.FirstName,
-                LastName=userRegisterDto.LastName,
+                Email = userRegisterDto.Email,
+                FirstName = userRegisterDto.FirstName,
+                LastName = userRegisterDto.LastName,
 
             };
-            var result= await _userManager.CreateAsync(user,userRegisterDto.Password);
-            if(result.Succeeded)
+            var result = await _userManager.CreateAsync(user, userRegisterDto.Password);
+            if (result.Succeeded)
             {
-                await _userManager.AddToRoleAsync(user,"Admin");
+                await _userManager.AddToRoleAsync(user, "Admin");
 
             }
-            return await GenerateJwt(user); 
+            return await GenerateJwt(user);
         }
     }
 }

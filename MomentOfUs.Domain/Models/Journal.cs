@@ -30,5 +30,8 @@ namespace MomentOfUs.Domain.Models
         [Required]
         public User? Owner { get; set; }
         public ICollection<SharedJournal> sharedJournals { get; set; }= new List<SharedJournal>();
+
+        //for tracking sunc
+         public bool IsSynced { get; set; } = false; 
     }
 }
