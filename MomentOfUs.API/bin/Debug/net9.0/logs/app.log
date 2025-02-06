@@ -1043,3 +1043,625 @@ WHERE "a"."UserId" = @__userId_0
    at MomentOfUs.API.Extensions.GlobalErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API/Extensions/GlobalErrorHandlingMiddleware.cs:line 28
 2025-02-03 22:03:41.3538 Warn BadRequestException: Unable to load user with id  
 2025-02-03 22:03:41.3824 Info Request finished HTTP/2 POST https://localhost:7241/api/Users/Logout - 400 - application/json 99861.0171ms 
+2025-02-05 20:10:00.2982 Info Application Starting Up... 
+2025-02-05 20:10:00.4858 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-05 20:10:00.5294 Info Now listening on: http://localhost:5063 
+2025-02-05 20:10:00.5302 Info Application started. Press Ctrl+C to shut down. 
+2025-02-05 20:10:00.5302 Info Hosting environment: Development 
+2025-02-05 20:10:00.5302 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-05 20:10:00.6365 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/index.html - - - 
+2025-02-05 20:10:00.7337 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/index.html - 200 - text/html;charset=utf-8 93.8752ms 
+2025-02-05 20:10:00.7404 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/swagger-ui-standalone-preset.js - - - 
+2025-02-05 20:10:00.7404 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/swagger-ui-bundle.js - - - 
+2025-02-05 20:10:00.7409 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/swagger-ui.css - - - 
+2025-02-05 20:10:00.7845 Info Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A' 
+2025-02-05 20:10:00.7845 Info Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A' 
+2025-02-05 20:10:00.7855 Info Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A' 
+2025-02-05 20:10:00.7860 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/swagger-ui.css - 200 143943 text/css 45.0220ms 
+2025-02-05 20:10:00.7860 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/swagger-ui-standalone-preset.js - 200 339486 text/javascript 46.1210ms 
+2025-02-05 20:10:00.7860 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/swagger-ui-bundle.js - 200 1096145 text/javascript 45.7407ms 
+2025-02-05 20:10:00.8883 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/v1/swagger.json - - - 
+2025-02-05 20:10:00.9308 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 42.5250ms 
+2025-02-05 20:12:05.9791 Info Application Starting Up... 
+2025-02-05 20:12:06.1649 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-05 20:12:06.2093 Info Now listening on: http://localhost:5063 
+2025-02-05 20:12:06.2101 Info Application started. Press Ctrl+C to shut down. 
+2025-02-05 20:12:06.2101 Info Hosting environment: Development 
+2025-02-05 20:12:06.2101 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-05 20:12:06.2771 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/index.html - - - 
+2025-02-05 20:12:06.3724 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/index.html - 200 - text/html;charset=utf-8 83.8460ms 
+2025-02-05 20:12:06.4687 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/v1/swagger.json - - - 
+2025-02-05 20:12:06.5153 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 46.6605ms 
+2025-02-05 20:14:31.2766 Info Application Starting Up... 
+2025-02-05 20:14:31.4315 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-05 20:14:31.4699 Info Now listening on: http://localhost:5063 
+2025-02-05 20:14:31.4708 Info Application started. Press Ctrl+C to shut down. 
+2025-02-05 20:14:31.4708 Info Hosting environment: Development 
+2025-02-05 20:14:31.4711 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-05 20:14:31.5480 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/index.html - - - 
+2025-02-05 20:14:31.6643 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/index.html - 200 - text/html;charset=utf-8 107.0654ms 
+2025-02-05 20:14:31.7303 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/v1/swagger.json - - - 
+2025-02-05 20:14:31.7719 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 41.5928ms 
+2025-02-05 20:14:57.6436 Info Application Starting Up... 
+2025-02-05 20:14:57.7847 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-05 20:14:57.8209 Info Now listening on: http://localhost:5063 
+2025-02-05 20:14:57.8209 Info Application started. Press Ctrl+C to shut down. 
+2025-02-05 20:14:57.8219 Info Hosting environment: Development 
+2025-02-05 20:14:57.8219 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-05 20:14:57.8795 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/index.html - - - 
+2025-02-05 20:14:57.9413 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/index.html - 200 - text/html;charset=utf-8 53.6087ms 
+2025-02-05 20:14:58.0103 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/v1/swagger.json - - - 
+2025-02-05 20:14:58.0488 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 38.4644ms 
+2025-02-05 20:15:32.0056 Info Request starting HTTP/1.1 POST http://localhost:5063/api/Users/Login - application/json 94 
+2025-02-05 20:15:32.0132 Warn Failed to determine the https port for redirect. 
+2025-02-05 20:15:32.0152 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-05 20:15:32.0302 Info Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MomentOfUs.Application.Dtos.UserDto.UserLoginDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-05 20:15:32.1096 Info Logging in user:abdullahtariq096@gmail.com 
+2025-02-05 20:15:32.5303 Info Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-05 20:15:37.2308 Info Executed action MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API) in 5195.3628ms 
+2025-02-05 20:15:37.2319 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-05 20:15:37.2417 Error An unhandled exception occurred MomentOfUs.Domain.Exceptions.BadRequestException: Inavlid Login Attempt
+   at MomentOfUs.Application.Service.AuthService.Login(UserLoginDto userLoginDto) in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Application/Service/AuthService.cs:line 83
+   at MomentOfUs.API.Controllers.UserController.Login(UserLoginDto userLoginDto) in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API/Controllers/UserController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at MomentOfUs.API.Extensions.GlobalErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API/Extensions/GlobalErrorHandlingMiddleware.cs:line 28
+2025-02-05 20:15:37.2574 Warn BadRequestException: Inavlid Login Attempt 
+2025-02-05 20:15:37.2865 Info Request finished HTTP/1.1 POST http://localhost:5063/api/Users/Login - 400 - application/json 5280.9965ms 
+2025-02-05 20:15:45.4322 Info Request starting HTTP/1.1 POST http://localhost:5063/api/Users/Login - application/json 95 
+2025-02-05 20:15:45.4339 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-05 20:15:45.4345 Info Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MomentOfUs.Application.Dtos.UserDto.UserLoginDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-05 20:15:45.4382 Info Logging in user:abdullahtariq096@gmail.com 
+2025-02-05 20:15:45.5040 Info Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-05 20:15:45.5665 Info Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClaimType", "a"."ClaimValue", "a"."UserId"
+FROM "AspNetUserClaims" AS "a"
+WHERE "a"."UserId" = @__user_Id_0 
+2025-02-05 20:15:45.5742 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-05 20:15:45.5788 Info AuthenticationScheme: Identity.Application signed in. 
+2025-02-05 20:15:45.5788 Info Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-05 20:15:45.5803 Info Generating JWT Token 
+2025-02-05 20:15:45.5803 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-05 20:15:45.5909 Info Executing CreatedAtActionResult, writing value of type 'System.String'. 
+2025-02-05 20:15:45.5962 Info Executed action MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API) in 161.5565ms 
+2025-02-05 20:15:45.5962 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-05 20:15:45.5963 Info Request finished HTTP/1.1 POST http://localhost:5063/api/Users/Login - 201 - text/plain;+charset=utf-8 164.1795ms 
+2025-02-05 20:16:15.4530 Info Request starting HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - - - 
+2025-02-05 20:16:15.4877 Info Failed to validate the token. Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2025-02-06 4:15:45 AM', Current time (UTC): '2025-02-06 4:16:15 AM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-02-05 20:16:15.4889 Info Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2025-02-06 4:15:45 AM', Current time (UTC): '2025-02-06 4:16:15 AM'. 
+2025-02-05 20:16:15.4920 Info Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2025-02-05 20:16:15.4945 Info AuthenticationScheme: Bearer was challenged. 
+2025-02-05 20:16:15.4945 Info Request finished HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - 401 0 - 41.7589ms 
+2025-02-05 20:16:40.3783 Info Request starting HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - - - 
+2025-02-05 20:16:40.3809 Info Failed to validate the token. System.ArgumentException: IDX14102: Unable to decode the header '[PII of type 'Microsoft.IdentityModel.Logging.SecurityArtifact' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string.
+ ---> System.FormatException: IDX10400: Unable to decode: '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64url encoded string.
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoding.ValidateAndGetOutputSize(ReadOnlySpan`1 strSpan, Int32 offset, Int32 length)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.CreateClaimSet(ReadOnlySpan`1 strSpan, Int32 startIndex, Int32 length, Boolean createHeaderClaimSet)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+2025-02-05 20:16:40.3814 Info Bearer was not authenticated. Failure message: IDX14102: Unable to decode the header '[PII of type 'Microsoft.IdentityModel.Logging.SecurityArtifact' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string. 
+2025-02-05 20:16:40.3827 Info Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2025-02-05 20:16:40.3833 Info AuthenticationScheme: Bearer was challenged. 
+2025-02-05 20:16:40.3833 Info Request finished HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - 401 0 - 31.6476ms 
+2025-02-05 20:16:59.8423 Info Request starting HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - - - 
+2025-02-05 20:16:59.8430 Info Failed to validate the token. System.ArgumentException: IDX14102: Unable to decode the header '[PII of type 'Microsoft.IdentityModel.Logging.SecurityArtifact' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string.
+ ---> System.FormatException: IDX10400: Unable to decode: '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64url encoded string.
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoding.ValidateAndGetOutputSize(ReadOnlySpan`1 strSpan, Int32 offset, Int32 length)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.CreateClaimSet(ReadOnlySpan`1 strSpan, Int32 startIndex, Int32 length, Boolean createHeaderClaimSet)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+2025-02-05 20:16:59.8430 Info Bearer was not authenticated. Failure message: IDX14102: Unable to decode the header '[PII of type 'Microsoft.IdentityModel.Logging.SecurityArtifact' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string. 
+2025-02-05 20:16:59.8456 Info Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2025-02-05 20:16:59.8456 Info AuthenticationScheme: Bearer was challenged. 
+2025-02-05 20:16:59.8456 Info Request finished HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - 401 0 - 3.7182ms 
+2025-02-05 20:17:13.1012 Info Request starting HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - - - 
+2025-02-05 20:17:13.1299 Info Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2025-02-05 20:17:13.1299 Info AuthenticationScheme: Bearer was challenged. 
+2025-02-05 20:17:13.1299 Info Request finished HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - 401 0 - 29.4045ms 
+2025-02-05 20:18:32.1263 Info Application Starting Up... 
+2025-02-05 20:18:32.3216 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-05 20:18:32.3622 Info Now listening on: http://localhost:5063 
+2025-02-05 20:18:32.3622 Info Application started. Press Ctrl+C to shut down. 
+2025-02-05 20:18:32.3632 Info Hosting environment: Development 
+2025-02-05 20:18:32.3632 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-05 20:18:32.4332 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/index.html - - - 
+2025-02-05 20:18:32.5291 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/index.html - 200 - text/html;charset=utf-8 86.2991ms 
+2025-02-05 20:18:32.5956 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/v1/swagger.json - - - 
+2025-02-05 20:18:32.6371 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 41.5225ms 
+2025-02-05 20:18:41.6850 Info Request starting HTTP/1.1 POST http://localhost:5063/api/Users/Login - application/json 95 
+2025-02-05 20:18:41.6923 Warn Failed to determine the https port for redirect. 
+2025-02-05 20:18:41.6945 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-05 20:18:41.7122 Info Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MomentOfUs.Application.Dtos.UserDto.UserLoginDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-05 20:18:41.7928 Info Logging in user:abdullahtariq096@gmail.com 
+2025-02-05 20:18:42.1381 Info Executed DbCommand (6ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-05 20:18:42.2170 Info Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClaimType", "a"."ClaimValue", "a"."UserId"
+FROM "AspNetUserClaims" AS "a"
+WHERE "a"."UserId" = @__user_Id_0 
+2025-02-05 20:18:42.2238 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-05 20:18:42.2281 Info AuthenticationScheme: Identity.Application signed in. 
+2025-02-05 20:18:42.2293 Info Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-05 20:18:42.2304 Info Generating JWT Token 
+2025-02-05 20:18:42.2308 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-05 20:18:42.2399 Info Executing CreatedAtActionResult, writing value of type 'System.String'. 
+2025-02-05 20:18:42.2470 Info Executed action MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API) in 533.0627ms 
+2025-02-05 20:18:42.2470 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-05 20:18:42.2491 Info Request finished HTTP/1.1 POST http://localhost:5063/api/Users/Login - 201 - text/plain;+charset=utf-8 564.3412ms 
+2025-02-05 20:19:57.2965 Info Request starting HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - - - 
+2025-02-05 20:19:57.3110 Info Failed to validate the token. System.ArgumentException: IDX14102: Unable to decode the header '[PII of type 'Microsoft.IdentityModel.Logging.SecurityArtifact' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string.
+ ---> System.FormatException: IDX10400: Unable to decode: '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64url encoded string.
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoding.ValidateAndGetOutputSize(ReadOnlySpan`1 strSpan, Int32 offset, Int32 length)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.CreateClaimSet(ReadOnlySpan`1 strSpan, Int32 startIndex, Int32 length, Boolean createHeaderClaimSet)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+2025-02-05 20:19:57.3227 Info Bearer was not authenticated. Failure message: IDX14102: Unable to decode the header '[PII of type 'Microsoft.IdentityModel.Logging.SecurityArtifact' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string. 
+2025-02-05 20:19:57.3256 Info Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2025-02-05 20:19:57.3281 Info AuthenticationScheme: Bearer was challenged. 
+2025-02-05 20:19:57.3281 Info Request finished HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - 401 0 - 32.0821ms 
+2025-02-05 20:20:30.8900 Info Request starting HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - - - 
+2025-02-05 20:20:30.8912 Info Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2025-02-05 20:20:30.8912 Info AuthenticationScheme: Bearer was challenged. 
+2025-02-05 20:20:30.8920 Info Request finished HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - 401 0 - 1.9141ms 
+2025-02-05 20:22:15.5729 Info Request starting HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - - - 
+2025-02-05 20:22:15.5737 Info Failed to validate the token. System.ArgumentException: IDX14102: Unable to decode the header '[PII of type 'Microsoft.IdentityModel.Logging.SecurityArtifact' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string.
+ ---> System.FormatException: IDX10400: Unable to decode: '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64url encoded string.
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoding.ValidateAndGetOutputSize(ReadOnlySpan`1 strSpan, Int32 offset, Int32 length)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.CreateClaimSet(ReadOnlySpan`1 strSpan, Int32 startIndex, Int32 length, Boolean createHeaderClaimSet)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+2025-02-05 20:22:15.5737 Info Bearer was not authenticated. Failure message: IDX14102: Unable to decode the header '[PII of type 'Microsoft.IdentityModel.Logging.SecurityArtifact' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string. 
+2025-02-05 20:22:15.5768 Info Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2025-02-05 20:22:15.5768 Info AuthenticationScheme: Bearer was challenged. 
+2025-02-05 20:22:15.5776 Info Request finished HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - 401 0 - 4.6817ms 
+2025-02-05 20:22:26.5119 Info Request starting HTTP/1.1 GET http://localhost:5063/api/Users/Users - - - 
+2025-02-05 20:22:26.5119 Info Failed to validate the token. System.ArgumentException: IDX14102: Unable to decode the header '[PII of type 'Microsoft.IdentityModel.Logging.SecurityArtifact' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string.
+ ---> System.FormatException: IDX10400: Unable to decode: '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64url encoded string.
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoding.ValidateAndGetOutputSize(ReadOnlySpan`1 strSpan, Int32 offset, Int32 length)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.CreateClaimSet(ReadOnlySpan`1 strSpan, Int32 startIndex, Int32 length, Boolean createHeaderClaimSet)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+2025-02-05 20:22:26.5128 Info Bearer was not authenticated. Failure message: IDX14102: Unable to decode the header '[PII of type 'Microsoft.IdentityModel.Logging.SecurityArtifact' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string. 
+2025-02-05 20:22:26.5142 Info Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin) 
+2025-02-05 20:22:26.5142 Info AuthenticationScheme: Bearer was challenged. 
+2025-02-05 20:22:26.5142 Info Request finished HTTP/1.1 GET http://localhost:5063/api/Users/Users - 401 0 - 2.7226ms 
+2025-02-05 20:26:25.2630 Info Request starting HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - - - 
+2025-02-05 20:26:25.2664 Info Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2025-02-05 20:26:25.2664 Info AuthenticationScheme: Bearer was challenged. 
+2025-02-05 20:26:25.2664 Info Request finished HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - 401 0 - 3.7421ms 
+2025-02-05 20:26:52.2184 Info Request starting HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - - - 
+2025-02-05 20:26:52.2478 Info Failed to validate the token. System.ArgumentException: IDX14102: Unable to decode the header '[PII of type 'Microsoft.IdentityModel.Logging.SecurityArtifact' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string.
+ ---> System.FormatException: IDX10400: Unable to decode: '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64url encoded string.
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoding.ValidateAndGetOutputSize(ReadOnlySpan`1 strSpan, Int32 offset, Int32 length)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.CreateClaimSet(ReadOnlySpan`1 strSpan, Int32 startIndex, Int32 length, Boolean createHeaderClaimSet)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+2025-02-05 20:26:52.2478 Info Bearer was not authenticated. Failure message: IDX14102: Unable to decode the header '[PII of type 'Microsoft.IdentityModel.Logging.SecurityArtifact' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string. 
+2025-02-05 20:26:52.2478 Info Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2025-02-05 20:26:52.2486 Info AuthenticationScheme: Bearer was challenged. 
+2025-02-05 20:26:52.2486 Info Request finished HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - 401 0 - 30.4020ms 
+2025-02-05 20:29:56.4295 Info Application Starting Up... 
+2025-02-05 20:29:56.6020 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-05 20:29:56.6415 Info Now listening on: http://localhost:5063 
+2025-02-05 20:29:56.6423 Info Application started. Press Ctrl+C to shut down. 
+2025-02-05 20:29:56.6423 Info Hosting environment: Development 
+2025-02-05 20:29:56.6423 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-05 20:29:56.7071 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/index.html - - - 
+2025-02-05 20:29:56.7730 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/index.html - 200 - text/html;charset=utf-8 57.0140ms 
+2025-02-05 20:29:56.8414 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/v1/swagger.json - - - 
+2025-02-05 20:29:56.8779 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 36.4621ms 
+2025-02-05 20:30:14.1259 Info Request starting HTTP/1.1 POST http://localhost:5063/api/Users/Login - application/json 94 
+2025-02-05 20:30:14.1348 Warn Failed to determine the https port for redirect. 
+2025-02-05 20:30:14.1373 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-05 20:30:14.1556 Info Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MomentOfUs.Application.Dtos.UserDto.UserLoginDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-05 20:30:14.2354 Info Logging in user:abdullahtariq096@gmail.com 
+2025-02-05 20:30:14.5794 Info Executed DbCommand (6ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-05 20:30:18.5896 Info Executed action MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API) in 4429.0279ms 
+2025-02-05 20:30:18.5907 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-05 20:30:18.6005 Error An unhandled exception occurred MomentOfUs.Domain.Exceptions.BadRequestException: Inavlid Login Attempt
+   at MomentOfUs.Application.Service.AuthService.Login(UserLoginDto userLoginDto) in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Application/Service/AuthService.cs:line 83
+   at MomentOfUs.API.Controllers.UserController.Login(UserLoginDto userLoginDto) in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API/Controllers/UserController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at MomentOfUs.API.Extensions.GlobalErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API/Extensions/GlobalErrorHandlingMiddleware.cs:line 28
+2025-02-05 20:30:18.6168 Warn BadRequestException: Inavlid Login Attempt 
+2025-02-05 20:30:18.6476 Info Request finished HTTP/1.1 POST http://localhost:5063/api/Users/Login - 400 - application/json 4521.6025ms 
+2025-02-05 20:30:25.1939 Info Request starting HTTP/1.1 POST http://localhost:5063/api/Users/Login - application/json 95 
+2025-02-05 20:30:25.1952 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-05 20:30:25.1952 Info Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MomentOfUs.Application.Dtos.UserDto.UserLoginDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-05 20:30:25.1982 Info Logging in user:abdullahtariq096@gmail.com 
+2025-02-05 20:30:25.2616 Info Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-05 20:30:25.3228 Info Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClaimType", "a"."ClaimValue", "a"."UserId"
+FROM "AspNetUserClaims" AS "a"
+WHERE "a"."UserId" = @__user_Id_0 
+2025-02-05 20:30:25.3300 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-05 20:30:25.3350 Info AuthenticationScheme: Identity.Application signed in. 
+2025-02-05 20:30:25.3350 Info Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-05 20:30:25.3364 Info Generating JWT Token 
+2025-02-05 20:30:25.3364 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-05 20:30:25.3467 Info Executing CreatedAtActionResult, writing value of type 'System.String'. 
+2025-02-05 20:30:25.3519 Info Executed action MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API) in 156.2565ms 
+2025-02-05 20:30:25.3519 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-05 20:30:25.3521 Info Request finished HTTP/1.1 POST http://localhost:5063/api/Users/Login - 201 - text/plain;+charset=utf-8 158.2294ms 
+2025-02-05 20:30:45.4411 Info Request starting HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - - - 
+2025-02-05 20:30:45.4635 Info Failed to validate the token. Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2025-02-06 4:30:25 AM', Current time (UTC): '2025-02-06 4:30:45 AM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-02-05 20:30:45.4644 Info Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2025-02-06 4:30:25 AM', Current time (UTC): '2025-02-06 4:30:45 AM'. 
+2025-02-05 20:30:45.4668 Info Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2025-02-05 20:30:45.4691 Info AuthenticationScheme: Bearer was challenged. 
+2025-02-05 20:30:45.4691 Info Request finished HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - 401 0 - 28.1431ms 
+2025-02-05 20:32:17.1041 Info Application Starting Up... 
+2025-02-05 20:32:17.2579 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-05 20:32:17.2951 Info Now listening on: http://localhost:5063 
+2025-02-05 20:32:17.2960 Info Application started. Press Ctrl+C to shut down. 
+2025-02-05 20:32:17.2960 Info Hosting environment: Development 
+2025-02-05 20:32:17.2960 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-05 20:32:17.3700 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/index.html - - - 
+2025-02-05 20:32:17.4335 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/index.html - 200 - text/html;charset=utf-8 54.3580ms 
+2025-02-05 20:32:17.5003 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/v1/swagger.json - - - 
+2025-02-05 20:32:17.5389 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 38.5947ms 
+2025-02-05 20:32:23.4296 Info Request starting HTTP/1.1 POST http://localhost:5063/api/Users/Login - application/json 95 
+2025-02-05 20:32:23.4712 Info Failed to validate the token. Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2025-02-06 4:30:25 AM', Current time (UTC): '2025-02-06 4:32:23 AM'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2025-02-05 20:32:23.4828 Info Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '2025-02-06 4:30:25 AM', Current time (UTC): '2025-02-06 4:32:23 AM'. 
+2025-02-05 20:32:23.4839 Warn Failed to determine the https port for redirect. 
+2025-02-05 20:32:23.4846 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-05 20:32:23.4934 Info Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MomentOfUs.Application.Dtos.UserDto.UserLoginDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-05 20:32:23.5542 Info Logging in user:abdullahtariq096@gmail.com 
+2025-02-05 20:32:23.8865 Info Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-05 20:32:23.9642 Info Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClaimType", "a"."ClaimValue", "a"."UserId"
+FROM "AspNetUserClaims" AS "a"
+WHERE "a"."UserId" = @__user_Id_0 
+2025-02-05 20:32:23.9711 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-05 20:32:23.9753 Info AuthenticationScheme: Identity.Application signed in. 
+2025-02-05 20:32:23.9765 Info Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-05 20:32:23.9776 Info Generating JWT Token 
+2025-02-05 20:32:23.9781 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-05 20:32:23.9847 Info Executing CreatedAtActionResult, writing value of type 'System.String'. 
+2025-02-05 20:32:23.9919 Info Executed action MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API) in 496.435ms 
+2025-02-05 20:32:23.9919 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-05 20:32:23.9941 Info Request finished HTTP/1.1 POST http://localhost:5063/api/Users/Login - 201 - text/plain;+charset=utf-8 564.4733ms 
+2025-02-05 20:32:40.2104 Info Request starting HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - - - 
+2025-02-05 20:32:40.3310 Info Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1 
+2025-02-05 20:32:40.3315 Info Bearer was not authenticated. Failure message: Unauthorized 
+2025-02-05 20:32:40.3339 Info Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2025-02-05 20:32:40.3359 Info AuthenticationScheme: Bearer was challenged. 
+2025-02-05 20:32:40.3359 Info Request finished HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - 401 0 - 125.7780ms 
+2025-02-05 20:33:03.4231 Info Request starting HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - - - 
+2025-02-05 20:33:03.4390 Info Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1 
+2025-02-05 20:33:03.4393 Info Bearer was not authenticated. Failure message: Unauthorized 
+2025-02-05 20:33:03.4393 Info Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2025-02-05 20:33:03.4393 Info AuthenticationScheme: Bearer was challenged. 
+2025-02-05 20:33:03.4401 Info Request finished HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - 401 0 - 17.0197ms 
+2025-02-05 20:36:08.2102 Info Application Starting Up... 
+2025-02-05 20:36:08.4149 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-05 20:36:08.4567 Info Now listening on: http://localhost:5063 
+2025-02-05 20:36:08.4575 Info Application started. Press Ctrl+C to shut down. 
+2025-02-05 20:36:08.4575 Info Hosting environment: Development 
+2025-02-05 20:36:08.4575 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-05 20:36:08.5544 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/index.html - - - 
+2025-02-05 20:36:08.6402 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/index.html - 200 - text/html;charset=utf-8 76.6185ms 
+2025-02-05 20:36:08.7062 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/v1/swagger.json - - - 
+2025-02-05 20:36:08.7719 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 65.5988ms 
+2025-02-05 20:36:26.3601 Info Request starting HTTP/1.1 POST http://localhost:5063/api/Users/Login - application/json 95 
+2025-02-05 20:36:26.3674 Warn Failed to determine the https port for redirect. 
+2025-02-05 20:36:26.3702 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-05 20:36:26.3891 Info Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MomentOfUs.Application.Dtos.UserDto.UserLoginDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-05 20:36:26.4674 Info Logging in user:abdullahtariq096@gmail.com 
+2025-02-05 20:36:26.8068 Info Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-05 20:36:26.8842 Info Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClaimType", "a"."ClaimValue", "a"."UserId"
+FROM "AspNetUserClaims" AS "a"
+WHERE "a"."UserId" = @__user_Id_0 
+2025-02-05 20:36:26.8907 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-05 20:36:26.8948 Info AuthenticationScheme: Identity.Application signed in. 
+2025-02-05 20:36:26.8959 Info Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-05 20:36:26.8968 Info Generating JWT Token 
+2025-02-05 20:36:26.8972 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-05 20:36:26.9088 Info Executing CreatedAtActionResult, writing value of type 'System.String'. 
+2025-02-05 20:36:26.9159 Info Executed action MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API) in 524.8231ms 
+2025-02-05 20:36:26.9159 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-05 20:36:26.9179 Info Request finished HTTP/1.1 POST http://localhost:5063/api/Users/Login - 201 - text/plain;+charset=utf-8 557.8402ms 
+2025-02-05 20:36:48.2512 Info Request starting HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - - - 
+2025-02-05 20:36:48.3208 Info Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1 
+2025-02-05 20:36:48.3213 Info Bearer was not authenticated. Failure message: Unauthorized 
+2025-02-05 20:36:48.3232 Info Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2025-02-05 20:36:48.3249 Info AuthenticationScheme: Bearer was challenged. 
+2025-02-05 20:36:48.3249 Info Request finished HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - 401 0 - 73.9476ms 
+2025-02-05 20:37:10.6949 Info Request starting HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - - - 
+2025-02-05 20:37:10.6973 Info Failed to validate the token. Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14120: JWT is not well formed, there is only one dot (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+2025-02-05 20:37:10.7098 Info Bearer was not authenticated. Failure message: IDX14120: JWT is not well formed, there is only one dot (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'. 
+2025-02-05 20:37:10.7098 Info Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2025-02-05 20:37:10.7105 Info AuthenticationScheme: Bearer was challenged. 
+2025-02-05 20:37:10.7105 Info Request finished HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - 401 0 - 15.6455ms 
+2025-02-05 20:41:14.5129 Info Application Starting Up... 
+2025-02-05 20:41:14.7223 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-05 20:41:14.7666 Info Now listening on: http://localhost:5063 
+2025-02-05 20:41:14.7676 Info Application started. Press Ctrl+C to shut down. 
+2025-02-05 20:41:14.7676 Info Hosting environment: Development 
+2025-02-05 20:41:14.7676 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-05 20:41:14.8326 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/index.html - - - 
+2025-02-05 20:41:14.9271 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/index.html - 200 - text/html;charset=utf-8 84.6703ms 
+2025-02-05 20:41:15.0026 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/v1/swagger.json - - - 
+2025-02-05 20:41:15.0673 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 64.6917ms 
+2025-02-05 20:41:22.3672 Info Request starting HTTP/1.1 POST http://localhost:5063/api/Users/Login - application/json 95 
+2025-02-05 20:41:22.3863 Info Failed to validate the token. Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14120: JWT is not well formed, there is only one dot (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(ReadOnlyMemory`1 encodedTokenMemory)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+2025-02-05 20:41:22.4013 Info Bearer was not authenticated. Failure message: IDX14120: JWT is not well formed, there is only one dot (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'. 
+2025-02-05 20:41:22.4025 Warn Failed to determine the https port for redirect. 
+2025-02-05 20:41:22.4035 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-05 20:41:22.4138 Info Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MomentOfUs.Application.Dtos.UserDto.UserLoginDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-05 20:41:22.4842 Info Logging in user:abdullahtariq096@gmail.com 
+2025-02-05 20:41:22.8289 Info Executed DbCommand (6ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-05 20:41:22.9062 Info Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClaimType", "a"."ClaimValue", "a"."UserId"
+FROM "AspNetUserClaims" AS "a"
+WHERE "a"."UserId" = @__user_Id_0 
+2025-02-05 20:41:22.9127 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-05 20:41:22.9171 Info AuthenticationScheme: Identity.Application signed in. 
+2025-02-05 20:41:22.9182 Info Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-05 20:41:22.9192 Info Generating JWT Token 
+2025-02-05 20:41:22.9192 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-05 20:41:22.9284 Info Executing CreatedAtActionResult, writing value of type 'System.String'. 
+2025-02-05 20:41:22.9352 Info Executed action MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API) in 519.5203ms 
+2025-02-05 20:41:22.9352 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-05 20:41:22.9373 Info Request finished HTTP/1.1 POST http://localhost:5063/api/Users/Login - 201 - text/plain;+charset=utf-8 570.2137ms 
+2025-02-05 20:41:39.4673 Info Request starting HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - - - 
+2025-02-05 20:41:39.5568 Info Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1 
+2025-02-05 20:41:39.5573 Info Bearer was not authenticated. Failure message: Unauthorized 
+2025-02-05 20:41:39.5592 Info Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user. 
+2025-02-05 20:41:39.5608 Info AuthenticationScheme: Bearer was challenged. 
+2025-02-05 20:41:39.5608 Info Request finished HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - 401 0 - 93.7287ms 
+2025-02-05 20:43:32.9993 Info Application Starting Up... 
+2025-02-05 20:43:33.1892 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-05 20:43:33.2302 Info Now listening on: http://localhost:5063 
+2025-02-05 20:43:33.2311 Info Application started. Press Ctrl+C to shut down. 
+2025-02-05 20:43:33.2311 Info Hosting environment: Development 
+2025-02-05 20:43:33.2311 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-05 20:43:33.2938 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/index.html - - - 
+2025-02-05 20:43:33.3863 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/index.html - 200 - text/html;charset=utf-8 82.8648ms 
+2025-02-05 20:43:33.4547 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/v1/swagger.json - - - 
+2025-02-05 20:43:33.5015 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 46.7982ms 
+2025-02-05 20:43:42.1685 Info Request starting HTTP/1.1 POST http://localhost:5063/api/Users/Login - application/json 95 
+2025-02-05 20:43:42.6158 Info Executed DbCommand (6ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1 
+2025-02-05 20:43:42.6455 Info Bearer was not authenticated. Failure message: Unauthorized 
+2025-02-05 20:43:42.6465 Warn Failed to determine the https port for redirect. 
+2025-02-05 20:43:42.6471 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-05 20:43:42.6520 Info Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MomentOfUs.Application.Dtos.UserDto.UserLoginDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-05 20:43:42.6628 Info Logging in user:abdullahtariq096@gmail.com 
+2025-02-05 20:43:42.6698 Info Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-05 20:43:42.7194 Info Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClaimType", "a"."ClaimValue", "a"."UserId"
+FROM "AspNetUserClaims" AS "a"
+WHERE "a"."UserId" = @__user_Id_0 
+2025-02-05 20:43:42.7257 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-05 20:43:42.7297 Info AuthenticationScheme: Identity.Application signed in. 
+2025-02-05 20:43:42.7308 Info Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-05 20:43:42.7308 Info Generating JWT Token 
+2025-02-05 20:43:42.7375 Info Executing CreatedAtActionResult, writing value of type 'System.String'. 
+2025-02-05 20:43:42.7442 Info Executed action MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API) in 90.3158ms 
+2025-02-05 20:43:42.7442 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-05 20:43:42.7462 Info Request finished HTTP/1.1 POST http://localhost:5063/api/Users/Login - 201 - text/plain;+charset=utf-8 577.7206ms 
+2025-02-05 20:43:57.1252 Info Request starting HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - - - 
+2025-02-05 20:43:57.1980 Info Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1 
+2025-02-05 20:43:57.2017 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.GetUserInfo (MomentOfUs.API)' 
+2025-02-05 20:43:57.2037 Info Route matched with {action = "GetUserInfo", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserInfo() on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-05 20:43:57.2053 Info Retrieving user inromation with userId:c6e51d40-8cca-4dc2-8e3c-34c373d99d49 
+2025-02-05 20:43:57.2057 Info Executing OkObjectResult, writing value of type 'MomentOfUs.Application.Dtos.UserDto.UserInfoDto'. 
+2025-02-05 20:43:57.2077 Info Executed action MomentOfUs.API.Controllers.UserController.GetUserInfo (MomentOfUs.API) in 3.822ms 
+2025-02-05 20:43:57.2077 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.GetUserInfo (MomentOfUs.API)' 
+2025-02-05 20:43:57.2081 Info Request finished HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - 200 - application/json;+charset=utf-8 82.8487ms 
