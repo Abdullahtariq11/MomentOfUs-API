@@ -3,10 +3,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging.Configuration;
+using Microsoft.OpenApi.Models;
 using MomentOfUs.API.Extensions;
 using MomentOfUs.Application.Service;
 using MomentOfUs.Application.Service.Contracts;
 using MomentOfUs.Domain.Contracts;
+using MomentOfUs.Domain.Models;
 using MomentOfUs.Infrastructure;
 using MomentOfUs.Infrastructure.Repository;
 using NLog;
@@ -38,12 +40,16 @@ builder.Host.UseNLog();  // Add NLog as the main logging provider
 
 
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IUserService,UserService>();
 builder.Services.AddScoped<IRepositoryManager, RepositoryManager>();
 builder.Services.AddScoped<IServiceManager, ServiceManager>();
 
 
+
+
 //Add database server
 builder.Services.ConfigureSQLiteDatabase(builder.Configuration);
+builder.Services.AddAuthentication();
 builder.Services.ConfigureIdentity();
 builder.Services.ConfigureJwtAuthentication(builder.Configuration);
 builder.Services.AddControllers();
@@ -51,7 +57,37 @@ builder.Services.AddControllers();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+
+builder.Services.AddSwaggerGen(c =>
+{
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        In = ParameterLocation.Header,
+        Description = "Please enter token with 'Bearer' scheme",
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer"
+    });
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement {
+    {
+        new OpenApiSecurityScheme
+        {
+            Reference = new OpenApiReference
+            {
+                Type = ReferenceType.SecurityScheme,
+                Id = "Bearer"
+            }
+        },
+
+        new string[] { }
+    }});
+    c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+    {
+        Title = "MomentOfUs Api",
+        Version = "v1"
+    });
+});
+
 
 var app = builder.Build();
 

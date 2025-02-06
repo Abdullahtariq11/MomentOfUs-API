@@ -37,35 +37,22 @@ namespace MomentOfUs.Application.Service
         {
             _logger.LogInformation("Generating JWT Token");
 
-            //Retrieves JWT settings from appsettings.json.
-            var jwtSettings = _configuration.GetSection("JwtSettings");
-            //Encodes the secret key (Key) into a byte array,
-            var secretKey = Encoding.UTF8.GetBytes(jwtSettings["Secret"]);
-            //Create JWT Claims
             var authClaims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name, user.UserName),                // Username
                 new Claim(ClaimTypes.NameIdentifier, user.Id),            // UserID
-                new Claim(ClaimTypes.GivenName, user.FirstName),          // First Name
-                new Claim(ClaimTypes.Surname, user.LastName),             // Last Name
+                 new Claim("Id", user.Id),
+                new Claim("FirstName", user.FirstName),                   // First Name
+                new Claim("LastName", user.LastName),                      // Last Name
+                new Claim("SecurityStamp", user.SecurityStamp)
             };
 
-            //Get user roles and add them as claim
-            var roles = await _userManager.GetRolesAsync(user);
-            foreach (var role in roles)
-            {
-                authClaims.Add(new Claim(ClaimTypes.Role, role));
-            }
 
-            //Converts the secret key into a SymmetricSecurityKey.
-            //This key will be used to digitally sign the JWT to prevent tampering.
-            var authSigningKey = new SymmetricSecurityKey(secretKey);
-
-            //Generate JWT Token
+            var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JwtSettings:Secret"]));
             var token = new JwtSecurityToken(
-                issuer: jwtSettings["Issuer"],
-                audience: jwtSettings["Audience"],
-                expires: DateTime.UtcNow.AddMinutes(Convert.ToDouble(jwtSettings["DurationInMinutes"])), // ✅ Use UTC time
+                issuer: _configuration["JwtSettings:Issuer"],
+                audience: _configuration["JwtSettings:Audience"],
+                expires: DateTime.Now.AddMinutes(Convert.ToDouble(_configuration["JwtSettings:DurationInMinutes"])),
                 claims: authClaims,
                 signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
             );
