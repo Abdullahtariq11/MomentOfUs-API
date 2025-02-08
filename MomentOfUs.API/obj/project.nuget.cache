@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "12UkfP9fZ/Y=",
+  "dgSpecHash": "WIJOM1ryVw4=",
   "success": true,
   "projectFilePath": "/Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API/MomentOfUs.API.csproj",
   "expectedPackageFiles": [
@@ -38,6 +38,7 @@
     "/Users/abdullahtariq/.nuget/packages/microsoft.extensions.configuration.binder/9.0.0/microsoft.extensions.configuration.binder.9.0.0.nupkg.sha512",
     "/Users/abdullahtariq/.nuget/packages/microsoft.extensions.configuration.fileextensions/9.0.1/microsoft.extensions.configuration.fileextensions.9.0.1.nupkg.sha512",
     "/Users/abdullahtariq/.nuget/packages/microsoft.extensions.configuration.json/9.0.1/microsoft.extensions.configuration.json.9.0.1.nupkg.sha512",
+    "/Users/abdullahtariq/.nuget/packages/microsoft.extensions.configuration.usersecrets/9.0.1/microsoft.extensions.configuration.usersecrets.9.0.1.nupkg.sha512",
     "/Users/abdullahtariq/.nuget/packages/microsoft.extensions.dependencyinjection/9.0.1/microsoft.extensions.dependencyinjection.9.0.1.nupkg.sha512",
     "/Users/abdullahtariq/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/9.0.1/microsoft.extensions.dependencyinjection.abstractions.9.0.1.nupkg.sha512",
     "/Users/abdullahtariq/.nuget/packages/microsoft.extensions.dependencymodel/9.0.1/microsoft.extensions.dependencymodel.9.0.1.nupkg.sha512",

@@ -22,6 +22,7 @@ public class RepositoryContext : IdentityDbContext<User>
         modelBuilder.ApplyConfiguration(new JournalConfiguration()); 
         modelBuilder.ApplyConfiguration(new SharedJournalConfiguration()); 
         modelBuilder.ApplyConfiguration(new UserSharedJournalConfiguration()); 
+        modelBuilder.ApplyConfiguration(new JournalEntryConfiguration());
 
     }
     ///<summary>
@@ -31,6 +32,10 @@ public class RepositoryContext : IdentityDbContext<User>
 
     public DbSet<Journal> Journals { get; set; }
     public DbSet<SharedJournal> SharedJournals { get; set; }
+
+    public DbSet<UserSharedJournal> UserSharedJournals { get; set;}
+
+    public DbSet<JournalEntry> JournalEntries { get; set; }
 
 
 

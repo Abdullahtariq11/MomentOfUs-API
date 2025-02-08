@@ -151,16 +151,7 @@ namespace MomentOfUs.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Content")
-                        .HasColumnType("TEXT");
-
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("TEXT");
-
-                    b.Property<bool>("IsSynced")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("ModelBuilder")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("OwnerID")
@@ -183,6 +174,38 @@ namespace MomentOfUs.Infrastructure.Migrations
                     b.HasIndex("OwnerID");
 
                     b.ToTable("Journals");
+                });
+
+            modelBuilder.Entity("MomentOfUs.Domain.Models.JournalEntry", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("IsSynced")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<Guid>("JournalId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Mood")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("JournalId");
+
+                    b.ToTable("JournalEntries");
                 });
 
             modelBuilder.Entity("MomentOfUs.Domain.Models.SharedJournal", b =>
@@ -312,7 +335,7 @@ namespace MomentOfUs.Infrastructure.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserSharedJournal");
+                    b.ToTable("UserSharedJournals");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -377,6 +400,17 @@ namespace MomentOfUs.Infrastructure.Migrations
                     b.Navigation("Owner");
                 });
 
+            modelBuilder.Entity("MomentOfUs.Domain.Models.JournalEntry", b =>
+                {
+                    b.HasOne("MomentOfUs.Domain.Models.Journal", "Journal")
+                        .WithMany("journalEntries")
+                        .HasForeignKey("JournalId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Journal");
+                });
+
             modelBuilder.Entity("MomentOfUs.Domain.Models.SharedJournal", b =>
                 {
                     b.HasOne("MomentOfUs.Domain.Models.Journal", "Journal")
@@ -417,6 +451,8 @@ namespace MomentOfUs.Infrastructure.Migrations
 
             modelBuilder.Entity("MomentOfUs.Domain.Models.Journal", b =>
                 {
+                    b.Navigation("journalEntries");
+
                     b.Navigation("sharedJournals");
                 });
 
