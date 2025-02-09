@@ -8,6 +8,7 @@ namespace MomentOfUs.Domain.Models
 {
     public class SharedJournal
     {
+
         public Guid Id { get; set; }
         public string OwnerId { get; set; } =string.Empty;
         [Required]
