@@ -200,10 +200,6 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
-            "Microsoft.AspNetCore.Cryptography.KeyDerivation": {
-              "target": "Package",
-              "version": "[9.0.1, )"
-            },
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[9.0.1, )"
