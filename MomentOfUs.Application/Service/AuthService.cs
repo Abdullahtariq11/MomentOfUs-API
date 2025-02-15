@@ -94,9 +94,11 @@ namespace MomentOfUs.Application.Service
             {
                 throw new BadRequestException("Information not present or not in correct format.");
             }
-            if (_userManager.FindByEmailAsync(userRegisterDto.Email) != null)
+            // Ensure uniqueness of email
+            var existingUser = await _userManager.FindByEmailAsync(userRegisterDto.Email);
+            if (existingUser != null)
             {
-                throw new BadRequestException("User with same email exist");
+                throw new BadRequestException("User with the same email exists");
             }
             var user = new User
             {
@@ -106,12 +108,14 @@ namespace MomentOfUs.Application.Service
                 LastName = userRegisterDto.LastName,
 
             };
+            
             var result = await _userManager.CreateAsync(user, userRegisterDto.Password);
-            if (result.Succeeded)
+            if (!result.Succeeded)
             {
-                await _userManager.AddToRoleAsync(user, "Admin");
+                throw new BadRequestException("SomethingWent wrong");
 
             }
+            
             return await GenerateJwt(user);
         }
     }

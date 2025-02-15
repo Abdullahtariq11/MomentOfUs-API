@@ -23,6 +23,12 @@ namespace MomentOfUs.Infrastructure.Configuration
             .WithOne(j=>j.Journal)
             .HasForeignKey(sj => sj.JournalId)
             .OnDelete(DeleteBehavior.Restrict);
+
+            //Relationship with JournalEntries
+            builder.HasMany(j=>j.journalEntries)
+            .WithOne(j=>j.Journal)
+            .HasForeignKey(je=>je.JournalId)
+            .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

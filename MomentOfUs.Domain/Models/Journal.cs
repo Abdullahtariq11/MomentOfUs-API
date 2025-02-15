@@ -17,10 +17,6 @@ namespace MomentOfUs.Domain.Models
         [MaxLength(50, ErrorMessage = "Character count exceeds the max length.")]
         public string? Title { get; set; }
 
-        public string? Content { get; set; } = string.Empty;
-
-        public string? ModelBuilder { get; set; }
-
         public string? PhotoUrl { get; set; }
 
         public DateTime CreatedAt { get; set; }=  DateTime.Now;
@@ -30,8 +26,7 @@ namespace MomentOfUs.Domain.Models
         [Required]
         public User? Owner { get; set; }
         public ICollection<SharedJournal> sharedJournals { get; set; }= new List<SharedJournal>();
+        public ICollection<JournalEntry> journalEntries{ get; set; }=new List<JournalEntry>();
 
-        //for tracking sunc
-         public bool IsSynced { get; set; } = false; 
     }
 }

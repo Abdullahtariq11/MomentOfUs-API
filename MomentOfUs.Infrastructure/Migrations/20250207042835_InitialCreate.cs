@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MomentOfUs.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class initialMigration : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -166,8 +166,6 @@ namespace MomentOfUs.Infrastructure.Migrations
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
                     OwnerID = table.Column<string>(type: "TEXT", nullable: false),
                     Title = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
-                    Content = table.Column<string>(type: "TEXT", nullable: true),
-                    ModelBuilder = table.Column<string>(type: "TEXT", nullable: true),
                     PhotoUrl = table.Column<string>(type: "TEXT", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "TEXT", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "TEXT", nullable: false)
@@ -181,6 +179,29 @@ namespace MomentOfUs.Infrastructure.Migrations
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "JournalEntries",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    JournalId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Content = table.Column<string>(type: "TEXT", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    Mood = table.Column<int>(type: "INTEGER", nullable: false),
+                    IsSynced = table.Column<bool>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_JournalEntries", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_JournalEntries_Journals_JournalId",
+                        column: x => x.JournalId,
+                        principalTable: "Journals",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -211,7 +232,7 @@ namespace MomentOfUs.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "UserSharedJournal",
+                name: "UserSharedJournals",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
@@ -221,15 +242,15 @@ namespace MomentOfUs.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserSharedJournal", x => x.Id);
+                    table.PrimaryKey("PK_UserSharedJournals", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_UserSharedJournal_AspNetUsers_UserId",
+                        name: "FK_UserSharedJournals_AspNetUsers_UserId",
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_UserSharedJournal_SharedJournals_SharedJournalId",
+                        name: "FK_UserSharedJournals_SharedJournals_SharedJournalId",
                         column: x => x.SharedJournalId,
                         principalTable: "SharedJournals",
                         principalColumn: "Id",
@@ -274,6 +295,11 @@ namespace MomentOfUs.Infrastructure.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_JournalEntries_JournalId",
+                table: "JournalEntries",
+                column: "JournalId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Journals_OwnerID",
                 table: "Journals",
                 column: "OwnerID");
@@ -289,13 +315,13 @@ namespace MomentOfUs.Infrastructure.Migrations
                 column: "OwnerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserSharedJournal_SharedJournalId",
-                table: "UserSharedJournal",
+                name: "IX_UserSharedJournals_SharedJournalId",
+                table: "UserSharedJournals",
                 column: "SharedJournalId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserSharedJournal_UserId",
-                table: "UserSharedJournal",
+                name: "IX_UserSharedJournals_UserId",
+                table: "UserSharedJournals",
                 column: "UserId");
         }
 
@@ -318,7 +344,10 @@ namespace MomentOfUs.Infrastructure.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "UserSharedJournal");
+                name: "JournalEntries");
+
+            migrationBuilder.DropTable(
+                name: "UserSharedJournals");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
