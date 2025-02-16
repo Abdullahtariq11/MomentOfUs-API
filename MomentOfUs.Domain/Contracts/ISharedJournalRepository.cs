@@ -12,7 +12,8 @@ namespace MomentOfUs.Domain.Contracts
         Task<IEnumerable<SharedJournal>> GetUserSharedJournalAsync(string userId, bool trackChanges);
         Task<PermissionLevel?> GetUserAccessAsync(Guid journalId, string userId);
 
-        Task Create(SharedJournal sharedJournal);
+        Task CreateAsync(SharedJournal sharedJournal);
+        Task Update(SharedJournal sharedJournal);
         Task Delete(SharedJournal sharedJournal);
 
 

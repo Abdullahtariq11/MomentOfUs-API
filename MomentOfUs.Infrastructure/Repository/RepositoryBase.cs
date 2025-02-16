@@ -19,17 +19,14 @@ namespace MomentOfUs.Infrastructure.Repository
         {
             _repositoryContext = repositoryContext;
         }
-        public void Create(T entity)
+        public async Task CreateAsync(T entity)
         {
-
-            _repositoryContext.Set<T>().AddAsync(entity);
+           await _repositoryContext.Set<T>().AddAsync(entity);
         }
 
         public void Delete(T entity)
         {
             _repositoryContext.Set<T>().Remove(entity);
-
-
         }
 
         public IQueryable<T> FindAll(bool trackChanges)
@@ -45,7 +42,6 @@ namespace MomentOfUs.Infrastructure.Repository
         public void Update(T entity)
         {
             _repositoryContext.Set<T>().Update(entity);
-
         }
     }
 

@@ -20,12 +20,17 @@ namespace MomentOfUs.Infrastructure.Repository
         private readonly Lazy<SharedJournalRepository> sharedJournalRepository;
         private readonly Lazy<UserSharedJournalRepository> userSharedJournalRepository;
 
+        private readonly Lazy<JournalEntryRepository> journalEntryRepository;
+
+        
+
         public RepositoryManager(RepositoryContext _repositoryContext)
         {
             repositoryContext = _repositoryContext;
             journalRepository= new Lazy<JournalRepository>(()=> new JournalRepository(repositoryContext));
             sharedJournalRepository= new Lazy<SharedJournalRepository>(()=> new SharedJournalRepository(repositoryContext));
             userSharedJournalRepository= new Lazy<UserSharedJournalRepository>(()=> new UserSharedJournalRepository(repositoryContext));
+            journalEntryRepository = new Lazy<JournalEntryRepository>(() => new JournalEntryRepository(repositoryContext));
             
         }
 
@@ -33,6 +38,8 @@ namespace MomentOfUs.Infrastructure.Repository
         public IUserSharedJournalRepository UserSharedJournalRepository => userSharedJournalRepository.Value;
 
         public IJournalRepository JournalRepository => journalRepository.Value;
+
+        public IJournalEntryRepository JournalEntryRepository => journalEntryRepository.Value;
 
 
         public async Task SaveAsync()
