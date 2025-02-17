@@ -84,5 +84,12 @@ namespace MomentOfUs.Application.Service
             _logger.LogInformation("User Updated Successfully!");
 
         }
+
+        public async Task<bool> UserExist(string userId)
+        {
+            _logger.LogInformation($"Checking if user with id: {userId} exists");
+
+            return await _userManager.Users.AnyAsync(u => u.Id == userId);
+        }
     }
 }

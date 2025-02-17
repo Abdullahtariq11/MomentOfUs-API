@@ -41,6 +41,7 @@ builder.Host.UseNLog();  // Add NLog as the main logging provider
 
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserService,UserService>();
+builder.Services.AddScoped<IJournalService,JournalService>();
 builder.Services.AddScoped<IRepositoryManager, RepositoryManager>();
 builder.Services.AddScoped<IServiceManager, ServiceManager>();
 

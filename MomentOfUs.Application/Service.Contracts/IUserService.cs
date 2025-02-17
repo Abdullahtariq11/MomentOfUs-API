@@ -12,5 +12,6 @@ namespace MomentOfUs.Application.Service.Contracts
         Task<UserInfoDto> GetUserInfo(string userId);
         Task UpdateUserInfo(string userId,UserInfoDto userInfoDto);
         Task<List<UserInfoDto>> GetUserInfoList();
+        Task<bool> UserExist(string userId);
     }
 }
