@@ -29,8 +29,6 @@ namespace MomentOfUs.Infrastructure.Repository
         }
 
 
-
-
         /// <summary>
         /// Returns all the entries for the specified journal.
         /// </summary>

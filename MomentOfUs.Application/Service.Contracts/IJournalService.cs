@@ -8,17 +8,24 @@ namespace MomentOfUs.Application.Service.Contracts
 {
     public interface IJournalService
     {
+        // Journal operations
         Task<Guid> CreateJournalAsync(string userId, string title, string? photoUrl);
         Task<IEnumerable<Journal>> GetUserJournalsAsync(string userId);
         Task<Journal?> GetJournalByIdAsync(Guid journalId, string userId);
         Task UpdateJournalAsync(Guid journalId, string userId, string title, string? photoUrl);
         Task DeleteJournalAsync(Guid journalId, string userId);
 
-        Task ShareJournalAsync(Guid journalId, string ownerId, string targetUserId, PermissionLevel permission);
-
+        // Journal entry operations
         Task AddJournalEntryAsync(Guid journalId, string userId, string content, JournalEntry.MoodType mood);
         Task<IEnumerable<JournalEntry>> GetJournalEntriesAsync(Guid journalId, string userId);
         Task UpdateJournalEntryAsync(Guid journalEntryId, string userId, string content, JournalEntry.MoodType mood);
         Task DeleteJournalEntryAsync(Guid journalEntryId, string userId);
+
+        // Shared journal operations
+        Task ShareJournalAsync(Guid journalId, string ownerId, string targetUserId, PermissionLevel permission);
+        Task RevokeUserAccessAsync(Guid journalId, string ownerId, string targetUserId);
+        Task<IEnumerable<UserSharedJournal>> GetSharedUsersAsync(Guid journalId);
+        Task UpdateUserPermissionAsync(Guid journalId, string ownerId, string targetUserId, PermissionLevel newPermission);
+        Task<IEnumerable<SharedJournal>> GetSharedJournalsForUserAsync(string userId);
     }
 }

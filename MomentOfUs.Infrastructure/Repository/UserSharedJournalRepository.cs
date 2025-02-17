@@ -84,7 +84,7 @@ namespace MomentOfUs.Infrastructure.Repository
 
         Task IUserSharedJournalRepository.Update(UserSharedJournal userSharedJournal)
         {
-            base.Update(userSharedJournal);
+            base.Delete(userSharedJournal);
             return Task.CompletedTask;
         }
     }
