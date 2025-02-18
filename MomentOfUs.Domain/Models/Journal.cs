@@ -17,6 +17,7 @@ namespace MomentOfUs.Domain.Models
         [MaxLength(50, ErrorMessage = "Character count exceeds the max length.")]
         public string? Title { get; set; }
 
+        //Cover photos
         public string? PhotoUrl { get; set; }
 
         public DateTime CreatedAt { get; set; }=  DateTime.Now;

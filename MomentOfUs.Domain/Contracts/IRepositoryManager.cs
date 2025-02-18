@@ -11,6 +11,8 @@ namespace MomentOfUs.Domain.Contracts
         ISharedJournalRepository SharedJournalRepository{ get; }
         IUserSharedJournalRepository UserSharedJournalRepository { get; }
 
+        IJournalEntryRepository JournalEntryRepository { get; }
+
         Task SaveAsync();
     }
 }

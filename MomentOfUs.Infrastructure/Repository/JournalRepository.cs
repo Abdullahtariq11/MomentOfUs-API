@@ -35,7 +35,7 @@ namespace MomentOfUs.Infrastructure.Repository
             return journal != null && journal.OwnerID == userId;
         }
 
-        public void Create(Journal journal) => base.Create(journal);
+        public async Task CreateAsync(Journal journal) => await base.CreateAsync(journal);
         public void Update(Journal journal) => base.Update(journal);
         public void Delete(Journal journal) => base.Delete(journal);
     }

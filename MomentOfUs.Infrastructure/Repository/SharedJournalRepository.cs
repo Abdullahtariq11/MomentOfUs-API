@@ -61,10 +61,9 @@ namespace MomentOfUs.Infrastructure.Repository
         /// <summary>
         /// Create a Shared Journal entry
         /// </summary>
-        public Task Create(SharedJournal sharedJournal)
+        public async Task CreateAsync(SharedJournal sharedJournal)
         {
-            base.Create(sharedJournal);
-            return Task.CompletedTask;
+            await base.CreateAsync(sharedJournal);
         }
 
         /// <summary>
@@ -73,6 +72,17 @@ namespace MomentOfUs.Infrastructure.Repository
         public Task Delete(SharedJournal sharedJournal)
         {
             base.Delete(sharedJournal);
+            return Task.CompletedTask;
+        }
+
+        /// <summary>
+        /// Updates a shared journal
+        /// </summary>
+        /// <param name="sharedJournal"></param>
+        /// <returns></returns>
+        Task ISharedJournalRepository.Update(SharedJournal sharedJournal)
+        {
+            base.Update(sharedJournal);
             return Task.CompletedTask;
         }
     }

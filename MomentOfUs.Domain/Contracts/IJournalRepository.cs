@@ -9,7 +9,7 @@ namespace MomentOfUs.Domain.Contracts
 {
     public interface IJournalRepository : IRepositoryBase<Journal>
     {
-        void Create(Journal journal);
+        Task CreateAsync(Journal journal);
         void Delete(Journal journal);
         void Update(Journal journal);
         Task<Journal?> GetByIdAsync(Guid journalId, bool trackChanges);

@@ -9,5 +9,6 @@ namespace MomentOfUs.Application.Service.Contracts
     {
         public IAuthService AuthService { get; }
         public IUserService UserService { get; }
+        public IJournalService JournalService { get;  }
     }
 }
