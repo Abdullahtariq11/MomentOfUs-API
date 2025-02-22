@@ -114,7 +114,7 @@ namespace MomentOfUs.Application.Service
 
         // ------------------- JOURNAL ENTRY OPERATIONS -------------------
 
-        public async Task AddJournalEntryAsync(Guid journalId, string userId, string content, JournalEntry.MoodType mood)
+        public async Task<Guid> AddJournalEntryAsync(Guid journalId, string userId, string content, JournalEntry.MoodType mood)
         {
             await ValidateUser(userId);
 
@@ -133,11 +133,12 @@ namespace MomentOfUs.Application.Service
                 CreatedAt = DateTime.UtcNow,
                 UpdatedAt = DateTime.UtcNow,
                 Mood = mood,
-                Journal = journal
+    
             };
 
             await _repositoryManager.JournalEntryRepository.CreateAsync(journalEntry);
             await _repositoryManager.SaveAsync();
+            return journalEntry.Id;
         }
 
         public async Task<IEnumerable<JournalEntry>> GetJournalEntriesAsync(Guid journalId, string userId)
@@ -151,17 +152,34 @@ namespace MomentOfUs.Application.Service
             return entries;
         }
 
-        public async Task UpdateJournalEntryAsync(Guid journalEntryId, string userId, string content, JournalEntry.MoodType mood)
+        public async Task<JournalEntry?> GetJournalEntryByIdAsync(Guid journalEntryId, Guid journalId, string userId)
         {
             await ValidateUser(userId);
-            var journalEntry = await _repositoryManager.JournalEntryRepository.GetByIdAsync(journalEntryId, trackChanges: true);
-            CheckEntityExist(journalEntry, journalEntryId, nameof(JournalEntry));
+            var entry = await _repositoryManager.JournalEntryRepository.GetByIdAsync(journalEntryId, trackChanges: false);
+            CheckEntityExist(entry, journalEntryId, nameof(JournalEntry));
 
-            journalEntry.Content = content;
-            journalEntry.Mood = mood;
-            journalEntry.UpdatedAt = DateTime.UtcNow;
+            var journal = await _repositoryManager.JournalRepository.GetByIdAsync(journalId, trackChanges: false);
+            var userShared = await _repositoryManager.UserSharedJournalRepository.GetUserPermissionAsync(journalId, userId, trackChanges: false);
+            var canEdit = userShared?.PermissionLevel == PermissionLevel.Edit || journal.OwnerID == userId;
+            if (!canEdit)
+                throw new BadRequestException($"User with ID {userId} does not have permission to view this entry.");
 
-            _repositoryManager.JournalEntryRepository.Update(journalEntry);
+            return entry;
+        }
+
+        public async Task UpdateJournalEntryAsync(Guid journalId, Guid entryId, string userId, string content, JournalEntry.MoodType mood)
+        {
+            var entry = await _repositoryManager.JournalEntryRepository.GetByIdAsync(entryId, trackChanges: false);
+            CheckEntityExist(entry, entryId, nameof(JournalEntry));
+
+            var journal = await _repositoryManager.JournalRepository.GetByIdAsync(journalId, trackChanges: false);
+            var userShared = await _repositoryManager.UserSharedJournalRepository.GetUserPermissionAsync(journalId, userId, trackChanges: false);
+            var canEdit = userShared?.PermissionLevel == PermissionLevel.Edit || journal.OwnerID == userId;
+            if (!canEdit)
+                throw new BadRequestException($"User with ID {userId} does not have permission to view this entry.");
+
+            entry.Content = content;
+            entry.Mood = mood;
             await _repositoryManager.SaveAsync();
         }
 

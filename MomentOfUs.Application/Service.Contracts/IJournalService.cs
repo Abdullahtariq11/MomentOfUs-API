@@ -16,9 +16,10 @@ namespace MomentOfUs.Application.Service.Contracts
         Task DeleteJournalAsync(Guid journalId, string userId);
 
         // Journal entry operations
-        Task AddJournalEntryAsync(Guid journalId, string userId, string content, JournalEntry.MoodType mood);
+        Task<Guid> AddJournalEntryAsync(Guid journalId, string userId, string content, JournalEntry.MoodType mood);
         Task<IEnumerable<JournalEntry>> GetJournalEntriesAsync(Guid journalId, string userId);
-        Task UpdateJournalEntryAsync(Guid journalEntryId, string userId, string content, JournalEntry.MoodType mood);
+        Task<JournalEntry?> GetJournalEntryByIdAsync(Guid journalEntryId, Guid journalId, string userId);
+        Task UpdateJournalEntryAsync(Guid journalId, Guid entryId, string userId, string content, JournalEntry.MoodType mood);
         Task DeleteJournalEntryAsync(Guid journalEntryId, string userId);
 
         // Shared journal operations
