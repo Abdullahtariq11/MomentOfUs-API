@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace MomentOfUs.Domain.Models
@@ -25,8 +26,13 @@ namespace MomentOfUs.Domain.Models
 
         //Navigation Property
         [Required]
+        [JsonIgnore] 
         public User? Owner { get; set; }
+
+        [JsonIgnore]
         public ICollection<SharedJournal> sharedJournals { get; set; }= new List<SharedJournal>();
+
+        [JsonIgnore]
         public ICollection<JournalEntry> journalEntries{ get; set; }=new List<JournalEntry>();
 
     }

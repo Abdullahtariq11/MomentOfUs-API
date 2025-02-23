@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 
@@ -20,8 +21,11 @@ namespace MomentOfUs.Domain.Models
         public string? ProfileImageUrl { get; set; }
 
         //Navigation Property
+        [JsonIgnore]
         public ICollection<Journal> Journals { get; set; }=new List<Journal>();
+        [JsonIgnore]
         public ICollection<SharedJournal> sharedJournals { get; set; }=new List<SharedJournal>();
+        [JsonIgnore]
         public ICollection<UserSharedJournal> userSharedJournals { get; set; }=new List<UserSharedJournal>();
     }
 }

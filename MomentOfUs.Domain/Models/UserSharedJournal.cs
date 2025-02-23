@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace MomentOfUs.Domain.Models
@@ -17,7 +18,9 @@ namespace MomentOfUs.Domain.Models
         public Guid SharedJournalId { get; set; }
         public PermissionLevel PermissionLevel { get; set; }
 
+        [JsonIgnore]
         public User? User { get; set; }
+        [JsonIgnore]
         public SharedJournal? SharedJournal { get; set; }
     }
         public enum PermissionLevel

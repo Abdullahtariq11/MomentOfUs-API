@@ -4178,3 +4178,577 @@ LIMIT 2
    at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
    at MomentOfUs.API.Extensions.GlobalErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API/Extensions/GlobalErrorHandlingMiddleware.cs:line 28
 2025-02-21 20:10:37.8450 Info Request finished HTTP/1.1 GET http://localhost:5063/api/Journals/96b5c156-3fa6-4473-b41b-4a89ed1c02ec - 500 - application/json 26.0912ms 
+2025-02-22 19:02:57.8896 Info Application Starting Up... 
+2025-02-22 19:02:58.1188 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-22 19:02:58.1608 Info Now listening on: http://localhost:5063 
+2025-02-22 19:02:58.1617 Info Application started. Press Ctrl+C to shut down. 
+2025-02-22 19:02:58.1617 Info Hosting environment: Development 
+2025-02-22 19:02:58.1617 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-22 19:02:58.2588 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/index.html - - - 
+2025-02-22 19:02:58.3720 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/index.html - 200 - text/html;charset=utf-8 100.6174ms 
+2025-02-22 19:02:58.4469 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/v1/swagger.json - - - 
+2025-02-22 19:02:58.5025 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 55.6520ms 
+2025-02-22 19:03:21.5341 Info Request starting HTTP/1.1 POST http://localhost:5063/api/Users/Login - application/json 94 
+2025-02-22 19:03:21.5492 Warn Failed to determine the https port for redirect. 
+2025-02-22 19:03:21.5509 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-22 19:03:21.5643 Info Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MomentOfUs.Application.Dtos.UserDto.UserLoginDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-22 19:03:21.6645 Info Logging in user:abdullahtariq96@gmail.com 
+2025-02-22 19:03:22.0628 Info Executed DbCommand (7ms) [Parameters=[@__normalizedUserName_0='?' (Size = 25)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-22 19:03:24.9172 Info Executed action MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API) in 3348.8168ms 
+2025-02-22 19:03:24.9172 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-22 19:03:24.9261 Error An unhandled exception occurred MomentOfUs.Domain.Exceptions.BadRequestException: Inavlid Login Attempt
+   at MomentOfUs.Application.Service.AuthService.Login(UserLoginDto userLoginDto) in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Application/Service/AuthService.cs:line 70
+   at MomentOfUs.API.Controllers.UserController.Login(UserLoginDto userLoginDto) in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API/Controllers/UserController.cs:line 34
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at MomentOfUs.API.Extensions.GlobalErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API/Extensions/GlobalErrorHandlingMiddleware.cs:line 28
+2025-02-22 19:03:24.9433 Warn BadRequestException: Inavlid Login Attempt 
+2025-02-22 19:03:24.9723 Info Request finished HTTP/1.1 POST http://localhost:5063/api/Users/Login - 400 - application/json 3438.4655ms 
+2025-02-22 19:03:34.1302 Info Request starting HTTP/1.1 POST http://localhost:5063/api/Users/Login - application/json 95 
+2025-02-22 19:03:34.1323 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-22 19:03:34.1323 Info Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MomentOfUs.Application.Dtos.UserDto.UserLoginDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-22 19:03:34.1358 Info Logging in user:abdullahtariq096@gmail.com 
+2025-02-22 19:03:34.2319 Info Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-22 19:03:34.3225 Info Executed DbCommand (2ms) [Parameters=[@__user_Id_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClaimType", "a"."ClaimValue", "a"."UserId"
+FROM "AspNetUserClaims" AS "a"
+WHERE "a"."UserId" = @__user_Id_0 
+2025-02-22 19:03:34.3298 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-22 19:03:34.3346 Info AuthenticationScheme: Identity.Application signed in. 
+2025-02-22 19:03:34.3349 Info Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-22 19:03:34.3349 Info Generating JWT Token 
+2025-02-22 19:03:34.3474 Info Executing CreatedAtActionResult, writing value of type 'System.String'. 
+2025-02-22 19:03:34.3527 Info Executed action MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API) in 219.7578ms 
+2025-02-22 19:03:34.3527 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-22 19:03:34.3527 Info Request finished HTTP/1.1 POST http://localhost:5063/api/Users/Login - 201 - text/plain;+charset=utf-8 222.7822ms 
+2025-02-22 19:04:10.5456 Info Request starting HTTP/1.1 GET http://localhost:5063/api/Journals - - - 
+2025-02-22 19:04:10.5815 Info Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1 
+2025-02-22 19:04:10.5856 Info Executing endpoint 'MomentOfUs.API.Controllers.JournalController.GetAllJournals (MomentOfUs.API)' 
+2025-02-22 19:04:10.5872 Info Route matched with {action = "GetAllJournals", controller = "Journal"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllJournals() on controller MomentOfUs.API.Controllers.JournalController (MomentOfUs.API). 
+2025-02-22 19:04:10.5899 Info Checking if user with id: a52a5349-3c2d-48fd-8e93-a65f75c09ca6 exists 
+2025-02-22 19:04:10.5963 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUsers" AS "a"
+    WHERE "a"."Id" = @__userId_0) 
+2025-02-22 19:04:10.6148 Warn Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'. 
+2025-02-22 19:04:10.6217 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "j"."Id", "j"."CreatedAt", "j"."OwnerID", "j"."PhotoUrl", "j"."Title", "j"."UpdatedAt", "j0"."Id", "j0"."Content", "j0"."CreatedAt", "j0"."IsSynced", "j0"."JournalId", "j0"."Mood", "j0"."UpdatedAt", "s"."Id", "s"."CreatedAt", "s"."JournalId", "s"."OwnerId", "s"."UpdatedAt"
+FROM "Journals" AS "j"
+LEFT JOIN "JournalEntries" AS "j0" ON "j"."Id" = "j0"."JournalId"
+LEFT JOIN "SharedJournals" AS "s" ON "j"."Id" = "s"."JournalId"
+WHERE "j"."OwnerID" = @__userId_0
+ORDER BY "j"."Id", "j0"."Id" 
+2025-02-22 19:04:10.6255 Info Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[MomentOfUs.Domain.Models.Journal, MomentOfUs.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2025-02-22 19:04:10.6295 Info Executed action MomentOfUs.API.Controllers.JournalController.GetAllJournals (MomentOfUs.API) in 42.2421ms 
+2025-02-22 19:04:10.6295 Info Executed endpoint 'MomentOfUs.API.Controllers.JournalController.GetAllJournals (MomentOfUs.API)' 
+2025-02-22 19:04:10.6295 Info Request finished HTTP/1.1 GET http://localhost:5063/api/Journals - 200 - application/json;+charset=utf-8 85.5272ms 
+2025-02-22 19:04:32.0855 Info Request starting HTTP/1.1 GET http://localhost:5063/api/Journals/96b5c156-3fa6-4473-b41b-4a89ed1c02ec/entries - - - 
+2025-02-22 19:04:32.0910 Info Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1 
+2025-02-22 19:04:32.0925 Info Executing endpoint 'MomentOfUs.API.Controllers.JournalEntryController.GetAllEntries (MomentOfUs.API)' 
+2025-02-22 19:04:32.0978 Info Route matched with {action = "GetAllEntries", controller = "JournalEntry"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEntries(System.Guid) on controller MomentOfUs.API.Controllers.JournalEntryController (MomentOfUs.API). 
+2025-02-22 19:04:32.1302 Info Checking if user with id: a52a5349-3c2d-48fd-8e93-a65f75c09ca6 exists 
+2025-02-22 19:04:32.1310 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUsers" AS "a"
+    WHERE "a"."Id" = @__userId_0) 
+2025-02-22 19:04:32.1390 Info Executed DbCommand (0ms) [Parameters=[@__journalId_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT "j"."Id", "j"."Content", "j"."CreatedAt", "j"."IsSynced", "j"."JournalId", "j"."Mood", "j"."UpdatedAt"
+FROM "JournalEntries" AS "j"
+WHERE "j"."JournalId" = @__journalId_0 
+2025-02-22 19:04:32.1390 Info Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[MomentOfUs.Domain.Models.JournalEntry, MomentOfUs.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2025-02-22 19:04:32.1433 Info Executed action MomentOfUs.API.Controllers.JournalEntryController.GetAllEntries (MomentOfUs.API) in 45.2645ms 
+2025-02-22 19:04:32.1433 Info Executed endpoint 'MomentOfUs.API.Controllers.JournalEntryController.GetAllEntries (MomentOfUs.API)' 
+2025-02-22 19:04:32.1433 Info Request finished HTTP/1.1 GET http://localhost:5063/api/Journals/96b5c156-3fa6-4473-b41b-4a89ed1c02ec/entries - 200 - application/json;+charset=utf-8 60.3567ms 
+2025-02-22 19:05:08.5776 Info Request starting HTTP/1.1 DELETE http://localhost:5063/api/Journals/96b5c156-3fa6-4473-b41b-4a89ed1c02ec/entries/03fb20ff-c3e8-403a-9e6f-7eb65c891c32 - - - 
+2025-02-22 19:05:08.5906 Info Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1 
+2025-02-22 19:05:08.5929 Info Executing endpoint 'MomentOfUs.API.Controllers.JournalEntryController.DeleteEntry (MomentOfUs.API)' 
+2025-02-22 19:05:08.5954 Info Route matched with {action = "DeleteEntry", controller = "JournalEntry"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteEntry(System.Guid, System.Guid) on controller MomentOfUs.API.Controllers.JournalEntryController (MomentOfUs.API). 
+2025-02-22 19:05:08.5985 Info Checking if user with id: a52a5349-3c2d-48fd-8e93-a65f75c09ca6 exists 
+2025-02-22 19:05:08.5988 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUsers" AS "a"
+    WHERE "a"."Id" = @__userId_0) 
+2025-02-22 19:05:08.6068 Info Executed DbCommand (0ms) [Parameters=[@__entryId_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT "j"."Id", "j"."Content", "j"."CreatedAt", "j"."IsSynced", "j"."JournalId", "j"."Mood", "j"."UpdatedAt", "j0"."Id", "j0"."CreatedAt", "j0"."OwnerID", "j0"."PhotoUrl", "j0"."Title", "j0"."UpdatedAt"
+FROM "JournalEntries" AS "j"
+INNER JOIN "Journals" AS "j0" ON "j"."JournalId" = "j0"."Id"
+WHERE "j"."Id" = @__entryId_0
+LIMIT 2 
+2025-02-22 19:05:08.6705 Info Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+DELETE FROM "JournalEntries"
+WHERE "Id" = @p0
+RETURNING 1; 
+2025-02-22 19:05:08.6766 Info Executing StatusCodeResult, setting HTTP status code 204 
+2025-02-22 19:05:08.6766 Info Executed action MomentOfUs.API.Controllers.JournalEntryController.DeleteEntry (MomentOfUs.API) in 81.1501ms 
+2025-02-22 19:05:08.6766 Info Executed endpoint 'MomentOfUs.API.Controllers.JournalEntryController.DeleteEntry (MomentOfUs.API)' 
+2025-02-22 19:05:08.6769 Info Request finished HTTP/1.1 DELETE http://localhost:5063/api/Journals/96b5c156-3fa6-4473-b41b-4a89ed1c02ec/entries/03fb20ff-c3e8-403a-9e6f-7eb65c891c32 - 204 - - 99.2912ms 
+2025-02-22 19:05:11.9930 Info Request starting HTTP/1.1 GET http://localhost:5063/api/Journals/96b5c156-3fa6-4473-b41b-4a89ed1c02ec/entries - - - 
+2025-02-22 19:05:11.9946 Info Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1 
+2025-02-22 19:05:11.9953 Info Executing endpoint 'MomentOfUs.API.Controllers.JournalEntryController.GetAllEntries (MomentOfUs.API)' 
+2025-02-22 19:05:11.9953 Info Route matched with {action = "GetAllEntries", controller = "JournalEntry"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllEntries(System.Guid) on controller MomentOfUs.API.Controllers.JournalEntryController (MomentOfUs.API). 
+2025-02-22 19:05:11.9960 Info Checking if user with id: a52a5349-3c2d-48fd-8e93-a65f75c09ca6 exists 
+2025-02-22 19:05:11.9960 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUsers" AS "a"
+    WHERE "a"."Id" = @__userId_0) 
+2025-02-22 19:05:11.9970 Info Executed DbCommand (0ms) [Parameters=[@__journalId_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT "j"."Id", "j"."Content", "j"."CreatedAt", "j"."IsSynced", "j"."JournalId", "j"."Mood", "j"."UpdatedAt"
+FROM "JournalEntries" AS "j"
+WHERE "j"."JournalId" = @__journalId_0 
+2025-02-22 19:05:11.9970 Info Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[MomentOfUs.Domain.Models.JournalEntry, MomentOfUs.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2025-02-22 19:05:11.9979 Info Executed action MomentOfUs.API.Controllers.JournalEntryController.GetAllEntries (MomentOfUs.API) in 2.2471ms 
+2025-02-22 19:05:11.9979 Info Executed endpoint 'MomentOfUs.API.Controllers.JournalEntryController.GetAllEntries (MomentOfUs.API)' 
+2025-02-22 19:05:11.9979 Info Request finished HTTP/1.1 GET http://localhost:5063/api/Journals/96b5c156-3fa6-4473-b41b-4a89ed1c02ec/entries - 200 - application/json;+charset=utf-8 5.2006ms 
+2025-02-22 19:28:04.7746 Info Application Starting Up... 
+2025-02-22 19:31:10.3967 Info Application Starting Up... 
+2025-02-22 19:33:52.8633 Info Application Starting Up... 
+2025-02-22 19:33:53.0553 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-22 19:33:53.0949 Info Now listening on: http://localhost:5063 
+2025-02-22 19:33:53.0958 Info Application started. Press Ctrl+C to shut down. 
+2025-02-22 19:33:53.0960 Info Hosting environment: Development 
+2025-02-22 19:33:53.0960 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-22 19:33:53.1700 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/index.html - - - 
+2025-02-22 19:33:53.2750 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/index.html - 200 - text/html;charset=utf-8 94.2952ms 
+2025-02-22 19:33:53.3518 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/v1/swagger.json - - - 
+2025-02-22 19:33:53.4224 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 70.6375ms 
+2025-02-22 19:33:59.2398 Info Request starting HTTP/1.1 GET http://localhost:5063/api/Journals - - - 
+2025-02-22 19:33:59.7046 Info Executed DbCommand (8ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1 
+2025-02-22 19:33:59.7334 Warn Failed to determine the https port for redirect. 
+2025-02-22 19:33:59.7353 Info Executing endpoint 'MomentOfUs.API.Controllers.JournalController.GetAllJournals (MomentOfUs.API)' 
+2025-02-22 19:33:59.7386 Info Route matched with {action = "GetAllJournals", controller = "Journal"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllJournals() on controller MomentOfUs.API.Controllers.JournalController (MomentOfUs.API). 
+2025-02-22 19:33:59.7406 Info Checking if user with id: a52a5349-3c2d-48fd-8e93-a65f75c09ca6 exists 
+2025-02-22 19:33:59.7458 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUsers" AS "a"
+    WHERE "a"."Id" = @__userId_0) 
+2025-02-22 19:33:59.7681 Warn Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'. 
+2025-02-22 19:33:59.7754 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "j"."Id", "j"."CreatedAt", "j"."OwnerID", "j"."PhotoUrl", "j"."Title", "j"."UpdatedAt", "j0"."Id", "j0"."Content", "j0"."CreatedAt", "j0"."IsSynced", "j0"."JournalId", "j0"."Mood", "j0"."UpdatedAt", "s"."Id", "s"."CreatedAt", "s"."JournalId", "s"."OwnerId", "s"."UpdatedAt"
+FROM "Journals" AS "j"
+LEFT JOIN "JournalEntries" AS "j0" ON "j"."Id" = "j0"."JournalId"
+LEFT JOIN "SharedJournals" AS "s" ON "j"."Id" = "s"."JournalId"
+WHERE "j"."OwnerID" = @__userId_0
+ORDER BY "j"."Id", "j0"."Id" 
+2025-02-22 19:33:59.7809 Info Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[MomentOfUs.Domain.Models.Journal, MomentOfUs.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2025-02-22 19:33:59.7878 Info Executed action MomentOfUs.API.Controllers.JournalController.GetAllJournals (MomentOfUs.API) in 47.2289ms 
+2025-02-22 19:33:59.7878 Info Executed endpoint 'MomentOfUs.API.Controllers.JournalController.GetAllJournals (MomentOfUs.API)' 
+2025-02-22 19:33:59.7901 Info Request finished HTTP/1.1 GET http://localhost:5063/api/Journals - 200 - application/json;+charset=utf-8 550.3030ms 
+2025-02-22 19:34:33.3150 Info Request starting HTTP/1.1 POST http://localhost:5063/api/Users/Login - application/json 95 
+2025-02-22 19:34:33.3168 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-22 19:34:33.3278 Info Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MomentOfUs.Application.Dtos.UserDto.UserLoginDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-22 19:34:33.3515 Info Logging in user:abdullahtariq096@gmail.com 
+2025-02-22 19:34:33.3799 Info Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-22 19:34:33.4289 Info Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClaimType", "a"."ClaimValue", "a"."UserId"
+FROM "AspNetUserClaims" AS "a"
+WHERE "a"."UserId" = @__user_Id_0 
+2025-02-22 19:34:33.4354 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-22 19:34:33.4401 Info AuthenticationScheme: Identity.Application signed in. 
+2025-02-22 19:34:33.4414 Info Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 26)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-22 19:34:33.4423 Info Generating JWT Token 
+2025-02-22 19:34:33.4478 Info Executing CreatedAtActionResult, writing value of type 'System.String'. 
+2025-02-22 19:34:33.4532 Info Executed action MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API) in 125.1639ms 
+2025-02-22 19:34:33.4532 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-22 19:34:33.4532 Info Request finished HTTP/1.1 POST http://localhost:5063/api/Users/Login - 201 - text/plain;+charset=utf-8 138.6287ms 
+2025-02-22 19:34:46.9675 Info Request starting HTTP/1.1 POST http://localhost:5063/api/Journals - application/json 47 
+2025-02-22 19:34:46.9865 Info Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1 
+2025-02-22 19:34:46.9879 Info Executing endpoint 'MomentOfUs.API.Controllers.JournalController.CreateJournal (MomentOfUs.API)' 
+2025-02-22 19:34:46.9912 Info Route matched with {action = "CreateJournal", controller = "Journal"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateJournal(MomentOfUs.Application.Dtos.JournalDto.JournalCreateDto) on controller MomentOfUs.API.Controllers.JournalController (MomentOfUs.API). 
+2025-02-22 19:34:46.9955 Info Creating journal with Title: string for user with id: a52a5349-3c2d-48fd-8e93-a65f75c09ca6 
+2025-02-22 19:34:46.9955 Info Checking if user with id: a52a5349-3c2d-48fd-8e93-a65f75c09ca6 exists 
+2025-02-22 19:34:46.9961 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUsers" AS "a"
+    WHERE "a"."Id" = @__userId_0) 
+2025-02-22 19:34:47.0676 Info Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?' (Size = 36), @p3='?' (Size = 6), @p4='?' (Size = 6), @p5='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Journals" ("Id", "CreatedAt", "OwnerID", "PhotoUrl", "Title", "UpdatedAt")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5); 
+2025-02-22 19:34:47.0751 Warn Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'. 
+2025-02-22 19:34:47.0805 Info Executed DbCommand (0ms) [Parameters=[@__journalId_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT "j1"."Id", "j1"."CreatedAt", "j1"."OwnerID", "j1"."PhotoUrl", "j1"."Title", "j1"."UpdatedAt", "j0"."Id", "j0"."Content", "j0"."CreatedAt", "j0"."IsSynced", "j0"."JournalId", "j0"."Mood", "j0"."UpdatedAt", "s"."Id", "s"."CreatedAt", "s"."JournalId", "s"."OwnerId", "s"."UpdatedAt"
+FROM (
+    SELECT "j"."Id", "j"."CreatedAt", "j"."OwnerID", "j"."PhotoUrl", "j"."Title", "j"."UpdatedAt"
+    FROM "Journals" AS "j"
+    WHERE "j"."Id" = @__journalId_0
+    LIMIT 2
+) AS "j1"
+LEFT JOIN "JournalEntries" AS "j0" ON "j1"."Id" = "j0"."JournalId"
+LEFT JOIN "SharedJournals" AS "s" ON "j1"."Id" = "s"."JournalId"
+ORDER BY "j1"."Id", "j0"."Id" 
+2025-02-22 19:34:47.0816 Info Journal with id: 45e49cb9-2d99-4c92-b352-e54f367c277f created successfully 
+2025-02-22 19:34:47.0823 Info Executing CreatedAtActionResult, writing value of type 'System.Guid'. 
+2025-02-22 19:34:47.0838 Info Executed action MomentOfUs.API.Controllers.JournalController.CreateJournal (MomentOfUs.API) in 92.5526ms 
+2025-02-22 19:34:47.0838 Info Executed endpoint 'MomentOfUs.API.Controllers.JournalController.CreateJournal (MomentOfUs.API)' 
+2025-02-22 19:34:47.0840 Info Request finished HTTP/1.1 POST http://localhost:5063/api/Journals - 201 - application/json;+charset=utf-8 116.4986ms 
+2025-02-22 19:35:36.1417 Info Request starting HTTP/1.1 POST http://localhost:5063/api/Users/Register - application/json 117 
+2025-02-22 19:35:36.1542 Info Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1 
+2025-02-22 19:35:36.1542 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-22 19:35:36.1590 Info Route matched with {action = "Register", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(MomentOfUs.Application.Dtos.UserDto.UserRegisterDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-22 19:35:36.1640 Info Registering User 
+2025-02-22 19:35:36.1707 Info Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 24)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2 
+2025-02-22 19:35:36.2222 Info Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 24)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-22 19:35:36.2230 Info Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 24)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedEmail" = @__normalizedEmail_0
+LIMIT 2 
+2025-02-22 19:35:36.2271 Info Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 36), @p1='?' (DbType = Int32), @p2='?' (Size = 36), @p3='?' (Size = 24), @p4='?' (DbType = Boolean), @p5='?' (Size = 4), @p6='?' (Size = 8), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 24), @p10='?' (Size = 24), @p11='?' (Size = 84), @p12='?', @p13='?' (DbType = Boolean), @p14='?', @p15='?' (Size = 32), @p16='?' (DbType = Boolean), @p17='?' (Size = 24)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "AspNetUsers" ("Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "ProfileImageUrl", "SecurityStamp", "TwoFactorEnabled", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17); 
+2025-02-22 19:35:36.2271 Info Generating JWT Token 
+2025-02-22 19:35:36.2271 Info Executing CreatedAtActionResult, writing value of type 'System.String'. 
+2025-02-22 19:35:36.2271 Info Executed action MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API) in 68.5955ms 
+2025-02-22 19:35:36.2271 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Register (MomentOfUs.API)' 
+2025-02-22 19:35:36.2271 Info Request finished HTTP/1.1 POST http://localhost:5063/api/Users/Register - 201 - text/plain;+charset=utf-8 86.1826ms 
+2025-02-22 19:36:02.2443 Info Request starting HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - - - 
+2025-02-22 19:36:02.2461 Info Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1 
+2025-02-22 19:36:02.2483 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.GetUserInfo (MomentOfUs.API)' 
+2025-02-22 19:36:02.2506 Info Route matched with {action = "GetUserInfo", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserInfo() on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-22 19:36:02.2530 Info Retrieving user inromation with userId:a52a5349-3c2d-48fd-8e93-a65f75c09ca6 
+2025-02-22 19:36:02.2539 Info Executing OkObjectResult, writing value of type 'MomentOfUs.Application.Dtos.UserDto.UserInfoDto'. 
+2025-02-22 19:36:02.2554 Info Executed action MomentOfUs.API.Controllers.UserController.GetUserInfo (MomentOfUs.API) in 4.6613ms 
+2025-02-22 19:36:02.2554 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.GetUserInfo (MomentOfUs.API)' 
+2025-02-22 19:36:02.2559 Info Request finished HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - 200 - application/json;+charset=utf-8 11.4191ms 
+2025-02-22 19:36:08.1619 Info Request starting HTTP/1.1 GET http://localhost:5063/api/Users/Users - - - 
+2025-02-22 19:36:08.1635 Info Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1 
+2025-02-22 19:36:08.1658 Info Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin) 
+2025-02-22 19:36:08.1685 Info AuthenticationScheme: Bearer was forbidden. 
+2025-02-22 19:36:08.1690 Info Request finished HTTP/1.1 GET http://localhost:5063/api/Users/Users - 403 0 - 7.1413ms 
+2025-02-22 19:38:50.2732 Info Request starting HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - - - 
+2025-02-22 19:38:50.3041 Info Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1 
+2025-02-22 19:38:50.3053 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.GetUserInfo (MomentOfUs.API)' 
+2025-02-22 19:38:50.3058 Info Route matched with {action = "GetUserInfo", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserInfo() on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-22 19:38:50.3058 Info Retrieving user inromation with userId:a52a5349-3c2d-48fd-8e93-a65f75c09ca6 
+2025-02-22 19:38:50.3058 Info Executing OkObjectResult, writing value of type 'MomentOfUs.Application.Dtos.UserDto.UserInfoDto'. 
+2025-02-22 19:38:50.3058 Info Executed action MomentOfUs.API.Controllers.UserController.GetUserInfo (MomentOfUs.API) in 0.6981ms 
+2025-02-22 19:38:50.3067 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.GetUserInfo (MomentOfUs.API)' 
+2025-02-22 19:38:50.3067 Info Request finished HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - 200 - application/json;+charset=utf-8 34.1615ms 
+2025-02-22 19:38:56.0864 Info Application Starting Up... 
+2025-02-22 19:38:56.2343 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-22 19:38:56.2729 Info Now listening on: http://localhost:5063 
+2025-02-22 19:38:56.2738 Info Application started. Press Ctrl+C to shut down. 
+2025-02-22 19:38:56.2738 Info Hosting environment: Development 
+2025-02-22 19:38:56.2738 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-22 19:38:56.3560 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/index.html - - - 
+2025-02-22 19:38:56.4258 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/index.html - 200 - text/html;charset=utf-8 64.2392ms 
+2025-02-22 19:38:56.5056 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/v1/swagger.json - - - 
+2025-02-22 19:38:56.5638 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 58.2370ms 
+2025-02-22 19:39:01.4589 Info Request starting HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - - - 
+2025-02-22 19:39:01.9214 Info Executed DbCommand (5ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1 
+2025-02-22 19:39:01.9610 Warn Failed to determine the https port for redirect. 
+2025-02-22 19:39:01.9638 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.GetUserInfo (MomentOfUs.API)' 
+2025-02-22 19:39:01.9685 Info Route matched with {action = "GetUserInfo", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserInfo() on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-22 19:39:01.9705 Info Retrieving user inromation with userId:a52a5349-3c2d-48fd-8e93-a65f75c09ca6 
+2025-02-22 19:39:01.9742 Info Executing OkObjectResult, writing value of type 'MomentOfUs.Application.Dtos.UserDto.UserInfoDto'. 
+2025-02-22 19:39:01.9808 Info Executed action MomentOfUs.API.Controllers.UserController.GetUserInfo (MomentOfUs.API) in 9.5254ms 
+2025-02-22 19:39:01.9808 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.GetUserInfo (MomentOfUs.API)' 
+2025-02-22 19:39:01.9860 Info Request finished HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - 200 - application/json;+charset=utf-8 527.1698ms 
+2025-02-22 19:39:39.5285 Info Request starting HTTP/1.1 POST http://localhost:5063/api/Users/Login - application/json 93 
+2025-02-22 19:39:39.5313 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-22 19:39:39.5404 Info Route matched with {action = "Login", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MomentOfUs.Application.Dtos.UserDto.UserLoginDto) on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-22 19:39:39.5603 Info Logging in user:musaabdullah23@gmail.com 
+2025-02-22 19:39:39.5904 Info Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 24)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-22 19:39:39.6466 Info Executed DbCommand (0ms) [Parameters=[@__user_Id_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."ClaimType", "a"."ClaimValue", "a"."UserId"
+FROM "AspNetUserClaims" AS "a"
+WHERE "a"."UserId" = @__user_Id_0 
+2025-02-22 19:39:39.6541 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a0"."Name"
+FROM "AspNetUserRoles" AS "a"
+INNER JOIN "AspNetRoles" AS "a0" ON "a"."RoleId" = "a0"."Id"
+WHERE "a"."UserId" = @__userId_0 
+2025-02-22 19:39:39.6593 Info AuthenticationScheme: Identity.Application signed in. 
+2025-02-22 19:39:39.6606 Info Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 24)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1 
+2025-02-22 19:39:39.6611 Info Generating JWT Token 
+2025-02-22 19:39:39.6666 Info Executing CreatedAtActionResult, writing value of type 'System.String'. 
+2025-02-22 19:39:39.6720 Info Executed action MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API) in 131.4781ms 
+2025-02-22 19:39:39.6720 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.Login (MomentOfUs.API)' 
+2025-02-22 19:39:39.6720 Info Request finished HTTP/1.1 POST http://localhost:5063/api/Users/Login - 201 - text/plain;+charset=utf-8 143.8874ms 
+2025-02-22 19:39:54.2926 Info Request starting HTTP/1.1 GET http://localhost:5063/api/Journals - - - 
+2025-02-22 19:39:54.3116 Info Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1 
+2025-02-22 19:39:54.3131 Info Executing endpoint 'MomentOfUs.API.Controllers.JournalController.GetAllJournals (MomentOfUs.API)' 
+2025-02-22 19:39:54.3162 Info Route matched with {action = "GetAllJournals", controller = "Journal"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllJournals() on controller MomentOfUs.API.Controllers.JournalController (MomentOfUs.API). 
+2025-02-22 19:39:54.3200 Info Checking if user with id: 6a9bc996-8614-49d4-8428-e59aa95bf599 exists 
+2025-02-22 19:39:54.3284 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUsers" AS "a"
+    WHERE "a"."Id" = @__userId_0) 
+2025-02-22 19:39:54.3528 Warn Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'. 
+2025-02-22 19:39:54.3606 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "j"."Id", "j"."CreatedAt", "j"."OwnerID", "j"."PhotoUrl", "j"."Title", "j"."UpdatedAt", "j0"."Id", "j0"."Content", "j0"."CreatedAt", "j0"."IsSynced", "j0"."JournalId", "j0"."Mood", "j0"."UpdatedAt", "s"."Id", "s"."CreatedAt", "s"."JournalId", "s"."OwnerId", "s"."UpdatedAt"
+FROM "Journals" AS "j"
+LEFT JOIN "JournalEntries" AS "j0" ON "j"."Id" = "j0"."JournalId"
+LEFT JOIN "SharedJournals" AS "s" ON "j"."Id" = "s"."JournalId"
+WHERE "j"."OwnerID" = @__userId_0
+ORDER BY "j"."Id", "j0"."Id" 
+2025-02-22 19:39:58.4499 Info Executed action MomentOfUs.API.Controllers.JournalController.GetAllJournals (MomentOfUs.API) in 4133.5563ms 
+2025-02-22 19:39:58.4499 Info Executed endpoint 'MomentOfUs.API.Controllers.JournalController.GetAllJournals (MomentOfUs.API)' 
+2025-02-22 19:39:58.4606 Error An unhandled exception occurred MomentOfUs.Domain.Exceptions.NotFoundException: No journals exist for the user.
+   at MomentOfUs.Application.Service.JournalService.GetUserJournalsAsync(String userId) in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Application/Service/JournalService.cs:line 58
+   at MomentOfUs.API.Controllers.JournalController.GetAllJournals() in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API/Controllers/JournalController.cs:line 114
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at MomentOfUs.API.Extensions.GlobalErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API/Extensions/GlobalErrorHandlingMiddleware.cs:line 28
+2025-02-22 19:39:58.4803 Warn NotFoundException: No journals exist for the user. 
+2025-02-22 19:39:58.5100 Info Request finished HTTP/1.1 GET http://localhost:5063/api/Journals - 404 - application/json 4217.3555ms 
+2025-02-22 19:40:33.1063 Info Request starting HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - - - 
+2025-02-22 19:40:33.1720 Info Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1 
+2025-02-22 19:40:33.1738 Info Executing endpoint 'MomentOfUs.API.Controllers.UserController.GetUserInfo (MomentOfUs.API)' 
+2025-02-22 19:40:33.1738 Info Route matched with {action = "GetUserInfo", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserInfo() on controller MomentOfUs.API.Controllers.UserController (MomentOfUs.API). 
+2025-02-22 19:40:33.1756 Info Retrieving user inromation with userId:6a9bc996-8614-49d4-8428-e59aa95bf599 
+2025-02-22 19:40:33.1756 Info Executing OkObjectResult, writing value of type 'MomentOfUs.Application.Dtos.UserDto.UserInfoDto'. 
+2025-02-22 19:40:33.1756 Info Executed action MomentOfUs.API.Controllers.UserController.GetUserInfo (MomentOfUs.API) in 2.192ms 
+2025-02-22 19:40:33.1766 Info Executed endpoint 'MomentOfUs.API.Controllers.UserController.GetUserInfo (MomentOfUs.API)' 
+2025-02-22 19:40:33.1766 Info Request finished HTTP/1.1 GET http://localhost:5063/api/Users/UserInfo - 200 - application/json;+charset=utf-8 70.4799ms 
+2025-02-22 19:42:54.9331 Info Request starting HTTP/1.1 POST http://localhost:5063/api/journals/45e49cb9-2d99-4c92-b352-e54f367c277f/shared - application/json 134 
+2025-02-22 19:42:54.9370 Info Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1 
+2025-02-22 19:42:54.9378 Info Executing endpoint 'MomentOfUs.API.Controllers.SharedJournalController.ShareJournal (MomentOfUs.API)' 
+2025-02-22 19:42:54.9431 Info Route matched with {action = "ShareJournal", controller = "SharedJournal"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ShareJournal(System.Guid, MomentOfUs.Application.Dtos.SharedJournalDto.SharedJournalCreateDto) on controller MomentOfUs.API.Controllers.SharedJournalController (MomentOfUs.API). 
+2025-02-22 19:42:54.9545 Info Checking if user with id: a52a5349-3c2d-48fd-8e93-a65f75c09ca6 exists 
+2025-02-22 19:42:54.9545 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUsers" AS "a"
+    WHERE "a"."Id" = @__userId_0) 
+2025-02-22 19:42:54.9545 Info Checking if user with id: 3fa85f64-5717-4562-b3fc-2c963f66afa6 exists 
+2025-02-22 19:42:54.9545 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUsers" AS "a"
+    WHERE "a"."Id" = @__userId_0) 
+2025-02-22 19:43:28.6737 Info Executed action MomentOfUs.API.Controllers.SharedJournalController.ShareJournal (MomentOfUs.API) in 33730.5458ms 
+2025-02-22 19:43:28.6749 Info Executed endpoint 'MomentOfUs.API.Controllers.SharedJournalController.ShareJournal (MomentOfUs.API)' 
+2025-02-22 19:43:28.6827 Error An unhandled exception occurred MomentOfUs.Domain.Exceptions.BadRequestException: User with ID: 3fa85f64-5717-4562-b3fc-2c963f66afa6 does not exist.
+   at MomentOfUs.Application.Service.JournalService.ValidateUser(String userId) in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Application/Service/JournalService.cs:line 306
+   at MomentOfUs.Application.Service.JournalService.ShareJournalAsync(Guid journalId, String ownerId, String targetUserId, PermissionLevel permission) in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Application/Service/JournalService.cs:line 201
+   at MomentOfUs.API.Controllers.SharedJournalController.ShareJournal(Guid journalId, SharedJournalCreateDto sharedJournalCreateDto) in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API/Controllers/SharedJournalController.cs:line 39
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at MomentOfUs.API.Extensions.GlobalErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API/Extensions/GlobalErrorHandlingMiddleware.cs:line 28
+2025-02-22 19:43:28.6838 Warn BadRequestException: User with ID: 3fa85f64-5717-4562-b3fc-2c963f66afa6 does not exist. 
+2025-02-22 19:43:28.6838 Info Request finished HTTP/1.1 POST http://localhost:5063/api/journals/45e49cb9-2d99-4c92-b352-e54f367c277f/shared - 400 - application/json 33751.0360ms 
+2025-02-22 19:43:35.8214 Info Request starting HTTP/1.1 POST http://localhost:5063/api/journals/45e49cb9-2d99-4c92-b352-e54f367c277f/shared - application/json 134 
+2025-02-22 19:43:35.8247 Info Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1 
+2025-02-22 19:43:35.8271 Info Executing endpoint 'MomentOfUs.API.Controllers.SharedJournalController.ShareJournal (MomentOfUs.API)' 
+2025-02-22 19:43:35.8271 Info Route matched with {action = "ShareJournal", controller = "SharedJournal"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ShareJournal(System.Guid, MomentOfUs.Application.Dtos.SharedJournalDto.SharedJournalCreateDto) on controller MomentOfUs.API.Controllers.SharedJournalController (MomentOfUs.API). 
+2025-02-22 19:43:35.8296 Info Checking if user with id: a52a5349-3c2d-48fd-8e93-a65f75c09ca6 exists 
+2025-02-22 19:43:35.8296 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUsers" AS "a"
+    WHERE "a"."Id" = @__userId_0) 
+2025-02-22 19:43:35.8296 Info Checking if user with id: 6a9bc996-8614-49d4-8428-e59aa95bf599 exists 
+2025-02-22 19:43:35.8307 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUsers" AS "a"
+    WHERE "a"."Id" = @__userId_0) 
+2025-02-22 19:43:35.8431 Warn Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'. 
+2025-02-22 19:43:35.8551 Info Executed DbCommand (2ms) [Parameters=[@__journalId_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT "j1"."Id", "j1"."CreatedAt", "j1"."OwnerID", "j1"."PhotoUrl", "j1"."Title", "j1"."UpdatedAt", "j0"."Id", "j0"."Content", "j0"."CreatedAt", "j0"."IsSynced", "j0"."JournalId", "j0"."Mood", "j0"."UpdatedAt", "s"."Id", "s"."CreatedAt", "s"."JournalId", "s"."OwnerId", "s"."UpdatedAt"
+FROM (
+    SELECT "j"."Id", "j"."CreatedAt", "j"."OwnerID", "j"."PhotoUrl", "j"."Title", "j"."UpdatedAt"
+    FROM "Journals" AS "j"
+    WHERE "j"."Id" = @__journalId_0
+    LIMIT 2
+) AS "j1"
+LEFT JOIN "JournalEntries" AS "j0" ON "j1"."Id" = "j0"."JournalId"
+LEFT JOIN "SharedJournals" AS "s" ON "j1"."Id" = "s"."JournalId"
+ORDER BY "j1"."Id", "j0"."Id" 
+2025-02-22 19:43:35.8709 Info Executed DbCommand (0ms) [Parameters=[@__sharedJournalId_0='?' (DbType = Guid), @__userId_1='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "u"."Id", "u"."PermissionLevel", "u"."SharedJournalId", "u"."UserId", "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName", "s"."Id", "s"."CreatedAt", "s"."JournalId", "s"."OwnerId", "s"."UpdatedAt"
+FROM "UserSharedJournals" AS "u"
+INNER JOIN "AspNetUsers" AS "a" ON "u"."UserId" = "a"."Id"
+INNER JOIN "SharedJournals" AS "s" ON "u"."SharedJournalId" = "s"."Id"
+WHERE "u"."SharedJournalId" = @__sharedJournalId_0 AND "u"."UserId" = @__userId_1
+LIMIT 1 
+2025-02-22 19:43:35.9319 Info Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?' (DbType = Guid), @p3='?' (Size = 36), @p4='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+INSERT INTO "SharedJournals" ("Id", "CreatedAt", "JournalId", "OwnerId", "UpdatedAt")
+VALUES (@p0, @p1, @p2, @p3, @p4); 
+2025-02-22 19:43:35.9361 Info Executing StatusCodeResult, setting HTTP status code 200 
+2025-02-22 19:43:35.9361 Info Executed action MomentOfUs.API.Controllers.SharedJournalController.ShareJournal (MomentOfUs.API) in 108.8051ms 
+2025-02-22 19:43:35.9361 Info Executed endpoint 'MomentOfUs.API.Controllers.SharedJournalController.ShareJournal (MomentOfUs.API)' 
+2025-02-22 19:43:35.9361 Info Request finished HTTP/1.1 POST http://localhost:5063/api/journals/45e49cb9-2d99-4c92-b352-e54f367c277f/shared - 200 0 - 114.9514ms 
+2025-02-22 19:43:45.7137 Info Request starting HTTP/1.1 GET http://localhost:5063/api/Journals - - - 
+2025-02-22 19:43:45.7154 Info Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ConcurrencyStamp", "a"."Email", "a"."EmailConfirmed", "a"."FirstName", "a"."LastName", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."ProfileImageUrl", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AspNetUsers" AS "a"
+WHERE "a"."Id" = @__p_0
+LIMIT 1 
+2025-02-22 19:43:45.7154 Info Executing endpoint 'MomentOfUs.API.Controllers.JournalController.GetAllJournals (MomentOfUs.API)' 
+2025-02-22 19:43:45.7154 Info Route matched with {action = "GetAllJournals", controller = "Journal"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllJournals() on controller MomentOfUs.API.Controllers.JournalController (MomentOfUs.API). 
+2025-02-22 19:43:45.7154 Info Checking if user with id: 6a9bc996-8614-49d4-8428-e59aa95bf599 exists 
+2025-02-22 19:43:45.7169 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUsers" AS "a"
+    WHERE "a"."Id" = @__userId_0) 
+2025-02-22 19:43:45.7178 Info Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 36)], CommandType='Text', CommandTimeout='30']
+SELECT "j"."Id", "j"."CreatedAt", "j"."OwnerID", "j"."PhotoUrl", "j"."Title", "j"."UpdatedAt", "j0"."Id", "j0"."Content", "j0"."CreatedAt", "j0"."IsSynced", "j0"."JournalId", "j0"."Mood", "j0"."UpdatedAt", "s"."Id", "s"."CreatedAt", "s"."JournalId", "s"."OwnerId", "s"."UpdatedAt"
+FROM "Journals" AS "j"
+LEFT JOIN "JournalEntries" AS "j0" ON "j"."Id" = "j0"."JournalId"
+LEFT JOIN "SharedJournals" AS "s" ON "j"."Id" = "s"."JournalId"
+WHERE "j"."OwnerID" = @__userId_0
+ORDER BY "j"."Id", "j0"."Id" 
+2025-02-22 19:43:50.7473 Info Executed action MomentOfUs.API.Controllers.JournalController.GetAllJournals (MomentOfUs.API) in 5031.1413ms 
+2025-02-22 19:43:50.7476 Info Executed endpoint 'MomentOfUs.API.Controllers.JournalController.GetAllJournals (MomentOfUs.API)' 
+2025-02-22 19:43:50.7622 Error An unhandled exception occurred MomentOfUs.Domain.Exceptions.NotFoundException: No journals exist for the user.
+   at MomentOfUs.Application.Service.JournalService.GetUserJournalsAsync(String userId) in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Application/Service/JournalService.cs:line 58
+   at MomentOfUs.API.Controllers.JournalController.GetAllJournals() in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API/Controllers/JournalController.cs:line 114
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at MomentOfUs.API.Extensions.GlobalErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API/Extensions/GlobalErrorHandlingMiddleware.cs:line 28
+2025-02-22 19:43:50.7635 Warn NotFoundException: No journals exist for the user. 
+2025-02-22 19:43:50.7635 Info Request finished HTTP/1.1 GET http://localhost:5063/api/Journals - 404 - application/json 5050.1059ms 
