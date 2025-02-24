@@ -25,7 +25,7 @@ namespace MomentOfUs.Application.Service.Contracts
         // Shared journal operations
         Task ShareJournalAsync(Guid journalId, string ownerId, string targetUserId, PermissionLevel permission);
         Task RevokeUserAccessAsync(Guid journalId, string ownerId, string targetUserId);
-        Task<IEnumerable<UserSharedJournal>> GetSharedUsersAsync(Guid journalId);
+        Task<IEnumerable<UserSharedJournal>> GetSharedUsersAsync(string userId);
         Task UpdateUserPermissionAsync(Guid journalId, string ownerId, string targetUserId, PermissionLevel newPermission);
         Task<IEnumerable<SharedJournal>> GetSharedJournalsForUserAsync(string userId);
     }

@@ -12,7 +12,9 @@ namespace MomentOfUs.Domain.Models
     /// </summary>
     public class UserSharedJournal
     {
+        [Key]
         public Guid Id { get; set; }
+        [Required]
         public string UserId { get; set; }=string.Empty;
         
         public Guid SharedJournalId { get; set; }

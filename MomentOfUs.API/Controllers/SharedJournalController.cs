@@ -79,14 +79,14 @@ namespace MomentOfUs.API.Controllers
         /// <param name="journalId"></param>
         /// <returns></returns>
         [HttpGet("users")]
-        public async Task<IActionResult> GetAllUsersWithAccess(Guid journalId)
+        public async Task<IActionResult> GetAllUsersWithAccess()
         {
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;  
             if (userId == null)
             {
                 return Unauthorized();
             }
-            var users = await _serviceManager.JournalService.GetSharedUsersAsync(journalId);
+            var users = await _serviceManager.JournalService.GetSharedUsersAsync(userId);
             return Ok(users);
         }      
 

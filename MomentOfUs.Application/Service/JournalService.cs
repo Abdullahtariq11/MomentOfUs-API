@@ -117,14 +117,22 @@ namespace MomentOfUs.Application.Service
         public async Task<Guid> AddJournalEntryAsync(Guid journalId, string userId, string content, JournalEntry.MoodType mood)
         {
             await ValidateUser(userId);
-
             var journal = await _repositoryManager.JournalRepository.GetByIdAsync(journalId, trackChanges: false);
             CheckEntityExist(journal, journalId, nameof(Journal));
 
-            var userShared = await _repositoryManager.UserSharedJournalRepository.GetUserPermissionAsync(journalId, userId, trackChanges: false);
-            var canEdit = userShared?.PermissionLevel == PermissionLevel.Edit || journal.OwnerID == userId;
+            var sharedJournals = await _repositoryManager.SharedJournalRepository.GetByJournalIdAsync(journalId, trackChanges: false);
+            var sharedJournal = sharedJournals.FirstOrDefault(sj => 
+                sj.SharedWith.Any(sw => sw.UserId == userId));
+            CheckEntityExist(sharedJournal, sharedJournal.Id, nameof(SharedJournal));
+
+            // Use SharedJournalRepository for permission check
+            var permission = await _repositoryManager.UserSharedJournalRepository.GetUserPermissionAsync(sharedJournal.Id, userId, trackChanges: false);
+            var canEdit = permission?.PermissionLevel == PermissionLevel.Edit || journal.OwnerID == userId;
+            
             if (!canEdit)
+            {
                 throw new BadRequestException($"User with ID {userId} does not have permission to add entries.");
+            }
 
             var journalEntry = new JournalEntry
             {
@@ -132,8 +140,7 @@ namespace MomentOfUs.Application.Service
                 Content = content,
                 CreatedAt = DateTime.UtcNow,
                 UpdatedAt = DateTime.UtcNow,
-                Mood = mood,
-    
+                Mood = mood
             };
 
             await _repositoryManager.JournalEntryRepository.CreateAsync(journalEntry);
@@ -203,29 +210,51 @@ namespace MomentOfUs.Application.Service
             var journal = await _repositoryManager.JournalRepository.GetByIdAsync(journalId, trackChanges: false);
             CheckEntityExist(journal, journalId, nameof(Journal));
 
+            if (journal.OwnerID != ownerId)
+            {
+                throw new BadRequestException($"User with ID {ownerId} is not the owner of this journal.");
+            }
+
+            var sharedJournals = await _repositoryManager.SharedJournalRepository.GetByJournalIdAsync(journalId, trackChanges: false);
+            var sharedJournal = sharedJournals.FirstOrDefault(sj => 
+                sj.SharedWith.Any(sw => sw.UserId == targetUserId));
+
+            if (sharedJournal == null)
+            {
+                sharedJournal = new SharedJournal
+                {
+                    OwnerId = ownerId,
+                    JournalId = journalId,
+                    CreatedAt = DateTime.UtcNow,
+                    UpdatedAt = DateTime.UtcNow
+                };
+
+                await _repositoryManager.SharedJournalRepository.CreateAsync(sharedJournal);
+                await _repositoryManager.SaveAsync();
+            }
+
             var existingPermission = await _repositoryManager.UserSharedJournalRepository
-                .GetUserPermissionAsync(journalId, targetUserId, trackChanges: false);
+                .GetUserPermissionAsync(sharedJournal.Id, targetUserId, trackChanges: false);
 
             if (existingPermission != null)
             {
                 if (existingPermission.PermissionLevel != permission)
                 {
                     existingPermission.PermissionLevel = permission;
-                    _repositoryManager.UserSharedJournalRepository.Update(existingPermission);
+                    await _repositoryManager.UserSharedJournalRepository.Update(existingPermission);
                     await _repositoryManager.SaveAsync();
                 }
                 return;
             }
 
-            var sharedJournal = new SharedJournal
+            var userSharedJournal = new UserSharedJournal
             {
-                OwnerId = ownerId,
-                JournalId = journalId,
-                CreatedAt = DateTime.UtcNow,
-                UpdatedAt = DateTime.UtcNow
+                UserId = targetUserId,
+                SharedJournalId = sharedJournal.Id,
+                PermissionLevel = permission
             };
 
-            await _repositoryManager.SharedJournalRepository.CreateAsync(sharedJournal);
+            await _repositoryManager.UserSharedJournalRepository.CreateAsync(userSharedJournal);
             await _repositoryManager.SaveAsync();
         }
 
@@ -234,24 +263,42 @@ namespace MomentOfUs.Application.Service
             await ValidateUser(ownerId);
             await ValidateUser(targetUserId);
 
+            // Check journal exists and ownership first
             var journal = await _repositoryManager.JournalRepository.GetByIdAsync(journalId, trackChanges: false);
             CheckEntityExist(journal, journalId, nameof(Journal));
+            if (journal.OwnerID != ownerId)
+            {
+                throw new BadRequestException($"User with ID {ownerId} is not the owner of this journal.");
+            }
 
-            if (!await _repositoryManager.JournalRepository.IsOwnerAsync(journalId, ownerId))
-                throw new BadRequestException($"User with ID {ownerId} does not have permission to revoke access.");
+            var sharedJournals = await _repositoryManager.SharedJournalRepository.GetByJournalIdAsync(journalId, trackChanges: false);
+            var sharedJournal = sharedJournals.FirstOrDefault(sj => 
+                sj.SharedWith.Any(sw => sw.UserId == targetUserId));
+            
+            if (sharedJournal == null)
+            {
+                throw new NotFoundException($"No shared access found for user ID {targetUserId}");
+            }
 
-            var success = await _repositoryManager.UserSharedJournalRepository.RevokeUserAccessAsync(journalId, targetUserId);
+            var success = await _repositoryManager.UserSharedJournalRepository.RevokeUserAccessAsync(sharedJournal.Id, targetUserId);
             if (!success)
+            {
                 throw new BadRequestException($"Failed to revoke access for user with ID {targetUserId}.");
+            }
 
             await _repositoryManager.SaveAsync();
         }
 
-        public async Task<IEnumerable<UserSharedJournal>> GetSharedUsersAsync(Guid journalId)
+        public async Task<IEnumerable<UserSharedJournal>> GetSharedUsersAsync(string userId)
         {
-            var sharedUsers = await _repositoryManager.UserSharedJournalRepository.GetUsersWithAccessAsync(journalId, trackChanges: false);
+            await ValidateUser(userId);
+            var sharedJournals = await _repositoryManager.SharedJournalRepository.GetUserSharedJournalAsync(userId, trackChanges: false);
+            if (!sharedJournals.Any())
+                throw new NotFoundException($"No shared journals found for user ID {userId}.");
+
+            var sharedUsers = sharedJournals.SelectMany(sj => sj.SharedWith);
             if (!sharedUsers.Any())
-                throw new NotFoundException("No shared users found for this journal.");
+                throw new NotFoundException($"No shared users found for user ID {userId}.");
 
             return sharedUsers;
         }
@@ -261,20 +308,33 @@ namespace MomentOfUs.Application.Service
             await ValidateUser(ownerId);
             await ValidateUser(targetUserId);
 
-            var journal = await _repositoryManager.JournalRepository.GetByIdAsync(journalId, false);
+            var journal = await _repositoryManager.JournalRepository.GetByIdAsync(journalId, trackChanges: false);
             CheckEntityExist(journal, journalId, nameof(Journal));
 
             if (journal.OwnerID != ownerId)
             {
-                throw new BadRequestException($"User with ID {ownerId} does not have permission to change access.");
+                throw new BadRequestException($"User with ID {ownerId} is not the owner of this journal.");
             }
 
-            var success = await _repositoryManager.UserSharedJournalRepository.UpdateUserPermissionAsync(journalId, targetUserId, newPermission);
-            if (!success)
+            var sharedJournals = await _repositoryManager.SharedJournalRepository.GetByJournalIdAsync(journalId, trackChanges: false);
+            var sharedJournal = sharedJournals.FirstOrDefault(sj => 
+                sj.SharedWith.Any(sw => sw.UserId == targetUserId));
+
+            if (sharedJournal == null)
             {
-                throw new BadRequestException($"Failed to update permission for user ID {targetUserId}.");
+                throw new BadRequestException($"User ID {targetUserId} does not have shared access to this journal.");
             }
 
+            var existingPermission = await _repositoryManager.UserSharedJournalRepository
+                .GetUserPermissionAsync(sharedJournal.Id, targetUserId, trackChanges: false);
+
+            if (existingPermission == null)
+            {
+                throw new BadRequestException($"User ID {targetUserId} does not have shared access to this journal.");
+            }
+
+            existingPermission.PermissionLevel = newPermission;
+            _repositoryManager.UserSharedJournalRepository.Update(existingPermission);
             await _repositoryManager.SaveAsync();
         }
 
