@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MomentOfUs.Application.Dtos.SharedJournalDto;
 using MomentOfUs.Application.Service.Contracts;
+using MomentOfUs.Domain.Exceptions;
 using MomentOfUs.Domain.Models;
 
 namespace MomentOfUs.API.Controllers
@@ -31,13 +32,20 @@ namespace MomentOfUs.API.Controllers
         [HttpPost]  
         public async Task<IActionResult> ShareJournal(Guid journalId, [FromBody] SharedJournalCreateDto sharedJournalCreateDto)
         {
-            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            if (userId == null)
+            try 
             {
-                return Unauthorized();
+                var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                if (userId == null)
+                {
+                    return Unauthorized();
+                }
+                await _serviceManager.JournalService.ShareJournalAsync(journalId, userId, sharedJournalCreateDto.targetUserId, sharedJournalCreateDto.Permission);
+                return Ok(new { message = "Journal shared successfully" });
             }
-            await _serviceManager.JournalService.ShareJournalAsync(journalId, userId, sharedJournalCreateDto.targetUserId, sharedJournalCreateDto.Permission);
-            return Ok();
+            catch (BadRequestException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
         /// <summary>
         /// upadte the permission of a shared journal
@@ -48,14 +56,20 @@ namespace MomentOfUs.API.Controllers
         [HttpPut]
         public async Task<IActionResult> UpdatePermission(Guid journalId, [FromBody] SharedJournalUpdated sharedJournalUpdated)
         {
-            
-            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            if (userId == null)
+            try
             {
+                var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                if (userId == null)
+                {
                 return Unauthorized();
             }
             await _serviceManager.JournalService.UpdateUserPermissionAsync(journalId, userId, sharedJournalUpdated.targetUserId, sharedJournalUpdated.Permission);
-            return Ok();
+            return Ok(new { message = "Permission updated successfully" });
+        }
+        catch (BadRequestException ex)
+        {
+            return BadRequest(new { message = ex.Message });
+        }
         }
         /// <summary>
         /// revoke user access to a shared journal
@@ -65,13 +79,20 @@ namespace MomentOfUs.API.Controllers
         [HttpDelete]
         public async Task<IActionResult> RevokeAccess(Guid journalId, string targetUserId)  
         {
-            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            if (userId == null)
+            try
             {
-                return Unauthorized();
+                var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                if (userId == null)
+                {
+                    return Unauthorized();
+                }
+                await _serviceManager.JournalService.RevokeUserAccessAsync(journalId, userId, targetUserId);
+                return NoContent();
             }
-            await _serviceManager.JournalService.RevokeUserAccessAsync(journalId, userId, targetUserId);
-            return NoContent();
+            catch (BadRequestException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }   
         /// <summary>
         /// get all users with access to a shared journal
@@ -81,20 +102,22 @@ namespace MomentOfUs.API.Controllers
         [HttpGet("users")]
         public async Task<IActionResult> GetAllUsersWithAccess()
         {
-            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;  
-            if (userId == null)
+            try
             {
-                return Unauthorized();
+                var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;  
+                if (string.IsNullOrEmpty(userId))
+                {
+                    return BadRequest("Invalid user request.");
+                }
+                var users = await _serviceManager.JournalService.GetSharedUsersAsync(userId);
+                return Ok(users);
             }
-            var users = await _serviceManager.JournalService.GetSharedUsersAsync(userId);
-            return Ok(users);
+            catch (BadRequestException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }      
 
-
-     
-
-
-        
         
     }
 }

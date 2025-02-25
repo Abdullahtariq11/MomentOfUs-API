@@ -8476,3 +8476,23 @@ ORDER BY "s"."Id"
    at MomentOfUs.API.Extensions.GlobalErrorHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API/Extensions/GlobalErrorHandlingMiddleware.cs:line 28
 2025-02-23 22:44:07.4400 Warn NotFoundException: No shared journals found for user ID 6a9bc996-8614-49d4-8428-e59aa95bf599. 
 2025-02-23 22:44:07.4686 Info Request finished HTTP/1.1 GET http://localhost:5063/api/journals/96b5c156-3fa6-4473-b41b-4a89ed1c02ec/shared/users - 404 - application/json 3282.4598ms 
+2025-02-24 20:35:08.5215 Info Application Starting Up... 
+2025-02-24 20:35:08.7344 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-24 20:35:08.7706 Info Now listening on: http://localhost:5063 
+2025-02-24 20:35:08.7713 Info Application started. Press Ctrl+C to shut down. 
+2025-02-24 20:35:08.7713 Info Hosting environment: Development 
+2025-02-24 20:35:08.7713 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-24 20:35:08.8746 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/index.html - - - 
+2025-02-24 20:35:08.9967 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/index.html - 200 - text/html;charset=utf-8 111.5132ms 
+2025-02-24 20:35:09.0674 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/v1/swagger.json - - - 
+2025-02-24 20:35:09.1662 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 98.7938ms 
+2025-02-24 20:35:23.8511 Info Application Starting Up... 
+2025-02-24 20:35:24.0441 Info User profile is available. Using '/Users/abdullahtariq/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest. 
+2025-02-24 20:35:24.0780 Info Now listening on: http://localhost:5063 
+2025-02-24 20:35:24.0780 Info Application started. Press Ctrl+C to shut down. 
+2025-02-24 20:35:24.0791 Info Hosting environment: Development 
+2025-02-24 20:35:24.0791 Info Content root path: /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.API 
+2025-02-24 20:35:24.1590 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/index.html - - - 
+2025-02-24 20:35:24.2227 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/index.html - 200 - text/html;charset=utf-8 54.9263ms 
+2025-02-24 20:35:24.2904 Info Request starting HTTP/1.1 GET http://localhost:5063/swagger/v1/swagger.json - - - 
+2025-02-24 20:35:24.3600 Info Request finished HTTP/1.1 GET http://localhost:5063/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 69.4913ms 

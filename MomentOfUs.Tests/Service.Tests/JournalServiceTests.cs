@@ -112,33 +112,82 @@ namespace MomentOfUs.Tests.Service.Tests
         [Test]
         public async Task AddJournalEntryAsync_ShouldThrowException_WhenNoEditPermissions()
         {
+            // Arrange
             var journalId = Guid.NewGuid();
+            var sharedJournalId = Guid.NewGuid();
             var userId = "user123";
 
-            _mockUserService.Setup(u => u.UserExist(userId)).ReturnsAsync(true);
-            _mockJournalRepository.Setup(r => r.GetByIdAsync(journalId, false)).ReturnsAsync(new Journal { Id = journalId });
-            _mockUserSharedJournalRepository.Setup(u => u.GetUserPermissionAsync(journalId, userId, false))
+            _mockUserService.Setup(u => u.UserExist(userId))
+                .ReturnsAsync(true);
+
+            _mockJournalRepository.Setup(r => r.GetByIdAsync(journalId, false))
+                .ReturnsAsync(new Journal { Id = journalId, OwnerID = "differentUser" });
+
+            _mockSharedJournalRepository.Setup(r => r.GetByJournalIdAsync(journalId, false))
+                .ReturnsAsync(new List<SharedJournal> 
+                { 
+                    new SharedJournal 
+                    { 
+                        Id = sharedJournalId,
+                        JournalId = journalId,
+                        SharedWith = new List<UserSharedJournal> 
+                        { 
+                            new UserSharedJournal { UserId = userId } 
+                        }
+                    } 
+                });
+
+            _mockUserSharedJournalRepository.Setup(u => u.GetUserPermissionAsync(sharedJournalId, userId, false))
                 .ReturnsAsync(new UserSharedJournal { PermissionLevel = PermissionLevel.View });
 
-            Assert.ThrowsAsync<BadRequestException>(async () => await _journalService.AddJournalEntryAsync(journalId, userId, "content", JournalEntry.MoodType.Happy));
+            // Act & Assert
+            var exception = Assert.ThrowsAsync<BadRequestException>(async () => 
+                await _journalService.AddJournalEntryAsync(journalId, userId, "content", JournalEntry.MoodType.Happy));
+            
+            Assert.That(exception.Message, Contains.Substring("does not have permission"));
         }
 
         [Test]
         public async Task ShareJournalAsync_ShouldUpdatePermission_WhenAlreadyShared()
         {
+            // Arrange
             var journalId = Guid.NewGuid();
+            var sharedJournalId = Guid.NewGuid();
             var ownerId = "owner123";
             var targetUserId = "targetUser";
 
-            _mockUserService.Setup(u => u.UserExist(ownerId)).ReturnsAsync(true);
-            _mockUserService.Setup(u => u.UserExist(targetUserId)).ReturnsAsync(true);
-            _mockJournalRepository.Setup(r => r.GetByIdAsync(journalId, false)).ReturnsAsync(new Journal { Id = journalId });
-            _mockUserSharedJournalRepository.Setup(u => u.GetUserPermissionAsync(journalId, targetUserId, false))
+            _mockUserService.Setup(u => u.UserExist(ownerId))
+                .ReturnsAsync(true);
+            _mockUserService.Setup(u => u.UserExist(targetUserId))
+                .ReturnsAsync(true);
+            
+            _mockJournalRepository.Setup(r => r.GetByIdAsync(journalId, false))
+                .ReturnsAsync(new Journal { Id = journalId, OwnerID = ownerId });
+
+            _mockSharedJournalRepository.Setup(r => r.GetByJournalIdAsync(journalId, false))
+                .ReturnsAsync(new List<SharedJournal> 
+                { 
+                    new SharedJournal 
+                    { 
+                        Id = sharedJournalId,
+                        JournalId = journalId,
+                        OwnerId = ownerId,
+                        SharedWith = new List<UserSharedJournal> 
+                        { 
+                            new UserSharedJournal { UserId = targetUserId } 
+                        }
+                    } 
+                });
+
+            _mockUserSharedJournalRepository.Setup(u => u.GetUserPermissionAsync(sharedJournalId, targetUserId, false))
                 .ReturnsAsync(new UserSharedJournal { PermissionLevel = PermissionLevel.View });
 
+            // Act
             await _journalService.ShareJournalAsync(journalId, ownerId, targetUserId, PermissionLevel.Edit);
 
-            _mockUserSharedJournalRepository.Verify(u => u.Update(It.IsAny<UserSharedJournal>()), Times.Once);
+            // Assert
+            _mockUserSharedJournalRepository.Verify(u => u.Update(It.Is<UserSharedJournal>(
+                usj => usj.PermissionLevel == PermissionLevel.Edit)), Times.Once);
             _mockRepositoryManager.Verify(r => r.SaveAsync(), Times.Once);
         }
 
