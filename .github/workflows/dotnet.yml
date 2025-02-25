@@ -12,18 +12,12 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     
-    - name: Install .NET 9 Preview
-      run: |
-        wget https://download.visualstudio.microsoft.com/download/pr/4a2c2c1f-2c66-4275-9c3c-84e4c0373f55/a1f658c0f5dbf1ccc0b33c7c1469d6fb/dotnet-sdk-9.0.100-preview.1.24101.2-linux-x64.tar.gz
-        mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-9.0.100-preview.1.24101.2-linux-x64.tar.gz -C $HOME/dotnet
-        echo "$HOME/dotnet" >> $GITHUB_PATH
-        export DOTNET_ROOT=$HOME/dotnet
-        export PATH="$HOME/dotnet:$PATH"
-        
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '9.0.100-preview.1.24101.2'
+        dotnet-version: |
+          7.0.x
+          9.0.100-preview.1
         
     - name: Restore dependencies
       run: dotnet restore MomentOfUs-API.sln
