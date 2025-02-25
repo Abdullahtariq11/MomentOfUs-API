@@ -1,8 +1,17 @@
+name: .NET Build and Test
+
+on:
+  push:
+    branches: [ main ]  # or your default branch name
+  pull_request:
+    branches: [ main ]  # or your default branch name
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+    
     - name: Install .NET 9 Preview
       run: |
         wget https://download.visualstudio.microsoft.com/download/pr/bd4c4c78-967a-4fcd-bf65-1e6ed9460d91/7f4e9e94f6cd2ffbb64e58b5d31fa2c5/dotnet-sdk-9.0.100-preview.4-linux-x64.tar.gz
@@ -10,13 +19,17 @@ jobs:
         echo "$HOME/dotnet" >> $GITHUB_PATH
         export DOTNET_ROOT=$HOME/dotnet
         export PATH="$HOME/dotnet:$PATH"
+        
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 9.0.x
+        dotnet-version: '9.0.x'
+        
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore MomentOfUs-API.sln
+      
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build MomentOfUs-API.sln --no-restore
+      
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test MomentOfUs-API.sln --no-build --verbosity normal
