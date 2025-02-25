@@ -16,8 +16,8 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: |
-          7.0.x
-          9.0.100-preview.1
+          8.0.x
+          9.0.100-preview.1.24101.2
         
     - name: Restore dependencies
       run: dotnet restore MomentOfUs-API.sln
