@@ -20,10 +20,10 @@ jobs:
           9.0.100-preview.1.24101.2
         
     - name: Restore dependencies
-      run: dotnet restore MomentOfUs-API.sln
+      run: dotnet restore MomentOfUs.sln  # Updated solution name
       
     - name: Build
-      run: dotnet build MomentOfUs-API.sln --no-restore
+      run: dotnet build MomentOfUs.sln --no-restore  # Updated solution name
       
     - name: Test
-      run: dotnet test MomentOfUs-API.sln --no-build --verbosity normal
+      run: dotnet test MomentOfUs.sln --no-build --verbosity normal  # Updated solution name
