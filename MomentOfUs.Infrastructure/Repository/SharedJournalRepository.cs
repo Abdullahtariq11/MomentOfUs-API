@@ -15,13 +15,29 @@ namespace MomentOfUs.Infrastructure.Repository
         }
 
         /// <summary>
-        /// Get shared journal by its Id
+        /// Gets a shared journal by its unique identifier
         /// </summary>
-        public async Task<SharedJournal?> GetByIdAsync(Guid id, bool trackChanges)
+        /// <param name="sharedJournalId">The ID of the shared journal entry</param>
+        /// <param name="trackChanges">Whether to track entity changes</param>
+        /// <returns>The SharedJournal if found, null otherwise</returns>
+        public async Task<SharedJournal?> GetByIdAsync(Guid sharedJournalId, bool trackChanges)
         {
-            return await FindByCondition(sj => sj.Id == id, trackChanges)
-                .Include(sj => sj.SharedWith) // Include shared users
+            return await FindByCondition(sj => sj.Id == sharedJournalId, trackChanges)
+                .Include(sj => sj.SharedWith)
                 .SingleOrDefaultAsync();
+        }
+
+        /// <summary>
+        /// Gets all shared journal entries for a specific journal
+        /// </summary>
+        /// <param name="journalId">The ID of the journal</param>
+        /// <param name="trackChanges">Whether to track entity changes</param>
+        /// <returns>List of SharedJournal entries for the specified journal</returns>
+        public async Task<IEnumerable<SharedJournal>> GetByJournalIdAsync(Guid journalId, bool trackChanges)
+        {
+            return await FindByCondition(sj => sj.JournalId == journalId, trackChanges)
+                .Include(sj => sj.SharedWith)
+                .ToListAsync();
         }
 
         /// <summary>
@@ -39,9 +55,10 @@ namespace MomentOfUs.Infrastructure.Repository
         /// </summary>
         public async Task<PermissionLevel?> GetUserAccessAsync(Guid journalId, string userId)
         {
-            var sharedJournal = await FindByCondition(sj => sj.JournalId == journalId, trackChanges: false)
-                .Include(sj => sj.SharedWith)
-                .SingleOrDefaultAsync();
+             var sharedJournal = await FindByCondition(sj => sj.JournalId == journalId, trackChanges: false)
+            .Include(sj => sj.SharedWith)
+            .ThenInclude(uj => uj.User) // Ensure user details are loaded
+            .FirstOrDefaultAsync(); 
 
             if (sharedJournal == null)
             {

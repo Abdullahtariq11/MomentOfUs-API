@@ -30,7 +30,7 @@ namespace MomentOfUs.Application.Service
             {
                 throw new NotFoundException($"User with id: {userId} not found", userId);
             }
-            UserInfoDto userInfo = new(user.FirstName, user.LastName, user.Email);
+            UserInfoDto userInfo = new(user.Id,user.FirstName, user.LastName, user.Email);
             return userInfo;
         }
 
@@ -45,7 +45,7 @@ namespace MomentOfUs.Application.Service
             List<UserInfoDto> userInfoDtos = new List<UserInfoDto>();
             foreach (var user in users)
             {
-                var userInfo = new UserInfoDto(user.FirstName, user.LastName, user.Email);
+                var userInfo = new UserInfoDto(user.Id,user.FirstName, user.LastName, user.Email);
                 if (userInfo == null)
                 {
                     throw new BadRequestException($"User information empty for userId :{user.Id}");

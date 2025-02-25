@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace MomentOfUs.Domain.Models
@@ -26,6 +27,7 @@ namespace MomentOfUs.Domain.Models
 
         //Navigation property
         [Required]
+        [JsonIgnore]
         public Journal Journal { get; set; }
 
         public enum MoodType

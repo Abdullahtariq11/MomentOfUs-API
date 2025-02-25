@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace MomentOfUs.Domain.Models
@@ -18,10 +19,11 @@ namespace MomentOfUs.Domain.Models
         public DateTime UpdatedAt { get; set; }
 
         //Navigation property
+        [JsonIgnore]
         public User? Owner { get; set; }
-        [Required]
+        [JsonIgnore]
         public Journal? Journal { get; set; }
-        [Required]
+        [JsonIgnore]
         public ICollection<UserSharedJournal> SharedWith { get; set; }=new List<UserSharedJournal>();
     }
 

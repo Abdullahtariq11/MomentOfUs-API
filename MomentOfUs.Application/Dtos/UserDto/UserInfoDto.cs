@@ -5,6 +5,6 @@ using System.Threading.Tasks;
 
 namespace MomentOfUs.Application.Dtos.UserDto
 {
-    public record UserInfoDto(string FirstName, string LastName, string Email);
+    public record UserInfoDto(string Id, string FirstName, string LastName, string Email);
    
 }

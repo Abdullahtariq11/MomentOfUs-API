@@ -22,6 +22,7 @@
     <ProjectReference Include="..\MomentOfUs.Application\MomentOfUs.Application.csproj" />
     <ProjectReference Include="..\MomentOfUs.Domain\MomentOfUs.Domain.csproj" />
     <ProjectReference Include="..\MomentOfUs.Infrastructure\MomentOfUs.Infrastructure.csproj" />
+    <ProjectReference Include="..\MomentOfUs.API\MomentOfUs.API.csproj" />
   </ItemGroup>
 
 </Project>
