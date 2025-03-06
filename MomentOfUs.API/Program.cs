@@ -38,6 +38,16 @@ logger.Info("Application Starting Up...");
 builder.Logging.ClearProviders();  // Remove default logging providers
 builder.Host.UseNLog();  // Add NLog as the main logging provider
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", builder =>
+    {
+        builder.AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader();
+    });
+});
+
 
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserService,UserService>();
@@ -91,6 +101,9 @@ builder.Services.AddSwaggerGen(c =>
 
 
 var app = builder.Build();
+
+//Apply CORS Before Middleware
+app.UseCors("AllowAll");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

@@ -1,0 +1,343 @@
+[
+  {
+    "ContainingType": "MomentOfUs.API.Controllers.JournalController",
+    "Method": "CreateJournal",
+    "RelativePath": "api/Journals",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "journalCreateDto",
+        "Type": "MomentOfUs.Application.Dtos.JournalDto.JournalCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MomentOfUs.API.Controllers.JournalController",
+    "Method": "GetAllJournals",
+    "RelativePath": "api/Journals",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MomentOfUs.API.Controllers.JournalController",
+    "Method": "GetJournalById",
+    "RelativePath": "api/Journals/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MomentOfUs.API.Controllers.JournalController",
+    "Method": "UpdateJournal",
+    "RelativePath": "api/Journals/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "journalUpdateDto",
+        "Type": "MomentOfUs.Application.Dtos.JournalDto.JournalUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MomentOfUs.API.Controllers.JournalController",
+    "Method": "DeleteJournal",
+    "RelativePath": "api/Journals/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MomentOfUs.API.Controllers.JournalEntryController",
+    "Method": "GetAllEntries",
+    "RelativePath": "api/Journals/{journalId}/entries",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "journalId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MomentOfUs.API.Controllers.JournalEntryController",
+    "Method": "CreateEntry",
+    "RelativePath": "api/Journals/{journalId}/entries",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "journalId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "entry",
+        "Type": "MomentOfUs.Application.Dtos.JournalEntryDto.JournalEntryCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MomentOfUs.API.Controllers.JournalEntryController",
+    "Method": "GetEntryById",
+    "RelativePath": "api/Journals/{journalId}/entries/{entryId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "journalId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "entryId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MomentOfUs.API.Controllers.JournalEntryController",
+    "Method": "UpdateEntry",
+    "RelativePath": "api/Journals/{journalId}/entries/{entryId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "journalId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "entryId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "entry",
+        "Type": "MomentOfUs.Application.Dtos.JournalEntryDto.JournalEntryUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MomentOfUs.API.Controllers.JournalEntryController",
+    "Method": "DeleteEntry",
+    "RelativePath": "api/Journals/{journalId}/entries/{entryId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "journalId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "entryId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MomentOfUs.API.Controllers.SharedJournalController",
+    "Method": "ShareJournal",
+    "RelativePath": "api/journals/{journalId}/shared",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "journalId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "sharedJournalCreateDto",
+        "Type": "MomentOfUs.Application.Dtos.SharedJournalDto.SharedJournalCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MomentOfUs.API.Controllers.SharedJournalController",
+    "Method": "UpdatePermission",
+    "RelativePath": "api/journals/{journalId}/shared",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "journalId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "sharedJournalUpdated",
+        "Type": "MomentOfUs.Application.Dtos.SharedJournalDto.SharedJournalUpdated",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MomentOfUs.API.Controllers.SharedJournalController",
+    "Method": "RevokeAccess",
+    "RelativePath": "api/journals/{journalId}/shared",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "journalId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "targetUserId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MomentOfUs.API.Controllers.SharedJournalController",
+    "Method": "GetAllUsersWithAccess",
+    "RelativePath": "api/journals/{journalId}/shared/users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "journalId",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MomentOfUs.API.Controllers.UserController",
+    "Method": "Login",
+    "RelativePath": "api/Users/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userLoginDto",
+        "Type": "MomentOfUs.Application.Dtos.UserDto.UserLoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MomentOfUs.API.Controllers.UserController",
+    "Method": "Logout",
+    "RelativePath": "api/Users/Logout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MomentOfUs.API.Controllers.UserController",
+    "Method": "Register",
+    "RelativePath": "api/Users/Register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userRegisterDto",
+        "Type": "MomentOfUs.Application.Dtos.UserDto.UserRegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MomentOfUs.API.Controllers.UserController",
+    "Method": "UpdateUserInfo",
+    "RelativePath": "api/Users/Update",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userInfo",
+        "Type": "MomentOfUs.Application.Dtos.UserDto.UserInfoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MomentOfUs.API.Controllers.UserController",
+    "Method": "GetUserInfo",
+    "RelativePath": "api/Users/UserInfo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MomentOfUs.API.Controllers.UserController",
+    "Method": "GetUsers",
+    "RelativePath": "api/Users/Users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

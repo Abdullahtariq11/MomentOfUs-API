@@ -1,26 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Infrastructure/MomentOfUs.Infrastructure.csproj": {}
+    "C:\\Users\\abdul\\Projects\\Abdullahtariq11\\MomentOfUs-API\\MomentOfUs.Infrastructure\\MomentOfUs.Infrastructure.csproj": {}
   },
   "projects": {
-    "/Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Domain/MomentOfUs.Domain.csproj": {
+    "C:\\Users\\abdul\\Projects\\Abdullahtariq11\\MomentOfUs-API\\MomentOfUs.Domain\\MomentOfUs.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Domain/MomentOfUs.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\abdul\\Projects\\Abdullahtariq11\\MomentOfUs-API\\MomentOfUs.Domain\\MomentOfUs.Domain.csproj",
         "projectName": "MomentOfUs.Domain",
-        "projectPath": "/Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Domain/MomentOfUs.Domain.csproj",
-        "packagesPath": "/Users/abdullahtariq/.nuget/packages/",
-        "outputPath": "/Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Domain/obj/",
+        "projectPath": "C:\\Users\\abdul\\Projects\\Abdullahtariq11\\MomentOfUs-API\\MomentOfUs.Domain\\MomentOfUs.Domain.csproj",
+        "packagesPath": "C:\\Users\\abdul\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\abdul\\Projects\\Abdullahtariq11\\MomentOfUs-API\\MomentOfUs.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/abdullahtariq/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\abdul\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,7 +45,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net9.0": {
@@ -70,35 +76,41 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Infrastructure/MomentOfUs.Infrastructure.csproj": {
+    "C:\\Users\\abdul\\Projects\\Abdullahtariq11\\MomentOfUs-API\\MomentOfUs.Infrastructure\\MomentOfUs.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Infrastructure/MomentOfUs.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\abdul\\Projects\\Abdullahtariq11\\MomentOfUs-API\\MomentOfUs.Infrastructure\\MomentOfUs.Infrastructure.csproj",
         "projectName": "MomentOfUs.Infrastructure",
-        "projectPath": "/Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Infrastructure/MomentOfUs.Infrastructure.csproj",
-        "packagesPath": "/Users/abdullahtariq/.nuget/packages/",
-        "outputPath": "/Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Infrastructure/obj/",
+        "projectPath": "C:\\Users\\abdul\\Projects\\Abdullahtariq11\\MomentOfUs-API\\MomentOfUs.Infrastructure\\MomentOfUs.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\abdul\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\abdul\\Projects\\Abdullahtariq11\\MomentOfUs-API\\MomentOfUs.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/abdullahtariq/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\abdul\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Domain/MomentOfUs.Domain.csproj": {
-                "projectPath": "/Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Domain/MomentOfUs.Domain.csproj"
+              "C:\\Users\\abdul\\Projects\\Abdullahtariq11\\MomentOfUs-API\\MomentOfUs.Domain\\MomentOfUs.Domain.csproj": {
+                "projectPath": "C:\\Users\\abdul\\Projects\\Abdullahtariq11\\MomentOfUs-API\\MomentOfUs.Domain\\MomentOfUs.Domain.csproj"
               }
             }
           }
@@ -113,7 +125,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net9.0": {
@@ -166,7 +178,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

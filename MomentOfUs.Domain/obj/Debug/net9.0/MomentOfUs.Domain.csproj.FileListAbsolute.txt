@@ -11,3 +11,16 @@
 /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Domain/obj/Debug/net9.0/refint/MomentOfUs.Domain.dll
 /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Domain/obj/Debug/net9.0/MomentOfUs.Domain.pdb
 /Users/abdullahtariq/Documents/GitHub/MomentOfUsBackend/MomentOfUs-API/MomentOfUs.Domain/obj/Debug/net9.0/ref/MomentOfUs.Domain.dll
+C:\Users\abdul\Projects\Abdullahtariq11\MomentOfUs-API\MomentOfUs.Domain\bin\Debug\net9.0\MomentOfUs.Domain.deps.json
+C:\Users\abdul\Projects\Abdullahtariq11\MomentOfUs-API\MomentOfUs.Domain\bin\Debug\net9.0\MomentOfUs.Domain.dll
+C:\Users\abdul\Projects\Abdullahtariq11\MomentOfUs-API\MomentOfUs.Domain\bin\Debug\net9.0\MomentOfUs.Domain.pdb
+C:\Users\abdul\Projects\Abdullahtariq11\MomentOfUs-API\MomentOfUs.Domain\obj\Debug\net9.0\MomentOfUs.Domain.csproj.AssemblyReference.cache
+C:\Users\abdul\Projects\Abdullahtariq11\MomentOfUs-API\MomentOfUs.Domain\obj\Debug\net9.0\MomentOfUs.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\abdul\Projects\Abdullahtariq11\MomentOfUs-API\MomentOfUs.Domain\obj\Debug\net9.0\MomentOfUs.Domain.AssemblyInfoInputs.cache
+C:\Users\abdul\Projects\Abdullahtariq11\MomentOfUs-API\MomentOfUs.Domain\obj\Debug\net9.0\MomentOfUs.Domain.AssemblyInfo.cs
+C:\Users\abdul\Projects\Abdullahtariq11\MomentOfUs-API\MomentOfUs.Domain\obj\Debug\net9.0\MomentOfUs.Domain.csproj.CoreCompileInputs.cache
+C:\Users\abdul\Projects\Abdullahtariq11\MomentOfUs-API\MomentOfUs.Domain\obj\Debug\net9.0\MomentOfUs.Domain.sourcelink.json
+C:\Users\abdul\Projects\Abdullahtariq11\MomentOfUs-API\MomentOfUs.Domain\obj\Debug\net9.0\MomentOfUs.Domain.dll
+C:\Users\abdul\Projects\Abdullahtariq11\MomentOfUs-API\MomentOfUs.Domain\obj\Debug\net9.0\refint\MomentOfUs.Domain.dll
+C:\Users\abdul\Projects\Abdullahtariq11\MomentOfUs-API\MomentOfUs.Domain\obj\Debug\net9.0\MomentOfUs.Domain.pdb
+C:\Users\abdul\Projects\Abdullahtariq11\MomentOfUs-API\MomentOfUs.Domain\obj\Debug\net9.0\ref\MomentOfUs.Domain.dll
