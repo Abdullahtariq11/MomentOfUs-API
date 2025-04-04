@@ -436,6 +436,28 @@
         }
       }
     },
+    "/api/journals/{journalId}/shared/sharedjournals": {
+      "get": {
+        "tags": [
+          "SharedJournal"
+        ],
+        "parameters": [
+          {
+            "name": "journalId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/Users/Register": {
       "post": {
         "tags": [

@@ -18,6 +18,22 @@ namespace MomentOfUs.Infrastructure.Repository
         }
 
         /// <summary>
+        /// Gets the SharedJournalId for a journal shared with a specific user
+        /// </summary>
+        /// <param name="journalId">The ID of the journal</param>
+        /// <param name="userId">The ID of the user</param>
+        /// <returns>The SharedJournalId if found, otherwise null</returns>
+        public async Task<Guid?> GetSharedJournalIdByJournalIdAsync(Guid journalId, string userId)
+        {
+            return await FindByCondition(usj => usj.UserId == userId, trackChanges: false)
+           .Include(usj => usj.SharedJournal) // Include related SharedJournal
+           .Where(usj => usj.SharedJournal.JournalId == journalId) // Now we can access JournalId
+           .Select(usj => (Guid?)usj.SharedJournalId)
+           .FirstOrDefaultAsync();
+        }
+
+
+        /// <summary>
         /// Gets the permission level for a specific user and journal
         /// </summary>
         /// <param name="sharedJournalId">The ID of the shared journal</param>
@@ -29,6 +45,7 @@ namespace MomentOfUs.Infrastructure.Repository
             return await base.FindByCondition(ush => ush.SharedJournalId == sharedJournalId && ush.UserId == userId, trackChanges)
              .FirstOrDefaultAsync();
         }
+
 
         /// <summary>
         /// Gets all users who have access to a specific journal

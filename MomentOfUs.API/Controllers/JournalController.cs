@@ -55,7 +55,7 @@ namespace MomentOfUs.API.Controllers
             {
                 return Unauthorized();
             }
-            var journal= await _serviceManager.JournalService.GetJournalByIdAsync(id,userId);
+            var journal= await _serviceManager.JournalService.GetJournalByIdAsync(id, userId);
             if(journal==null)
             {
                 return NotFound();
@@ -114,6 +114,22 @@ namespace MomentOfUs.API.Controllers
             var journals= await _serviceManager.JournalService.GetUserJournalsAsync(userId);
             return Ok(journals);
         }
-        
+
+        [Authorize]
+        [HttpGet("shared-with-me")]
+        public async Task<IActionResult> GetJournalsSharedWithMe()
+        {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (string.IsNullOrEmpty(userId))
+            {
+                return Unauthorized();
+            }
+
+            var journals = await _serviceManager.JournalService.GetJournalsSharedWithUserAsync(userId);
+            return Ok(journals);
+        }
+
+
+
     }
 }

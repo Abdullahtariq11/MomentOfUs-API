@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MomentOfUs.Application.Dtos.SharedJournalDto;
 using MomentOfUs.Domain.Models;
 
 namespace MomentOfUs.Application.Service.Contracts
@@ -28,5 +29,6 @@ namespace MomentOfUs.Application.Service.Contracts
         Task<IEnumerable<UserSharedJournal>> GetSharedUsersAsync(string userId);
         Task UpdateUserPermissionAsync(Guid journalId, string ownerId, string targetUserId, PermissionLevel newPermission);
         Task<IEnumerable<SharedJournal>> GetSharedJournalsForUserAsync(string userId);
+        Task<IEnumerable<JournalSharedWithMeDto>> GetJournalsSharedWithUserAsync(string userId);
     }
 }

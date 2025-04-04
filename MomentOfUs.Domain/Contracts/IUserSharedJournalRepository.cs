@@ -16,5 +16,6 @@ namespace MomentOfUs.Domain.Contracts
         Task<bool> UpdateUserPermissionAsync(Guid sharedJournalId, string userId, PermissionLevel newPermission);
         Task<bool> RevokeUserAccessAsync(Guid sharedJournalId, string userId);
         Task<bool> GrantUserAccessAsync(Guid sharedJournalId, string userId, PermissionLevel permissionLevel);
+        Task<Guid?> GetSharedJournalIdByJournalIdAsync(Guid journalId, string userId);
     }
 }

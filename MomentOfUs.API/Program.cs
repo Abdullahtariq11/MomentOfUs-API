@@ -19,7 +19,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 if (builder.Environment.IsDevelopment())
 {
-    builder.Configuration.AddUserSecrets<Program>();
+   // builder.Configuration.AddUserSecrets<Program>();
 }
 
 // Add services to the container.
@@ -62,6 +62,12 @@ builder.Services.AddScoped<IServiceManager, ServiceManager>();
 builder.Services.ConfigureSQLiteDatabase(builder.Configuration);
 builder.Services.AddAuthentication();
 builder.Services.ConfigureIdentity();
+var jwtSecret = builder.Configuration["JwtSettings:Secret"];
+var sqliteConn = builder.Configuration["ConnectionStrings:sqliteConnectionString"];
+
+logger.Info($"JWT Secret From Env: {(string.IsNullOrWhiteSpace(jwtSecret) ? "NULL or EMPTY" : "Exists")}");
+logger.Info($"SQLite Conn From Env: {(string.IsNullOrWhiteSpace(sqliteConn) ? "NULL or EMPTY" : sqliteConn)}");
+
 builder.Services.ConfigureJwtAuthentication(builder.Configuration);
 builder.Services.AddControllers();
 
@@ -99,24 +105,29 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+builder.WebHost.ConfigureKestrel(serverOptions =>
+{
+    serverOptions.ListenAnyIP(5063); // or whatever port you're using
+});
 
 var app = builder.Build();
+
 
 //Apply CORS Before Middleware
 app.UseCors("AllowAll");
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+
+
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+
 
 app.UseMiddleware<GlobalErrorHandlingMiddleware>();
 
 
-app.UseHttpsRedirection();
-
+//app.UseHttpsRedirection();
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

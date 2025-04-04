@@ -20,6 +20,7 @@ namespace MomentOfUs.Infrastructure.Repository
                          .SingleOrDefaultAsync();
         }
 
+
         public async Task<IEnumerable<Journal>> GetUserJournalsAsync(string userId, bool trackChanges)
         {
             return await FindByCondition(j => j.OwnerID == userId, trackChanges)

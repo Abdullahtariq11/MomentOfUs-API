@@ -248,6 +248,22 @@
   },
   {
     "ContainingType": "MomentOfUs.API.Controllers.SharedJournalController",
+    "Method": "GetAllSharedJournals",
+    "RelativePath": "api/journals/{journalId}/shared/sharedjournals",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "journalId",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MomentOfUs.API.Controllers.SharedJournalController",
     "Method": "GetAllUsersWithAccess",
     "RelativePath": "api/journals/{journalId}/shared/users",
     "HttpMethod": "GET",

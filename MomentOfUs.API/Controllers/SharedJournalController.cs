@@ -14,7 +14,7 @@ namespace MomentOfUs.API.Controllers
 {
     [Authorize]
     [ApiController]
-    [Route("api/journals/{journalId}/shared")]  
+    [Route("api/journals/shared")]  
     public class SharedJournalController : ControllerBase
     {
         private readonly IServiceManager _serviceManager;
@@ -116,8 +116,8 @@ namespace MomentOfUs.API.Controllers
             {
                 return BadRequest(new { message = ex.Message });
             }
-        }      
+        }
 
-        
+
     }
 }

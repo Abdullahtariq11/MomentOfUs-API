@@ -22,6 +22,8 @@ namespace MomentOfUs.Domain.Contracts
         /// </summary>
         Task<IEnumerable<SharedJournal>> GetUserSharedJournalAsync(string userId, bool trackChanges);
 
+        Task<IEnumerable<SharedJournal>> GetJournalsSharedWithUserAsync(string userId, bool trackChanges);
+
         /// <summary>
         /// Gets the type of access a user has to a journal
         /// </summary>

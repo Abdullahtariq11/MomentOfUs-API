@@ -51,6 +51,18 @@ namespace MomentOfUs.Infrastructure.Repository
         }
 
         /// <summary>
+        /// Get all shared journals that a user has access to (journals shared with them)
+        /// </summary>
+        public async Task<IEnumerable<SharedJournal>> GetJournalsSharedWithUserAsync(string userId, bool trackChanges)
+        {
+            return await FindByCondition(sj => sj.SharedWith.Any(sw => sw.UserId == userId),trackChanges)
+                .Include(sj => sj.SharedWith)
+                .Include(sj => sj.Journal) // Optional: eager load the Journal itself
+                .ToListAsync();
+        }
+
+
+        /// <summary>
         /// Get the type of access a user has to a journal (Owner, Edit, View, or None).
         /// </summary>
         public async Task<PermissionLevel?> GetUserAccessAsync(Guid journalId, string userId)

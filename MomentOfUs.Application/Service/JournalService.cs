@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
+using MomentOfUs.Application.Dtos.SharedJournalDto;
 using MomentOfUs.Application.Service.Contracts;
 using MomentOfUs.Domain.Contracts;
 using MomentOfUs.Domain.Exceptions;
@@ -65,8 +66,9 @@ namespace MomentOfUs.Application.Service
             await ValidateUser(userId);
             var journal = await _repositoryManager.JournalRepository.GetByIdAsync(journalId, trackChanges: false);
             CheckEntityExist(journal, journalId, nameof(Journal));
+            var sharedJournalId = await _repositoryManager.UserSharedJournalRepository.GetSharedJournalIdByJournalIdAsync(journalId, userId);
 
-            var hasAccess = await _repositoryManager.UserSharedJournalRepository.GetUserPermissionAsync(journalId, userId, trackChanges: false);
+            var hasAccess = await _repositoryManager.UserSharedJournalRepository.GetUserPermissionAsync(sharedJournalId.Value, userId, trackChanges: false);
             var isOwner = await _repositoryManager.JournalRepository.IsOwnerAsync(journalId, userId);
             if (hasAccess == null && !isOwner)
             {
@@ -348,6 +350,36 @@ namespace MomentOfUs.Application.Service
 
             return sharedJournals;
         }
+
+        public async Task<IEnumerable<JournalSharedWithMeDto>> GetJournalsSharedWithUserAsync(string userId)
+        {
+            await ValidateUser(userId);
+
+            var sharedJournals = await _repositoryManager.SharedJournalRepository
+                .GetJournalsSharedWithUserAsync(userId, trackChanges: false);
+
+            if (!sharedJournals.Any())
+                throw new NotFoundException("No journals have been shared with this user.");
+
+            var result = sharedJournals.Select(sj =>
+            {
+                var userAccess = sj.SharedWith.FirstOrDefault(sw => sw.UserId == userId);
+                return new JournalSharedWithMeDto
+                {
+                    SharedJournalId = sj.Id,
+                    JournalId = sj.JournalId,
+                    Title = sj.Journal?.Title ?? "Untitled",
+                    PhotoUrl = sj.Journal?.PhotoUrl,
+                    OwnerId = sj.OwnerId,
+                    CreatedAt = sj.CreatedAt,
+                    UpdatedAt = sj.UpdatedAt,
+                    PermissionLevel = userAccess?.PermissionLevel ?? PermissionLevel.View // fallback
+                };
+            });
+
+            return result;
+        }
+
 
         // ------------------- HELPER METHODS -------------------
 
